@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import dto.UsuarioDTO;
 import interfaces.ControlStrategy;
 
 /**
@@ -14,6 +15,7 @@ import interfaces.ControlStrategy;
 public class CtrlMaster {
 
     private ControlStrategy ctrl;
+    public static UsuarioDTO usuario;
 
     public CtrlMaster() {
         //Inicialmente se debe establecer el ControlStrategy por el setCtrl()

@@ -29,10 +29,30 @@ public class OrdenCompraDAO {
             pst.setDate(2, new java.sql.Date(nuevo.getFechaCompra().getTime()));
             pst.setDate(3, new java.sql.Date(nuevo.getFechaEntrega().getTime()));
             pst.setBoolean(4, nuevo.isEstado());
-            pst.executeUpdate();
+            if(pst.executeUpdate() > 0){
+                nuevo.setIdOrdenCompra(lastId());
+            }
         } catch (SQLException ex) {
             System.err.println("Clase OrdenCompraDAO.insertar:\n" + ex);
         }
+    }
+    
+    public static int lastId(){
+        String sql = "select id_compra from tbl_orden_compra order by id_compra desc limit 1";
+        int id = -1;
+        Connection conn = Conexion.getInstance();
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()){
+                System.out.println("13131313");
+                id = rs.getInt("id_compra");
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase OrdenCompraDAO.insertar:\n" + ex);
+        }
+        
+        return id;
     }
 
     /**

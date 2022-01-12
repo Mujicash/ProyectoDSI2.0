@@ -22,6 +22,10 @@ public class UsuarioDTO {
     public UsuarioDTO() {
     }
 
+    public UsuarioDTO(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
     public UsuarioDTO(int idUsuario, String username, String password, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaCreacion, Date ultimaConexion, int idTipoUsuario) {
         this.idUsuario = idUsuario;
         this.username = username;

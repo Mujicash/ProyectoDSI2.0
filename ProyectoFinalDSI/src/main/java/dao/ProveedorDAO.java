@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -117,6 +119,22 @@ public class ProveedorDAO {
             System.err.println("Clase ProveedorDAO.buscar:\n" + ex);
         }
         return false;
+    }
+    
+    public static List<ProveedorDTO> mostrar() {
+        String sql = "SELECT * FROM tbl_proveedor";
+        Connection conn = Conexion.getInstance();
+        List<ProveedorDTO> lista = null;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rst = pst.executeQuery();
+            lista = new LinkedList<>();
+            while (rst.next()) {
+                lista.add(new ProveedorDTO(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5)));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase FabricanteDAO.buscar:\n" + ex);
+        }
+        return lista;
     }
 
 }
