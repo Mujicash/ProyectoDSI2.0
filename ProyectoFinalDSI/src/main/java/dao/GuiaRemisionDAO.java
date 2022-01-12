@@ -22,7 +22,7 @@ public class GuiaRemisionDAO {
      * @param nuevo Usuario ha registrar en la base de datos
      */
     public static void insertar(GuiaRemisionDTO nuevo) {
-        String sql = "INSERT INTO tbl_guia_remision(num_guia,punto_partida,motivo,fecha_inicio,fecha_entrega) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO tbl_guia_remision(num_guia,punto_partida,motivo,fecha_inicio,fecha_entrega,id_guia,img) VALUES(?,?,?,?,?,?,?)";
         Connection conn = Conexion.getInstance().getConn();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, nuevo.getNumGuia());
@@ -30,6 +30,8 @@ public class GuiaRemisionDAO {
             pst.setString(3, nuevo.getMotivo());
             pst.setDate(4, new java.sql.Date(nuevo.getFechaInicio().getTime()));
             pst.setDate(5, new java.sql.Date(nuevo.getFechaEntrega().getTime()));
+            pst.setInt(6, nuevo.getIdGuia());
+            pst.setBinaryStream(7, nuevo.getFoto().getFis(), (int) nuevo.getFoto().getFich().length());
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.err.println("Clase GuiaRemisionDAO.insertar:\n" + ex);

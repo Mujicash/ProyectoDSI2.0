@@ -59,23 +59,25 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jPanelRetPrincipal5 = new javax.swing.JPanel();
         jLabelRegGuiaRemision = new javax.swing.JLabel();
         jLabelNumOrdCompra = new javax.swing.JLabel();
-        jTextFieldNumOrdCompra = new javax.swing.JTextField();
-        jButtonSubirGuiaRemision = new javax.swing.JButton();
+        textOrden = new javax.swing.JTextField();
+        botonArchivo = new javax.swing.JButton();
         jLabelProveedor = new javax.swing.JLabel();
-        jTextFieldPunPartida = new javax.swing.JTextField();
+        textPartida = new javax.swing.JTextField();
         jLabelPunPartida = new javax.swing.JLabel();
-        JComboBoxProveedor = new javax.swing.JComboBox<>();
         jLabelNombreArchivo = new javax.swing.JLabel();
-        jTextFieldNumGuiaRemision = new javax.swing.JTextField();
+        textNumero = new javax.swing.JTextField();
         jLabelMotTraslado = new javax.swing.JLabel();
-        jTextFieldMotTraslado = new javax.swing.JTextField();
+        textProveedor = new javax.swing.JTextField();
         jLabelFechaIniTraslado = new javax.swing.JLabel();
-        jTextFieldFechaIniTraslado = new javax.swing.JTextField();
-        jButtonBusGuiaRemision = new javax.swing.JButton();
-        jPanelGuiaRemision = new javax.swing.JPanel();
-        jButtonGuardarGuiaRemision = new javax.swing.JButton();
-        JTestFieldNomArchivo = new javax.swing.JTextField();
+        textAnio = new javax.swing.JTextField();
+        botonBuscar = new javax.swing.JButton();
+        panelArchivo = new javax.swing.JPanel();
+        botonGuardar = new javax.swing.JButton();
+        textArchivo = new javax.swing.JTextField();
         jLabelNumGuiaRemision = new javax.swing.JLabel();
+        textMotivo = new javax.swing.JTextField();
+        textDia = new javax.swing.JTextField();
+        textMes = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,128 +115,136 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jLabelNumOrdCompra.setText("N° ORDEN COMPRA");
         jPanelBaseRegGuiaRemision.add(jLabelNumOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 260, -1));
 
-        jTextFieldNumOrdCompra.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldNumOrdCompra.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNumOrdCompra.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNumOrdCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegGuiaRemision.add(jTextFieldNumOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 180, 40));
+        textOrden.setBackground(new java.awt.Color(0, 0, 38));
+        textOrden.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textOrden.setForeground(new java.awt.Color(255, 255, 255));
+        textOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 180, 40));
 
-        jButtonSubirGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonSubirGuiaRemision.setText("SUBIR GUÍA REMISIÓN");
-        jButtonSubirGuiaRemision.addActionListener(new java.awt.event.ActionListener() {
+        botonArchivo.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        botonArchivo.setText("SUBIR GUÍA REMISIÓN");
+        botonArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSubirGuiaRemisionActionPerformed(evt);
+                botonArchivoActionPerformed(evt);
             }
         });
-        jPanelBaseRegGuiaRemision.add(jButtonSubirGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 330, 40));
+        jPanelBaseRegGuiaRemision.add(botonArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 330, 40));
 
         jLabelProveedor.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelProveedor.setForeground(new java.awt.Color(0, 0, 51));
         jLabelProveedor.setText("PROVEEDOR");
         jPanelBaseRegGuiaRemision.add(jLabelProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 260, -1));
 
-        jTextFieldPunPartida.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldPunPartida.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldPunPartida.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldPunPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegGuiaRemision.add(jTextFieldPunPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 180, 40));
+        textPartida.setBackground(new java.awt.Color(0, 0, 38));
+        textPartida.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textPartida.setForeground(new java.awt.Color(255, 255, 255));
+        textPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 180, 40));
 
         jLabelPunPartida.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelPunPartida.setForeground(new java.awt.Color(0, 0, 51));
         jLabelPunPartida.setText("PUNTO PARTIDA");
         jPanelBaseRegGuiaRemision.add(jLabelPunPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 160, -1));
 
-        JComboBoxProveedor.setBackground(new java.awt.Color(0, 0, 38));
-        JComboBoxProveedor.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        JComboBoxProveedor.setForeground(new java.awt.Color(0, 0, 0));
-        JComboBoxProveedor.setAutoscrolls(true);
-        JComboBoxProveedor.setBorder(null);
-        JComboBoxProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        JComboBoxProveedor.setName(""); // NOI18N
-        JComboBoxProveedor.setOpaque(false);
-        jPanelBaseRegGuiaRemision.add(JComboBoxProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 320, 40));
-
         jLabelNombreArchivo.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNombreArchivo.setForeground(new java.awt.Color(0, 0, 51));
         jLabelNombreArchivo.setText("NOMBRE:");
         jPanelBaseRegGuiaRemision.add(jLabelNombreArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 88, 80, 30));
 
-        jTextFieldNumGuiaRemision.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldNumGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNumGuiaRemision.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNumGuiaRemision.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegGuiaRemision.add(jTextFieldNumGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 180, 40));
+        textNumero.setBackground(new java.awt.Color(0, 0, 38));
+        textNumero.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textNumero.setForeground(new java.awt.Color(255, 255, 255));
+        textNumero.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 180, 40));
 
         jLabelMotTraslado.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelMotTraslado.setForeground(new java.awt.Color(0, 0, 51));
         jLabelMotTraslado.setText("MOTIVO TRASLADO");
         jPanelBaseRegGuiaRemision.add(jLabelMotTraslado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 200, -1));
 
-        jTextFieldMotTraslado.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldMotTraslado.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldMotTraslado.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldMotTraslado.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegGuiaRemision.add(jTextFieldMotTraslado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 320, 40));
+        textProveedor.setBackground(new java.awt.Color(0, 0, 38));
+        textProveedor.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textProveedor.setForeground(new java.awt.Color(255, 255, 255));
+        textProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 320, 40));
 
         jLabelFechaIniTraslado.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelFechaIniTraslado.setForeground(new java.awt.Color(0, 0, 51));
         jLabelFechaIniTraslado.setText("FECHA INICIO TRASLADO");
         jPanelBaseRegGuiaRemision.add(jLabelFechaIniTraslado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 240, -1));
 
-        jTextFieldFechaIniTraslado.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldFechaIniTraslado.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldFechaIniTraslado.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldFechaIniTraslado.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegGuiaRemision.add(jTextFieldFechaIniTraslado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 180, 40));
+        textAnio.setBackground(new java.awt.Color(0, 0, 38));
+        textAnio.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textAnio.setForeground(new java.awt.Color(255, 255, 255));
+        textAnio.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 50, 40));
 
-        jButtonBusGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonBusGuiaRemision.setText("BUSCAR");
-        jButtonBusGuiaRemision.addActionListener(new java.awt.event.ActionListener() {
+        botonBuscar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        botonBuscar.setText("BUSCAR");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBusGuiaRemisionActionPerformed(evt);
+                botonBuscarActionPerformed(evt);
             }
         });
-        jPanelBaseRegGuiaRemision.add(jButtonBusGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, 40));
+        jPanelBaseRegGuiaRemision.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, 40));
 
-        javax.swing.GroupLayout jPanelGuiaRemisionLayout = new javax.swing.GroupLayout(jPanelGuiaRemision);
-        jPanelGuiaRemision.setLayout(jPanelGuiaRemisionLayout);
-        jPanelGuiaRemisionLayout.setHorizontalGroup(
-            jPanelGuiaRemisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelArchivoLayout = new javax.swing.GroupLayout(panelArchivo);
+        panelArchivo.setLayout(panelArchivoLayout);
+        panelArchivoLayout.setHorizontalGroup(
+            panelArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 330, Short.MAX_VALUE)
         );
-        jPanelGuiaRemisionLayout.setVerticalGroup(
-            jPanelGuiaRemisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelArchivoLayout.setVerticalGroup(
+            panelArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 240, Short.MAX_VALUE)
         );
 
-        jPanelBaseRegGuiaRemision.add(jPanelGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 330, 240));
+        jPanelBaseRegGuiaRemision.add(panelArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 330, 240));
 
-        jButtonGuardarGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonGuardarGuiaRemision.setText("GUARDAR");
-        jButtonGuardarGuiaRemision.addActionListener(new java.awt.event.ActionListener() {
+        botonGuardar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        botonGuardar.setText("GUARDAR");
+        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGuardarGuiaRemisionActionPerformed(evt);
+                botonGuardarActionPerformed(evt);
             }
         });
-        jPanelBaseRegGuiaRemision.add(jButtonGuardarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 110, 40));
+        jPanelBaseRegGuiaRemision.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 110, 40));
 
-        JTestFieldNomArchivo.setEditable(false);
-        JTestFieldNomArchivo.setBackground(new java.awt.Color(0, 0, 38));
-        JTestFieldNomArchivo.setFont(new java.awt.Font("Sitka Text", 1, 20)); // NOI18N
-        JTestFieldNomArchivo.setForeground(new java.awt.Color(255, 255, 255));
-        JTestFieldNomArchivo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTestFieldNomArchivo.setBorder(null);
-        JTestFieldNomArchivo.addActionListener(new java.awt.event.ActionListener() {
+        textArchivo.setEditable(false);
+        textArchivo.setBackground(new java.awt.Color(0, 0, 38));
+        textArchivo.setFont(new java.awt.Font("Sitka Text", 1, 20)); // NOI18N
+        textArchivo.setForeground(new java.awt.Color(255, 255, 255));
+        textArchivo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textArchivo.setBorder(null);
+        textArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTestFieldNomArchivoActionPerformed(evt);
+                textArchivoActionPerformed(evt);
             }
         });
-        jPanelBaseRegGuiaRemision.add(JTestFieldNomArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 80, 240, 40));
+        jPanelBaseRegGuiaRemision.add(textArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 80, 240, 40));
 
         jLabelNumGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNumGuiaRemision.setForeground(new java.awt.Color(0, 0, 51));
         jLabelNumGuiaRemision.setText("N° GUÍA REMISIÓN");
         jPanelBaseRegGuiaRemision.add(jLabelNumGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 190, -1));
+
+        textMotivo.setBackground(new java.awt.Color(0, 0, 38));
+        textMotivo.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textMotivo.setForeground(new java.awt.Color(255, 255, 255));
+        textMotivo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 320, 40));
+
+        textDia.setBackground(new java.awt.Color(0, 0, 38));
+        textDia.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textDia.setForeground(new java.awt.Color(255, 255, 255));
+        textDia.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 50, 40));
+
+        textMes.setBackground(new java.awt.Color(0, 0, 38));
+        textMes.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textMes.setForeground(new java.awt.Color(255, 255, 255));
+        textMes.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegGuiaRemision.add(textMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 50, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -256,21 +266,21 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jPanelRetPrincipal5MouseClicked
 
-    private void jButtonSubirGuiaRemisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubirGuiaRemisionActionPerformed
+    private void botonArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArchivoActionPerformed
         
-    }//GEN-LAST:event_jButtonSubirGuiaRemisionActionPerformed
+    }//GEN-LAST:event_botonArchivoActionPerformed
 
-    private void jButtonBusGuiaRemisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBusGuiaRemisionActionPerformed
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBusGuiaRemisionActionPerformed
+    }//GEN-LAST:event_botonBuscarActionPerformed
 
-    private void jButtonGuardarGuiaRemisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarGuiaRemisionActionPerformed
+    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGuardarGuiaRemisionActionPerformed
+    }//GEN-LAST:event_botonGuardarActionPerformed
 
-    private void JTestFieldNomArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTestFieldNomArchivoActionPerformed
+    private void textArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textArchivoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTestFieldNomArchivoActionPerformed
+    }//GEN-LAST:event_textArchivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,11 +318,9 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JComboBox<String> JComboBoxProveedor;
-    public javax.swing.JTextField JTestFieldNomArchivo;
-    private javax.swing.JButton jButtonBusGuiaRemision;
-    private javax.swing.JButton jButtonGuardarGuiaRemision;
-    private javax.swing.JButton jButtonSubirGuiaRemision;
+    public javax.swing.JButton botonArchivo;
+    public javax.swing.JButton botonBuscar;
+    public javax.swing.JButton botonGuardar;
     private javax.swing.JLabel jLabelFechaIniTraslado;
     private javax.swing.JLabel jLabelMotTraslado;
     private javax.swing.JLabel jLabelNombreArchivo;
@@ -322,12 +330,16 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPunPartida;
     private javax.swing.JLabel jLabelRegGuiaRemision;
     private javax.swing.JPanel jPanelBaseRegGuiaRemision;
-    private javax.swing.JPanel jPanelGuiaRemision;
     private javax.swing.JPanel jPanelRetPrincipal5;
-    public javax.swing.JTextField jTextFieldFechaIniTraslado;
-    public javax.swing.JTextField jTextFieldMotTraslado;
-    public javax.swing.JTextField jTextFieldNumGuiaRemision;
-    public javax.swing.JTextField jTextFieldNumOrdCompra;
-    public javax.swing.JTextField jTextFieldPunPartida;
+    public javax.swing.JPanel panelArchivo;
+    public javax.swing.JTextField textAnio;
+    public javax.swing.JTextField textArchivo;
+    public javax.swing.JTextField textDia;
+    public javax.swing.JTextField textMes;
+    public javax.swing.JTextField textMotivo;
+    public javax.swing.JTextField textNumero;
+    public javax.swing.JTextField textOrden;
+    public javax.swing.JTextField textPartida;
+    public javax.swing.JTextField textProveedor;
     // End of variables declaration//GEN-END:variables
 }

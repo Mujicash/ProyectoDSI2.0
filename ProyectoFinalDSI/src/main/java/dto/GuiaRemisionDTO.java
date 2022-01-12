@@ -1,7 +1,9 @@
 
 package dto;
 
+import extra.Foto;
 import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -15,6 +17,8 @@ public class GuiaRemisionDTO {
     private String motivo;
     private Date fechaInicio;
     private Date fechaEntrega;
+    private Foto guia;
+    
 
     public GuiaRemisionDTO() {
     }
@@ -80,6 +84,14 @@ public class GuiaRemisionDTO {
         this.fechaEntrega = fechaEntrega;
     }
 
+    public void setFoto(Foto f){
+        this.guia = f;
+    }
+    
+    public Foto getFoto(){
+        return this.guia;
+    }
+    
     @Override
     public String toString() {
         return "GuiaRemisionDTO{" + "idGuia=" + idGuia + ", numGuia=" + numGuia + '}';

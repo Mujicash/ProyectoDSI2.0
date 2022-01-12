@@ -5,6 +5,8 @@
  */
 package vista;
 
+import controlador.CtrlGuiaRemision;
+
 /**
  *
  * @author USER
@@ -200,7 +202,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void jPanelBotRegistrarGuiaRemisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
         FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
-        regGuiaRemision.setVisible(true);
+        CtrlGuiaRemision ctrl = new CtrlGuiaRemision(regGuiaRemision);
+        //regGuiaRemision.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
 
@@ -218,6 +221,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void jPanelBotRegistrarDatosProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarDatosProveedorMouseClicked
         FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
+        
         regDatProveedor.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPanelBotRegistrarDatosProveedorMouseClicked
