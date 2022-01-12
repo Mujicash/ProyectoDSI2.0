@@ -16,10 +16,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
      */
     public FrmRegistrarDatosProveedor() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(840, 590);
-        setResizable(false);
-        setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -42,6 +39,8 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
         jTextFieldEmpresa = new javax.swing.JTextField();
         jButtonBuscarRUC = new javax.swing.JButton();
         jButtonGuardarDatProveedor1 = new javax.swing.JButton();
+        jLabelTelefono = new javax.swing.JLabel();
+        jTextFieldTelefono = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,43 +76,54 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
         jLabelRUC.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelRUC.setForeground(new java.awt.Color(0, 0, 51));
         jLabelRUC.setText("RUC:");
-        jPanelBaseRegDatosProveedor.add(jLabelRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 90, 20));
+        jPanelBaseRegDatosProveedor.add(jLabelRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 90, 20));
 
         jTextFieldRUC.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldRUC.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldRUC.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldRUC.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProveedor.add(jTextFieldRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 240, 40));
+        jPanelBaseRegDatosProveedor.add(jTextFieldRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 240, 40));
 
         jLabelDireccion.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelDireccion.setForeground(new java.awt.Color(0, 0, 51));
         jLabelDireccion.setText("DIRECCIÓN:");
-        jPanelBaseRegDatosProveedor.add(jLabelDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 150, 20));
+        jPanelBaseRegDatosProveedor.add(jLabelDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 150, 20));
 
         jTextFieldDireccion.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldDireccion.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldDireccion.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldDireccion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProveedor.add(jTextFieldDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 560, 40));
+        jPanelBaseRegDatosProveedor.add(jTextFieldDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 560, 40));
 
         jLabelEmpresa.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelEmpresa.setForeground(new java.awt.Color(0, 0, 51));
         jLabelEmpresa.setText("EMPRESA:");
-        jPanelBaseRegDatosProveedor.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 100, 20));
+        jPanelBaseRegDatosProveedor.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 100, 20));
 
         jTextFieldEmpresa.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldEmpresa.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldEmpresa.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldEmpresa.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProveedor.add(jTextFieldEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 560, 40));
+        jPanelBaseRegDatosProveedor.add(jTextFieldEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 560, 40));
 
         jButtonBuscarRUC.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonBuscarRUC.setText("BUSCAR");
-        jPanelBaseRegDatosProveedor.add(jButtonBuscarRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 110, 40));
+        jPanelBaseRegDatosProveedor.add(jButtonBuscarRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 110, 40));
 
         jButtonGuardarDatProveedor1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonGuardarDatProveedor1.setText("GUARDAR");
         jPanelBaseRegDatosProveedor.add(jButtonGuardarDatProveedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 110, 40));
+
+        jLabelTelefono.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelTelefono.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelTelefono.setText("TELEFONO:");
+        jPanelBaseRegDatosProveedor.add(jLabelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 150, 20));
+
+        jTextFieldTelefono.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldTelefono.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldTelefono.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldTelefono.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegDatosProveedor.add(jTextFieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 560, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,9 +140,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal4MouseClicked
-        FrmPrincipal ret4 = new FrmPrincipal();
-        ret4.setVisible(true);
-        dispose();
+
     }//GEN-LAST:event_jPanelRetPrincipal4MouseClicked
 
     /**
@@ -162,6 +170,8 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -172,16 +182,18 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscarRUC;
-    private javax.swing.JButton jButtonGuardarDatProveedor1;
+    public javax.swing.JButton jButtonBuscarRUC;
+    public javax.swing.JButton jButtonGuardarDatProveedor1;
     private javax.swing.JLabel jLabelDireccion;
     private javax.swing.JLabel jLabelEmpresa;
     private javax.swing.JLabel jLabelRUC;
     private javax.swing.JLabel jLabelRegDatProveedor;
+    private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JPanel jPanelBaseRegDatosProveedor;
-    private javax.swing.JPanel jPanelRetPrincipal4;
+    public javax.swing.JPanel jPanelRetPrincipal4;
     public javax.swing.JTextField jTextFieldDireccion;
     public javax.swing.JTextField jTextFieldEmpresa;
     public javax.swing.JTextField jTextFieldRUC;
+    public javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables
 }

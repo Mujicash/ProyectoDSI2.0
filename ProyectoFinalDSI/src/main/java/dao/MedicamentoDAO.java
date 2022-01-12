@@ -23,7 +23,7 @@ public class MedicamentoDAO {
      */
     public static void insertar(MedicamentoDTO nuevo) {
         String sql = "INSERT INTO tbl_medicamento(id_fabricante,nombre,medida) VALUES(?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getIdFabricante());
             pst.setString(2, nuevo.getNombre());
@@ -40,7 +40,7 @@ public class MedicamentoDAO {
      */
     public static void modificar(MedicamentoDTO modificado) {
         String sql = "UPDATE tbl_medicamento SET id_fabricante=?,nombre=?,medida=? WHERE id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getIdFabricante());
             pst.setString(2, modificado.getNombre());
@@ -58,7 +58,7 @@ public class MedicamentoDAO {
      */
     public static void eliminar(int idMedicamento) {
         String sql = "DELETE FROM tbl_medicamento WHERE id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idMedicamento);
             pst.executeUpdate();
@@ -74,7 +74,7 @@ public class MedicamentoDAO {
      */
     public static MedicamentoDTO buscar(int idMedicamento) {
         String sql = "SELECT * FROM tbl_medicamento WHERE id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idMedicamento);
             ResultSet rst = pst.executeQuery();
