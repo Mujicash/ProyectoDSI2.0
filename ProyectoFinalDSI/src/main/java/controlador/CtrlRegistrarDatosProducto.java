@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
+import javax.swing.JOptionPane;
 import vista.FrmRegistrarDatosProducto;
 
 /**
@@ -45,7 +46,7 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
     @Override
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(800, 575);
+        this.vista.setSize(805, 700);
         this.vista.jPanelRetPrincipal3.addMouseListener(this);
         this.vista.jButtonGuardarDatMedicamento.addActionListener(this);
         this.vista.jButtonModificarDatProducto.addActionListener(this);
@@ -75,7 +76,8 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
                     0,
                     this.cbxFabricante.get(this.vista.jComboBoxTipo.getSelectedIndex()).getIdFabricante(),
                     this.vista.jTextFieldNombre.getText(),
-                    this.vista.jTextFieldPeso.getText());
+                    this.vista.jTextFieldPeso.getText(),
+                    Integer.parseInt(this.vista.jTextFieldNumBlister.getText()));
             MedicamentoDAO.insertar(nuevo);
         }
         if (e.getSource() == this.vista.jButtonModificarDatProducto) {
@@ -86,8 +88,20 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
             ProductoDAO.modificar(modificar);
         }
         if (e.getSource() == this.vista.jButtonBuscarDatProducto) {
-            ProductoDAO.buscar(Integer.parseInt(this.vista.jTextFieldCodigo.getText()),
+            ProductoDTO encontrado = ProductoDAO.buscar(Integer.parseInt(this.vista.jTextFieldCodigo.getText()),
                     this.cbxTipoProducto.get(this.vista.jComboBoxTipo.getSelectedIndex()).getIdTipo());
+            if (encontrado != null) {
+                MedicamentoDTO medicamento = MedicamentoDAO.buscar(encontrado.getIdMedicamento());
+                this.vista.jTextFieldNombre.setText(medicamento.getNombre());
+                this.vista.jTextFieldPeso.setText(medicamento.getMedida());
+                this.vista.jTextFieldNumBlister.setText(medicamento.getNum_blister() + "");
+                this.vista.jComboBoxMarca.setSelectedItem(FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre());
+                this.vista.jTextFieldStock.setText(encontrado.getStock() + "");
+                this.vista.jTextFieldPrecioVenta.setText(encontrado.getPrecioVenta() + "");
+            } else {
+                JOptionPane.showMessageDialog(this.vista, "Este CODIGO no se encuentra registrado", "CODIGO no encontrado", JOptionPane.INFORMATION_MESSAGE);
+            }
+
         }
     }
 

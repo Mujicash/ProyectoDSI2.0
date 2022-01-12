@@ -76,7 +76,7 @@ public class ProductoDAO {
      * @param idTipo
      * @return El DTO del fabricante
      */
-    public static ProveedorDTO buscar(int idMedicamento, int idTipo) {
+    public static ProductoDTO buscar(int idMedicamento, int idTipo) {
         String sql = "SELECT * FROM tbl_producto WHERE id_medicamento=? AND id_tipo=?";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
@@ -84,10 +84,10 @@ public class ProductoDAO {
             pst.setInt(2, idTipo);
             ResultSet rst = pst.executeQuery();
             if (rst.next()) {
-                return new ProveedorDTO(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5));
+                return new ProductoDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getFloat(4));
             }
         } catch (SQLException ex) {
-            System.err.println("Clase ProductoDAO.eliminar:\n" + ex);
+            System.err.println("Clase ProductoDAO.buscar:\n" + ex);
         }
         return null;
     }

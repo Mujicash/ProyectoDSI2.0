@@ -22,12 +22,13 @@ public class MedicamentoDAO {
      * @param nuevo Usuario ha registrar en la base de datos
      */
     public static void insertar(MedicamentoDTO nuevo) {
-        String sql = "INSERT INTO tbl_medicamento(id_fabricante,nombre,medida) VALUES(?,?,?)";
+        String sql = "INSERT INTO tbl_medicamento(id_fabricante,nombre,medida,num_blister) VALUES(?,?,?,?)";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getIdFabricante());
             pst.setString(2, nuevo.getNombre());
             pst.setString(3, nuevo.getMedida());
+            pst.setInt(4, nuevo.getNum_blister());
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.insertar:\n" + ex);
@@ -39,13 +40,14 @@ public class MedicamentoDAO {
      * @param modificado Usuario ha modificar en la base de datos
      */
     public static void modificar(MedicamentoDTO modificado) {
-        String sql = "UPDATE tbl_medicamento SET id_fabricante=?,nombre=?,medida=? WHERE id_medicamento=?";
+        String sql = "UPDATE tbl_medicamento SET id_fabricante=?,nombre=?,medida=?,num_blister=? WHERE id_medicamento=?";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getIdFabricante());
             pst.setString(2, modificado.getNombre());
             pst.setString(3, modificado.getMedida());
-            pst.setInt(4, modificado.getIdMedicamento());
+            pst.setInt(4, modificado.getNum_blister());
+            pst.setInt(5, modificado.getIdMedicamento());
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.modificar:\n" + ex);
@@ -79,7 +81,7 @@ public class MedicamentoDAO {
             pst.setInt(1, idMedicamento);
             ResultSet rst = pst.executeQuery();
             if (rst.next()) {
-                return new MedicamentoDTO(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4));
+                return new MedicamentoDTO(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4), rst.getInt(5));
             }
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.buscar:\n" + ex);
