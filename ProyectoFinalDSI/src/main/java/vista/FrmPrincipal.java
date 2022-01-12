@@ -17,7 +17,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+        setTitle("BOTICA CRUZ DE MAYO - JAUJA");      
         
         setSize(1039, 660);
         setResizable(false);
