@@ -21,7 +21,7 @@ public class MedicamentoDAO {
      *
      * @param nuevo Usuario ha registrar en la base de datos
      */
-    public static void insertar(MedicamentoDTO nuevo) {
+    public static boolean insertar(MedicamentoDTO nuevo) {
         String sql = "INSERT INTO tbl_medicamento(id_fabricante,nombre,medida,num_blister) VALUES(?,?,?,?)";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
@@ -29,17 +29,18 @@ public class MedicamentoDAO {
             pst.setString(2, nuevo.getNombre());
             pst.setString(3, nuevo.getMedida());
             pst.setInt(4, nuevo.getNum_blister());
-            pst.executeUpdate();
+            return pst.executeUpdate() > 0;
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.insertar:\n" + ex);
         }
+        return false;
     }
 
     /**
      *
      * @param modificado Usuario ha modificar en la base de datos
      */
-    public static void modificar(MedicamentoDTO modificado) {
+    public static boolean modificar(MedicamentoDTO modificado) {
         String sql = "UPDATE tbl_medicamento SET id_fabricante=?,nombre=?,medida=?,num_blister=? WHERE id_medicamento=?";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
@@ -48,10 +49,11 @@ public class MedicamentoDAO {
             pst.setString(3, modificado.getMedida());
             pst.setInt(4, modificado.getNum_blister());
             pst.setInt(5, modificado.getIdMedicamento());
-            pst.executeUpdate();
+            return pst.executeUpdate() > 0;
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.modificar:\n" + ex);
         }
+        return false;
     }
 
     /**
@@ -87,6 +89,20 @@ public class MedicamentoDAO {
             System.err.println("Clase MedicamentoDAO.buscar:\n" + ex);
         }
         return null;
+    }
+
+    public static int ultimoID() {
+        String sql = "SELECT MAX(id_medicamento) FROM tbl_medicamento";
+        Connection conn = Conexion.getInstance();
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rst = pst.executeQuery();
+            if (rst.next()) {
+                return rst.getInt(1);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase MedicamentoDAO.buscar:\n" + ex);
+        }
+        return 0;
     }
 
 }

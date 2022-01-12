@@ -7,7 +7,6 @@ import dao.TipoProductoDAO;
 import dto.FabricanteDTO;
 import dto.MedicamentoDTO;
 import dto.ProductoDTO;
-import dto.TipoProductoDTO;
 import interfaces.ControlStrategy;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +25,6 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
     private FrmRegistrarDatosProducto vista;
     private CtrlMaster ctrl;
     private List<FabricanteDTO> cbxFabricante;
-    private List<TipoProductoDTO> cbxTipoProducto;
 
     /**
      *
@@ -36,7 +34,6 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
         this.vista = new FrmRegistrarDatosProducto();
         this.ctrl = ctrl;
         this.cbxFabricante = FabricanteDAO.mostrar();
-        this.cbxTipoProducto = TipoProductoDAO.mostrar();
     }
 
     /**
@@ -50,13 +47,9 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
         this.vista.jPanelRetPrincipal3.addMouseListener(this);
         this.vista.jButtonGuardarDatMedicamento.addActionListener(this);
         this.vista.jButtonModificarDatProducto.addActionListener(this);
-        this.vista.jButtonBuscarDatProducto.addActionListener(this);
 
         this.cbxFabricante.forEach(item
                 -> this.vista.jComboBoxMarca.addItem(item.getNombre())
-        );
-        this.cbxTipoProducto.forEach(item
-                -> this.vista.jComboBoxTipo.addItem(item.getFormato())
         );
 
         this.vista.setLocationRelativeTo(null);
@@ -74,32 +67,64 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
         if (e.getSource() == this.vista.jButtonGuardarDatMedicamento) {
             MedicamentoDTO nuevo = new MedicamentoDTO(
                     0,
-                    this.cbxFabricante.get(this.vista.jComboBoxTipo.getSelectedIndex()).getIdFabricante(),
+                    this.cbxFabricante.get(this.vista.jComboBoxMarca.getSelectedIndex()).getIdFabricante(),
                     this.vista.jTextFieldNombre.getText(),
                     this.vista.jTextFieldPeso.getText(),
                     Integer.parseInt(this.vista.jTextFieldNumBlister.getText()));
-            MedicamentoDAO.insertar(nuevo);
+            if (MedicamentoDAO.insertar(nuevo)) {
+                this.vista.jTextFieldNombre.setEnabled(false);
+                this.vista.jTextFieldPeso.setEnabled(false);
+                this.vista.jTextFieldNumBlister.setEnabled(false);
+                this.vista.jComboBoxMarca.setEnabled(false);
+                this.vista.jButtonGuardarDatMedicamento.setEnabled(false);
+
+                int ultimoID = MedicamentoDAO.ultimoID();
+
+                ProductoDTO caja = new ProductoDTO(ultimoID, 1, 0, 0);
+                ProductoDTO blister = new ProductoDTO(ultimoID, 2, 0, 0);
+
+                if (ProductoDAO.insertar(caja) && ProductoDAO.insertar(blister)) {
+                    JOptionPane.showMessageDialog(this.vista, "Se ha registrado el Producto correctamente. Por favor registrar el precio de venta", "Registrado", JOptionPane.INFORMATION_MESSAGE);
+                    this.vista.jTextFieldCodigoBlister.setText(ultimoID + "");
+                    this.vista.jTextFieldCodigoCaja.setText(ultimoID + "");
+                    this.vista.jTextFieldPrecioVentaBlister.setEnabled(true);
+                    this.vista.jTextFieldPrecioVentaCaja.setEnabled(true);
+                    this.vista.jButtonModificarDatProducto.setEnabled(true);
+                } else {
+                    JOptionPane.showMessageDialog(this.vista, "No pudo registrar el Producto", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                    this.vista.jTextFieldNombre.setEnabled(true);
+                    this.vista.jTextFieldPeso.setEnabled(true);
+                    this.vista.jTextFieldNumBlister.setEnabled(true);
+                    this.vista.jComboBoxMarca.setEnabled(true);
+                    this.vista.jButtonGuardarDatMedicamento.setEnabled(true);
+                }
+
+            }
         }
         if (e.getSource() == this.vista.jButtonModificarDatProducto) {
-            ProductoDTO modificar = new ProductoDTO(Integer.parseInt(this.vista.jTextFieldCodigo.getText()),
-                    this.cbxTipoProducto.get(this.vista.jComboBoxTipo.getSelectedIndex()).getIdTipo(),
-                    Integer.parseInt(this.vista.jTextFieldStock.getText()),
-                    Float.valueOf(this.vista.jTextFieldPrecioVenta.getText()));
-            ProductoDAO.modificar(modificar);
-        }
-        if (e.getSource() == this.vista.jButtonBuscarDatProducto) {
-            ProductoDTO encontrado = ProductoDAO.buscar(Integer.parseInt(this.vista.jTextFieldCodigo.getText()),
-                    this.cbxTipoProducto.get(this.vista.jComboBoxTipo.getSelectedIndex()).getIdTipo());
-            if (encontrado != null) {
-                MedicamentoDTO medicamento = MedicamentoDAO.buscar(encontrado.getIdMedicamento());
-                this.vista.jTextFieldNombre.setText(medicamento.getNombre());
-                this.vista.jTextFieldPeso.setText(medicamento.getMedida());
-                this.vista.jTextFieldNumBlister.setText(medicamento.getNum_blister() + "");
-                this.vista.jComboBoxMarca.setSelectedItem(FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre());
-                this.vista.jTextFieldStock.setText(encontrado.getStock() + "");
-                this.vista.jTextFieldPrecioVenta.setText(encontrado.getPrecioVenta() + "");
-            } else {
-                JOptionPane.showMessageDialog(this.vista, "Este CODIGO no se encuentra registrado", "CODIGO no encontrado", JOptionPane.INFORMATION_MESSAGE);
+            ProductoDTO modificarCaja = new ProductoDTO(
+                    Integer.parseInt(this.vista.jTextFieldCodigoCaja.getText()),
+                    1,
+                    0,
+                    Float.valueOf(this.vista.jTextFieldPrecioVentaCaja.getText()));
+            ProductoDTO modificarBlister = new ProductoDTO(
+                    Integer.parseInt(this.vista.jTextFieldCodigoBlister.getText()),
+                    2,
+                    0,
+                    Float.valueOf(this.vista.jTextFieldPrecioVentaBlister.getText()));
+            if (ProductoDAO.modificar(modificarCaja) && ProductoDAO.modificar(modificarBlister)) {
+                this.vista.jTextFieldNombre.setEnabled(true);
+                this.vista.jTextFieldPeso.setEnabled(true);
+                this.vista.jTextFieldNumBlister.setEnabled(true);
+                this.vista.jComboBoxMarca.setEnabled(true);
+                this.vista.jButtonGuardarDatMedicamento.setEnabled(true);
+
+                this.vista.jTextFieldCodigoBlister.setText("");
+                this.vista.jTextFieldCodigoCaja.setText("");
+                this.vista.jTextFieldPrecioVentaBlister.setEnabled(false);
+                this.vista.jTextFieldPrecioVentaCaja.setEnabled(false);
+                this.vista.jButtonModificarDatProducto.setEnabled(false);
+
             }
 
         }

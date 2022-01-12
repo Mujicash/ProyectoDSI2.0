@@ -22,7 +22,7 @@ public class ProductoDAO {
      *
      * @param nuevo Usuario ha registrar en la base de datos
      */
-    public static void insertar(ProductoDTO nuevo) {
+    public static boolean insertar(ProductoDTO nuevo) {
         String sql = "INSERT INTO tbl_producto(id_medicamento,id_tipo,stock,precio_venta) VALUES(?,?,?,?)";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
@@ -30,17 +30,18 @@ public class ProductoDAO {
             pst.setInt(2, nuevo.getIdTipoProducto());
             pst.setInt(3, nuevo.getStock());
             pst.setFloat(4, nuevo.getPrecioVenta());
-            pst.executeUpdate();
+            return pst.executeUpdate() > 0;
         } catch (SQLException ex) {
             System.err.println("Clase ProductoDAO.insertar:\n" + ex);
         }
+        return false;
     }
 
     /**
      *
      * @param modificado Usuario ha modificar en la base de datos
      */
-    public static void modificar(ProductoDTO modificado) {
+    public static boolean modificar(ProductoDTO modificado) {
         String sql = "UPDATE tbl_producto SET stock=?,precio_venta=? WHERE id_medicamento=? AND id_tipo=?";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
@@ -48,10 +49,11 @@ public class ProductoDAO {
             pst.setFloat(2, modificado.getPrecioVenta());
             pst.setInt(3, modificado.getIdMedicamento());
             pst.setInt(4, modificado.getIdTipoProducto());
-            pst.executeUpdate();
+            return pst.executeUpdate() > 0;
         } catch (SQLException ex) {
             System.err.println("Clase ProductoDAO.modificar:\n" + ex);
         }
+        return false;
     }
 
     /**
