@@ -283,9 +283,6 @@
             <Component class="javax.swing.JLabel" name="jLabelUser">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USER\Dropbox\Mi PC (LAPTOP-ML2VI351)\Documents\CICLOS UNMSM\CICLO VI\DISE&#xd1;O DE SISTEMAS DE INFORMACI&#xd3;N\ProyectoFinal\ProgramaProyecto\ProyectoDSI2.0\ProyectoFinalDSI\src\main\java\imagenes\user.png"/>
-                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -296,9 +293,6 @@
             <Component class="javax.swing.JLabel" name="jLabelPassword">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\USER\Dropbox\Mi PC (LAPTOP-ML2VI351)\Documents\CICLOS UNMSM\CICLO VI\DISE&#xd1;O DE SISTEMAS DE INFORMACI&#xd3;N\ProyectoFinal\ProgramaProyecto\ProyectoDSI2.0\ProyectoFinalDSI\src\main\java\imagenes\password.png"/>
-                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -360,7 +354,7 @@
         <Component class="javax.swing.JLabel" name="jLabelFondoCeleste">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USER\Dropbox\Mi PC (LAPTOP-ML2VI351)\Documents\CICLOS UNMSM\CICLO VI\DISE&#xd1;O DE SISTEMAS DE INFORMACI&#xd3;N\ProyectoFinal\ProgramaProyecto\ProyectoDSI2.0\ProyectoFinalDSI\src\main\java\imagenes\celeste.png"/>
+              <Image iconType="2" name="C:\Users\USER\Dropbox\Mi PC (LAPTOP-ML2VI351)\Documents\CICLOS UNMSM\CICLO VI\DISE&#xd1;O DE SISTEMAS DE INFORMACI&#xd3;N\ProyectoFinal\SistemaBotica\ProyectoDSI2.0\ProyectoFinalDSI\src\main\java\imagenes\celeste.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -372,7 +366,7 @@
         <Component class="javax.swing.JLabel" name="jLabelFondoImagen">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USER\Dropbox\Mi PC (LAPTOP-ML2VI351)\Documents\CICLOS UNMSM\CICLO VI\DISE&#xd1;O DE SISTEMAS DE INFORMACI&#xd3;N\ProyectoFinal\ProgramaProyecto\ProyectoDSI2.0\ProyectoFinalDSI\src\main\java\imagenes\Farmaceutico.jpg"/>
+              <Image iconType="2" name="C:\Users\USER\Dropbox\Mi PC (LAPTOP-ML2VI351)\Documents\CICLOS UNMSM\CICLO VI\DISE&#xd1;O DE SISTEMAS DE INFORMACI&#xd3;N\ProyectoFinal\SistemaBotica\ProyectoDSI2.0\ProyectoFinalDSI\src\main\java\imagenes\Farmaceutico.jpg"/>
             </Property>
           </Properties>
           <Constraints>
