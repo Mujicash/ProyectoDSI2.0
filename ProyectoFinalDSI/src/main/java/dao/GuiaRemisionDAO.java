@@ -23,7 +23,7 @@ public class GuiaRemisionDAO {
      */
     public static void insertar(GuiaRemisionDTO nuevo) {
         String sql = "INSERT INTO tbl_guia_remision(num_guia,punto_partida,motivo,fecha_inicio,fecha_entrega) VALUES(?,?,?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, nuevo.getNumGuia());
             pst.setString(2, nuevo.getPuntoPartida());
@@ -42,7 +42,7 @@ public class GuiaRemisionDAO {
      */
     public static void modificar(GuiaRemisionDTO modificado) {
         String sql = "UPDATE tbl_guia_remision SET num_guia=?,punto_partida=?,motivo=?,fecha_inicio=?,fecha_entrega=? WHERE id_guia=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, modificado.getNumGuia());
             pst.setString(2, modificado.getPuntoPartida());
@@ -62,7 +62,7 @@ public class GuiaRemisionDAO {
      */
     public static void eliminar(int idGuia) {
         String sql = "DELETE FROM tbl_guia_remision WHERE id_guia=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idGuia);
             pst.executeUpdate();
@@ -78,7 +78,7 @@ public class GuiaRemisionDAO {
      */
     public static GuiaRemisionDTO buscar(int idGuia) {
         String sql = "SELECT * FROM tbl_guia_remision WHERE id_guia=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idGuia);
             ResultSet rst = pst.executeQuery();

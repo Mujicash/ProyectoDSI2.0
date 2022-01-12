@@ -24,7 +24,7 @@ public class ProductoDAO {
      */
     public static void insertar(ProductoDTO nuevo) {
         String sql = "INSERT INTO tbl_producto(id_medicamento,id_tipo,stock,precio_venta) VALUES(?,?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getIdMedicamento());
             pst.setInt(2, nuevo.getIdTipoProducto());
@@ -42,7 +42,7 @@ public class ProductoDAO {
      */
     public static void modificar(ProductoDTO modificado) {
         String sql = "UPDATE tbl_producto SET stock=?,precio_venta=? WHERE id_medicamento=? AND id_tipo=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getStock());
             pst.setFloat(2, modificado.getPrecioVenta());
@@ -60,7 +60,7 @@ public class ProductoDAO {
      */
     public static void eliminar(ProductoDTO eliminar) {//Quizas solo pedir la id
         String sql = "DELETE FROM tbl_producto WHERE id_medicamento=? AND id_tipo=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, eliminar.getIdMedicamento());
             pst.setInt(2, eliminar.getIdTipoProducto());
@@ -73,20 +73,21 @@ public class ProductoDAO {
     /**
      *
      * @param idMedicamento ID con el que se registro el Fabricante
+     * @param idTipo
      * @return El DTO del fabricante
      */
-    public static ProveedorDTO buscar(int idMedicamento, int idTipo) {
+    public static ProductoDTO buscar(int idMedicamento, int idTipo) {
         String sql = "SELECT * FROM tbl_producto WHERE id_medicamento=? AND id_tipo=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idMedicamento);
             pst.setInt(2, idTipo);
             ResultSet rst = pst.executeQuery();
             if (rst.next()) {
-                return new ProveedorDTO(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5));
+                return new ProductoDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getFloat(4));
             }
         } catch (SQLException ex) {
-            System.err.println("Clase ProductoDAO.eliminar:\n" + ex);
+            System.err.println("Clase ProductoDAO.buscar:\n" + ex);
         }
         return null;
     }

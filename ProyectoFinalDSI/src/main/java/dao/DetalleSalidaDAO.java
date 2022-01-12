@@ -24,7 +24,7 @@ public class DetalleSalidaDAO {
      */
     public static boolean insertar(DetalleSalidaDTO nuevo) {
         String sql = "INSERT INTO tbl_detalle_salida(id_orden,id_tipo,id_medicamento,cantidad) VALUES(?,?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getIdOrdenSalida());
             pst.setInt(2, nuevo.getIdTipoProducto());
@@ -48,7 +48,7 @@ public class DetalleSalidaDAO {
      */
     public static void modificar(DetalleSalidaDTO modificado) {
         String sql = "UPDATE tbl_detalle_salida SET cantidad=? WHERE id_orden=? AND id_tipo=? AND id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getCantidad());
             pst.setInt(2, modificado.getIdOrdenSalida());
@@ -71,7 +71,7 @@ public class DetalleSalidaDAO {
      */
     public static void eliminar(int idOrden, int idTipo, int idMedicamento) {
         String sql = "DELETE FROM tbl_detalle_salida WHERE id_orden=? AND id_tipo=? AND id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idOrden);
             pst.setInt(2, idTipo);
@@ -91,7 +91,7 @@ public class DetalleSalidaDAO {
      */
     public static DetalleSalidaDTO buscar(int idOrden, int idTipo, int idMedicamento) {
         String sql = "SELECT * FROM tbl_detalle_salida WHERE id_orden=? AND id_tipo=? AND id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idOrden);
             pst.setInt(2, idTipo);
