@@ -73,6 +73,7 @@ public class CtrlPrincipal implements MouseListener, ControlStrategy {
 
         }
         if (e.getSource() == this.vista.jPanelBotRegistrarOrdenSalida) {
+            this.ctrl.visualizar(new CtrlRegistroOrdenSalida(this.ctrl));
 
         }
 
