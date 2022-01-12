@@ -5,6 +5,7 @@
  */
 package vista;
 
+
 /**
  *
  * @author USER
@@ -17,7 +18,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public FrmPrincipal() {
         initComponents();
         setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(1070, 650);
+
+        setSize(1039, 660);
         setResizable(false);
         setLocationRelativeTo(null);
     }
@@ -48,6 +50,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarGuiaRemision = new javax.swing.JLabel();
         jPanelBotBuscarOrdenCompra = new javax.swing.JPanel();
         jLabelBuscarOrdenCompra = new javax.swing.JLabel();
+        jPanelFranja1 = new javax.swing.JPanel();
+        jPanelInferior = new javax.swing.JPanel();
+        jLabelFondoCeleste = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,11 +63,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelCentral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNomBotica.setBackground(new java.awt.Color(204, 204, 255));
-        jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabelNomBotica.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 48)); // NOI18N
         jLabelNomBotica.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomBotica.setText("CRUZ DE MAYO");
-        jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 380, 40));
+        jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 380, 40));
 
         jPanelBotRegistrarOrdenCompra.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarOrdenCompra.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,9 +81,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarOrdenCompra.setForeground(new java.awt.Color(0, 5, 25));
         jLabellRegistrarOrdenCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabellRegistrarOrdenCompra.setText("REGISTRAR ORDEN DE COMPRA");
-        jPanelBotRegistrarOrdenCompra.add(jLabellRegistrarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 280, 20));
+        jPanelBotRegistrarOrdenCompra.add(jLabellRegistrarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 320, 40));
+        jPanelCentral.add(jPanelBotRegistrarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 380, 40));
 
         jPanelBotRegistrarOrdenSalida.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarOrdenSalida.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,9 +97,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarOrdenSalida.setForeground(new java.awt.Color(0, 5, 25));
         jLabellRegistrarOrdenSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabellRegistrarOrdenSalida.setText("REGISTRAR ORDEN DE SALIDA");
-        jPanelBotRegistrarOrdenSalida.add(jLabellRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 280, 20));
+        jPanelBotRegistrarOrdenSalida.add(jLabellRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 320, 40));
+        jPanelCentral.add(jPanelBotRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 380, 40));
 
         jPanelBotRegistrarDatosProveedor.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarDatosProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,9 +113,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarDatosProveedor.setForeground(new java.awt.Color(0, 5, 25));
         jLabellRegistrarDatosProveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabellRegistrarDatosProveedor.setText("REGISTRAR DATOS DEL PROVEEDOR");
-        jPanelBotRegistrarDatosProveedor.add(jLabellRegistrarDatosProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 280, 20));
+        jPanelBotRegistrarDatosProveedor.add(jLabellRegistrarDatosProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarDatosProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 320, 40));
+        jPanelCentral.add(jPanelBotRegistrarDatosProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 380, 40));
 
         jPanelBotRegistrarDatosProducto.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarDatosProducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,9 +129,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarDatosProducto.setForeground(new java.awt.Color(0, 5, 25));
         jLabellRegistrarDatosProducto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabellRegistrarDatosProducto.setText("REGISTRAR DATOS DEL PRODUCTO");
-        jPanelBotRegistrarDatosProducto.add(jLabellRegistrarDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 260, 20));
+        jPanelBotRegistrarDatosProducto.add(jLabellRegistrarDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 320, 40));
+        jPanelCentral.add(jPanelBotRegistrarDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 380, 40));
 
         jPanelBotBuscarProducto.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotBuscarProducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -140,9 +145,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarGuiaRemision1.setForeground(new java.awt.Color(0, 5, 25));
         jLabellRegistrarGuiaRemision1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabellRegistrarGuiaRemision1.setText("BUSCAR PRODUCTO");
-        jPanelBotBuscarProducto.add(jLabellRegistrarGuiaRemision1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 260, 20));
+        jPanelBotBuscarProducto.add(jLabellRegistrarGuiaRemision1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
 
-        jPanelCentral.add(jPanelBotBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 320, 40));
+        jPanelCentral.add(jPanelBotBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 380, 40));
 
         jPanelBotRegistrarGuiaRemision.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarGuiaRemision.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -156,9 +161,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarGuiaRemision.setForeground(new java.awt.Color(0, 5, 25));
         jLabellRegistrarGuiaRemision.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabellRegistrarGuiaRemision.setText("REGISTRAR GUÍA DE REMISIÓN");
-        jPanelBotRegistrarGuiaRemision.add(jLabellRegistrarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 260, 20));
+        jPanelBotRegistrarGuiaRemision.add(jLabellRegistrarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 320, 40));
+        jPanelCentral.add(jPanelBotRegistrarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 380, 40));
 
         jPanelBotBuscarOrdenCompra.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotBuscarOrdenCompra.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,21 +177,49 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabelBuscarOrdenCompra.setForeground(new java.awt.Color(0, 5, 25));
         jLabelBuscarOrdenCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBuscarOrdenCompra.setText("BUSCAR ORDEN DE COMPRA");
-        jPanelBotBuscarOrdenCompra.add(jLabelBuscarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 260, 20));
+        jPanelBotBuscarOrdenCompra.add(jLabelBuscarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
 
-        jPanelCentral.add(jPanelBotBuscarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 320, 40));
+        jPanelCentral.add(jPanelBotBuscarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 380, 40));
 
-        jPanel1.add(jPanelCentral, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 440, 460));
+        jPanel1.add(jPanelCentral, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 510, 520));
+
+        jPanelFranja1.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranja1Layout = new javax.swing.GroupLayout(jPanelFranja1);
+        jPanelFranja1.setLayout(jPanelFranja1Layout);
+        jPanelFranja1Layout.setHorizontalGroup(
+            jPanelFranja1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1115, Short.MAX_VALUE)
+        );
+        jPanelFranja1Layout.setVerticalGroup(
+            jPanelFranja1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanelFranja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 515, 1115, -1));
+
+        jPanelInferior.setBackground(new java.awt.Color(0, 5, 25));
+        jPanelInferior.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelInferior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelInferiorMouseClicked(evt);
+            }
+        });
+        jPanelInferior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanelInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1029, 110));
+
+        jLabelFondoCeleste.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\ProgramaProyecto\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\celeste.png")); // NOI18N
+        jPanel1.add(jLabelFondoCeleste, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1029, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1031, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1029, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -234,6 +267,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jPanelBotRegistrarOrdenSalidaMouseClicked
 
+    private void jPanelInferiorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelInferiorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelInferiorMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -271,6 +308,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelBuscarOrdenCompra;
+    private javax.swing.JLabel jLabelFondoCeleste;
     private javax.swing.JLabel jLabelNomBotica;
     private javax.swing.JLabel jLabellRegistrarDatosProducto;
     private javax.swing.JLabel jLabellRegistrarDatosProveedor;
@@ -287,5 +325,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelBotRegistrarOrdenCompra;
     private javax.swing.JPanel jPanelBotRegistrarOrdenSalida;
     private javax.swing.JPanel jPanelCentral;
+    private javax.swing.JPanel jPanelFranja1;
+    private javax.swing.JPanel jPanelInferior;
     // End of variables declaration//GEN-END:variables
 }

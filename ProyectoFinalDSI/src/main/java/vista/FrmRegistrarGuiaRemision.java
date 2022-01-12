@@ -211,6 +211,11 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
 
         jButtonGuardarGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonGuardarGuiaRemision.setText("GUARDAR");
+        jButtonGuardarGuiaRemision.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonGuardarGuiaRemisionMouseClicked(evt);
+            }
+        });
         jButtonGuardarGuiaRemision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGuardarGuiaRemisionActionPerformed(evt);
@@ -271,6 +276,12 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     private void JTestFieldNomArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTestFieldNomArchivoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTestFieldNomArchivoActionPerformed
+
+    private void jButtonGuardarGuiaRemisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarGuiaRemisionMouseClicked
+        FrmGestionarInventario guardar = new FrmGestionarInventario();
+        guardar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonGuardarGuiaRemisionMouseClicked
 
     /**
      * @param args the command line arguments

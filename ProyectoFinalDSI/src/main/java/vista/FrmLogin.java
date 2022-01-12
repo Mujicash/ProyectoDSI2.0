@@ -2,7 +2,7 @@
 package vista;
 
 import conexion.Conexion;
-import javax.swing.ImageIcon;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -15,15 +15,15 @@ public class FrmLogin extends javax.swing.JFrame {
     public FrmLogin() {
         initComponents();
         setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.setSize(920, 615);
-        setResizable(false);
-        
-        
+
+        setSize(1128, 658);
+        setResizable(false);       
        setLocationRelativeTo(null);
        
        Conexion.getInstance();
         
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,6 +35,9 @@ public class FrmLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelBase = new javax.swing.JPanel();
+        jPanelFranjaDerecha = new javax.swing.JPanel();
+        jPanelLinea2 = new javax.swing.JPanel();
+        jPanelLinea1 = new javax.swing.JPanel();
         jPanelCentral = new javax.swing.JPanel();
         jLabelNomBotica = new javax.swing.JLabel();
         jLabelNomContraseña = new javax.swing.JLabel();
@@ -43,41 +46,96 @@ public class FrmLogin extends javax.swing.JFrame {
         jPasswordFieldContraseña = new javax.swing.JPasswordField();
         jPanelBotonIngresar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabelUser = new javax.swing.JLabel();
+        jLabelPassword = new javax.swing.JLabel();
+        jPanelFranja1 = new javax.swing.JPanel();
+        jPanelInferior = new javax.swing.JPanel();
+        jLabelFondoCeleste = new javax.swing.JLabel();
+        jLabelFondoImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanelBase.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBase.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelCentral.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranjaDerechaLayout = new javax.swing.GroupLayout(jPanelFranjaDerecha);
+        jPanelFranjaDerecha.setLayout(jPanelFranjaDerechaLayout);
+        jPanelFranjaDerechaLayout.setHorizontalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 4, Short.MAX_VALUE)
+        );
+        jPanelFranjaDerechaLayout.setVerticalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 630, Short.MAX_VALUE)
+        );
+
+        jPanelBase.add(jPanelFranjaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1028, 0, 4, 630));
+
+        jPanelLinea2.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea2Layout = new javax.swing.GroupLayout(jPanelLinea2);
+        jPanelLinea2.setLayout(jPanelLinea2Layout);
+        jPanelLinea2Layout.setHorizontalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+        jPanelLinea2Layout.setVerticalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBase.add(jPanelLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 330, 3));
+
+        jPanelLinea1.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea1Layout = new javax.swing.GroupLayout(jPanelLinea1);
+        jPanelLinea1.setLayout(jPanelLinea1Layout);
+        jPanelLinea1Layout.setHorizontalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+        jPanelLinea1Layout.setVerticalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBase.add(jPanelLinea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 330, 3));
+
+        jPanelCentral.setBackground(new java.awt.Color(228, 241, 254));
         jPanelCentral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNomBotica.setBackground(new java.awt.Color(204, 204, 255));
-        jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabelNomBotica.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 45)); // NOI18N
         jLabelNomBotica.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomBotica.setText("CRUZ DE MAYO");
-        jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 380, 40));
+        jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 40));
 
-        jLabelNomContraseña.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelNomContraseña.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18)); // NOI18N
         jLabelNomContraseña.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomContraseña.setText("CONTRASEÑA:");
-        jPanelCentral.add(jLabelNomContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 160, 30));
+        jPanelCentral.add(jLabelNomContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 160, 30));
 
-        jLabelNomUsuario.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelNomUsuario.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18)); // NOI18N
         jLabelNomUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomUsuario.setText("USUARIO:");
-        jPanelCentral.add(jLabelNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 160, 30));
+        jPanelCentral.add(jLabelNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 160, 30));
 
-        jTextFieldUsuario.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldUsuario.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jTextFieldUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanelCentral.add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 330, 40));
+        jTextFieldUsuario.setToolTipText("");
+        jTextFieldUsuario.setBorder(null);
+        jPanelCentral.add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 290, 40));
 
-        jPasswordFieldContraseña.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jPasswordFieldContraseña.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordFieldContraseña.setBackground(new java.awt.Color(255, 255, 255));
+        jPasswordFieldContraseña.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jPasswordFieldContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanelCentral.add(jPasswordFieldContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 330, 40));
+        jPasswordFieldContraseña.setToolTipText("");
+        jPasswordFieldContraseña.setBorder(null);
+        jPanelCentral.add(jPasswordFieldContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 290, 40));
 
         jPanelBotonIngresar.setBackground(new java.awt.Color(0, 5, 25));
         jPanelBotonIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -87,25 +145,64 @@ public class FrmLogin extends javax.swing.JFrame {
         });
         jPanelBotonIngresar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("INGRESAR");
         jPanelBotonIngresar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 6, 142, 28));
 
-        jPanelCentral.add(jPanelBotonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 180, 40));
+        jPanelCentral.add(jPanelBotonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 180, 40));
 
-        jPanelBase.add(jPanelCentral, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 400, 440));
+        jLabelUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelUser.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\ProgramaProyecto\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\user.png")); // NOI18N
+        jPanelCentral.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 175, 50, 50));
+
+        jLabelPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelPassword.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\ProgramaProyecto\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\password.png")); // NOI18N
+        jPanelCentral.add(jLabelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 303, 40, 50));
+
+        jPanelBase.add(jPanelCentral, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 430, 490));
+
+        jPanelFranja1.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranja1Layout = new javax.swing.GroupLayout(jPanelFranja1);
+        jPanelFranja1.setLayout(jPanelFranja1Layout);
+        jPanelFranja1Layout.setHorizontalGroup(
+            jPanelFranja1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1115, Short.MAX_VALUE)
+        );
+        jPanelFranja1Layout.setVerticalGroup(
+            jPanelFranja1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBase.add(jPanelFranja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 1115, 3));
+
+        jPanelInferior.setBackground(new java.awt.Color(0, 5, 25));
+        jPanelInferior.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelInferior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelInferiorMouseClicked(evt);
+            }
+        });
+        jPanelInferior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelBase.add(jPanelInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 1115, 140));
+
+        jLabelFondoCeleste.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\ProgramaProyecto\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\celeste.png")); // NOI18N
+        jPanelBase.add(jLabelFondoCeleste, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1115, 630));
+
+        jLabelFondoImagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\ProgramaProyecto\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\Farmaceutico.jpg")); // NOI18N
+        jPanelBase.add(jLabelFondoImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1115, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 907, Short.MAX_VALUE)
+            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -127,6 +224,10 @@ public class FrmLogin extends javax.swing.JFrame {
 //            JOptionPane.showMessageDialog(this, "Usuario / Contraseña incorrecta"); 
 //        }
     }//GEN-LAST:event_jPanelBotonIngresarMouseClicked
+
+    private void jPanelInferiorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelInferiorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelInferiorMouseClicked
 
     /**
      * @param args the command line arguments
@@ -165,12 +266,21 @@ public class FrmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelFondoCeleste;
+    private javax.swing.JLabel jLabelFondoImagen;
     private javax.swing.JLabel jLabelNomBotica;
     private javax.swing.JLabel jLabelNomContraseña;
     private javax.swing.JLabel jLabelNomUsuario;
+    private javax.swing.JLabel jLabelPassword;
+    private javax.swing.JLabel jLabelUser;
     private javax.swing.JPanel jPanelBase;
     private javax.swing.JPanel jPanelBotonIngresar;
     private javax.swing.JPanel jPanelCentral;
+    private javax.swing.JPanel jPanelFranja1;
+    private javax.swing.JPanel jPanelFranjaDerecha;
+    private javax.swing.JPanel jPanelInferior;
+    private javax.swing.JPanel jPanelLinea1;
+    private javax.swing.JPanel jPanelLinea2;
     private javax.swing.JPasswordField jPasswordFieldContraseña;
     private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
