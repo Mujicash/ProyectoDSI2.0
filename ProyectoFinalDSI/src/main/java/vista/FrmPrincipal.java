@@ -18,7 +18,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public FrmPrincipal() {
         initComponents();
         setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-
+        
         setSize(1039, 660);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -63,7 +63,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelCentral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNomBotica.setBackground(new java.awt.Color(204, 204, 255));
-        jLabelNomBotica.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 48)); // NOI18N
+        jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabelNomBotica.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomBotica.setText("CRUZ DE MAYO");
