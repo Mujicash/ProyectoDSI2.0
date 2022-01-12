@@ -52,6 +52,8 @@ public class CtrlLogin implements MouseListener, ControlStrategy {
         if (e.getSource() == this.vista.jPanelBotonIngresar) {
             UsuarioDTO user = UsuarioDAO.buscar(this.vista.jTextFieldUsuario.getText(), String.valueOf(this.vista.jPasswordFieldContraseña.getPassword()));
             if (user != null) {
+                CtrlMaster.usuario = user;
+                System.out.println(CtrlMaster.usuario);
                 this.ctrl.visualizar(new CtrlPrincipal(this.ctrl));
             }
         }
