@@ -1,6 +1,7 @@
 package vista;
 
 import conexion.Conexion;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**

@@ -17,7 +17,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
     public FrmRegistrarOrdenSalida() {
         initComponents();
         setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(943, 670);
+        setSize(1020, 660);
         setResizable(false);
         setLocationRelativeTo(null);
     }
@@ -39,10 +39,10 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jButtonBusCodProducto = new javax.swing.JButton();
         jLabelCantProducto = new javax.swing.JLabel();
         jTextFieldCantProducto = new javax.swing.JTextField();
-        jButtonFinalizar = new javax.swing.JButton();
+        jButtonCrearOrden = new javax.swing.JButton();
         jLabelMotSalida = new javax.swing.JLabel();
         jTextFieldMotSalida = new javax.swing.JTextField();
-        jButtonCrearBoleta = new javax.swing.JButton();
+        jButtonDescartarProducto = new javax.swing.JButton();
         jButtonDescartar = new javax.swing.JButton();
         jButtonAñadirCantProducto = new javax.swing.JButton();
         jScrollRegOrdSalida = new javax.swing.JScrollPane();
@@ -82,55 +82,55 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jLabelCodProducto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelCodProducto.setForeground(new java.awt.Color(0, 0, 51));
         jLabelCodProducto.setText("CÓDIGO PRODUCTO");
-        jPanelBaseRegOrdenSalida.add(jLabelCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 190, -1));
+        jPanelBaseRegOrdenSalida.add(jLabelCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 190, -1));
 
         jTextFieldCodProducto.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldCodProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldCodProducto.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldCodProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanelBaseRegOrdenSalida.add(jTextFieldCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 190, 40));
+        jPanelBaseRegOrdenSalida.add(jTextFieldCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 190, 40));
 
         jButtonBusCodProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonBusCodProducto.setText("BUSCAR");
-        jPanelBaseRegOrdenSalida.add(jButtonBusCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 110, 40));
+        jPanelBaseRegOrdenSalida.add(jButtonBusCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 110, 40));
 
         jLabelCantProducto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelCantProducto.setForeground(new java.awt.Color(0, 0, 51));
         jLabelCantProducto.setText("CANTIDAD PRODUCTO");
-        jPanelBaseRegOrdenSalida.add(jLabelCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 190, -1));
+        jPanelBaseRegOrdenSalida.add(jLabelCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 190, -1));
 
         jTextFieldCantProducto.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldCantProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldCantProducto.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldCantProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanelBaseRegOrdenSalida.add(jTextFieldCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 190, 40));
+        jPanelBaseRegOrdenSalida.add(jTextFieldCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 190, 40));
 
-        jButtonFinalizar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonFinalizar.setText("FINALIZAR");
-        jPanelBaseRegOrdenSalida.add(jButtonFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, 120, 40));
+        jButtonCrearOrden.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jButtonCrearOrden.setText("CREAR ORDEN");
+        jPanelBaseRegOrdenSalida.add(jButtonCrearOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 550, 130, 40));
 
         jLabelMotSalida.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelMotSalida.setForeground(new java.awt.Color(0, 0, 51));
         jLabelMotSalida.setText("MOTIVO SALIDA");
-        jPanelBaseRegOrdenSalida.add(jLabelMotSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 150, -1));
+        jPanelBaseRegOrdenSalida.add(jLabelMotSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 150, -1));
 
         jTextFieldMotSalida.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldMotSalida.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldMotSalida.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldMotSalida.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanelBaseRegOrdenSalida.add(jTextFieldMotSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 190, 40));
+        jPanelBaseRegOrdenSalida.add(jTextFieldMotSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 190, 40));
 
-        jButtonCrearBoleta.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonCrearBoleta.setText("CREAR BOLETA");
-        jPanelBaseRegOrdenSalida.add(jButtonCrearBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, 150, 40));
+        jButtonDescartarProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jButtonDescartarProducto.setText("DESCARTAR PRODUCTO");
+        jPanelBaseRegOrdenSalida.add(jButtonDescartarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 550, 200, 40));
 
         jButtonDescartar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonDescartar.setText("DESCARTAR");
-        jPanelBaseRegOrdenSalida.add(jButtonDescartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 550, 120, 40));
+        jPanelBaseRegOrdenSalida.add(jButtonDescartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 120, 40));
 
         jButtonAñadirCantProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonAñadirCantProducto.setText("AÑADIR");
-        jPanelBaseRegOrdenSalida.add(jButtonAñadirCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 110, 40));
+        jPanelBaseRegOrdenSalida.add(jButtonAñadirCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 230, 110, 40));
 
         jTableRegOrdSalida.setBackground(new java.awt.Color(0, 0, 38));
         jTableRegOrdSalida.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -166,7 +166,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jTableRegOrdSalida.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollRegOrdSalida.setViewportView(jTableRegOrdSalida);
 
-        jPanelBaseRegOrdenSalida.add(jScrollRegOrdSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 850, 220));
+        jPanelBaseRegOrdenSalida.add(jScrollRegOrdSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 870, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,9 +226,9 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAñadirCantProducto;
     private javax.swing.JButton jButtonBusCodProducto;
-    private javax.swing.JButton jButtonCrearBoleta;
+    private javax.swing.JButton jButtonCrearOrden;
     private javax.swing.JButton jButtonDescartar;
-    private javax.swing.JButton jButtonFinalizar;
+    private javax.swing.JButton jButtonDescartarProducto;
     private javax.swing.JLabel jLabelCantProducto;
     private javax.swing.JLabel jLabelCodProducto;
     private javax.swing.JLabel jLabelMotSalida;
