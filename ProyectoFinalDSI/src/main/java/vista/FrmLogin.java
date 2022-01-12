@@ -1,4 +1,3 @@
-
 package vista;
 
 import conexion.Conexion;
@@ -11,9 +10,9 @@ import javax.swing.JOptionPane;
  */
 public class FrmLogin extends javax.swing.JFrame {
 
-    
     public FrmLogin() {
         initComponents();
+        /*
         setTitle("BOTICA CRUZ DE MAYO - JAUJA");
 
         setSize(1128, 658);
@@ -21,7 +20,7 @@ public class FrmLogin extends javax.swing.JFrame {
        setLocationRelativeTo(null);
        
        Conexion.getInstance();
-        
+         */
     }
    
 
@@ -108,24 +107,20 @@ public class FrmLogin extends javax.swing.JFrame {
 
         jLabelNomBotica.setBackground(new java.awt.Color(0, 0, 0));
         jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jLabelNomBotica.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomBotica.setText("CRUZ DE MAYO");
         jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 40));
 
         jLabelNomContraseña.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
-        jLabelNomContraseña.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomContraseña.setText("CONTRASEÑA:");
         jPanelCentral.add(jLabelNomContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 160, 30));
 
         jLabelNomUsuario.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
-        jLabelNomUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomUsuario.setText("USUARIO:");
         jPanelCentral.add(jLabelNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 160, 30));
 
         jTextFieldUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldUsuario.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldUsuario.setToolTipText("");
         jTextFieldUsuario.setBorder(null);
@@ -133,7 +128,6 @@ public class FrmLogin extends javax.swing.JFrame {
 
         jPasswordFieldContraseña.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordFieldContraseña.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jPasswordFieldContraseña.setForeground(new java.awt.Color(0, 0, 0));
         jPasswordFieldContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPasswordFieldContraseña.setToolTipText("");
         jPasswordFieldContraseña.setBorder(null);
@@ -217,9 +211,9 @@ public class FrmLogin extends javax.swing.JFrame {
 //        String Pass = new String(jPasswordFieldContraseña.getPassword());
 //        
 //        if(jTextFieldUsuario.getText().equals(usuario)&& Pass.equals(contra)){
-            FrmPrincipal principal = new FrmPrincipal(); 
-            principal.setVisible(true); 
-            dispose(); 
+//            FrmPrincipal principal = new FrmPrincipal(); 
+//            principal.setVisible(true); 
+//            dispose(); 
 //        }
 //        else{
 //            
@@ -257,6 +251,7 @@ public class FrmLogin extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -276,7 +271,7 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPassword;
     private javax.swing.JLabel jLabelUser;
     private javax.swing.JPanel jPanelBase;
-    private javax.swing.JPanel jPanelBotonIngresar;
+    public javax.swing.JPanel jPanelBotonIngresar;
     private javax.swing.JPanel jPanelCentral;
     private javax.swing.JPanel jPanelFranja1;
     private javax.swing.JPanel jPanelFranjaDerecha;

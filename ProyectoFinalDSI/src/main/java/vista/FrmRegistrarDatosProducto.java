@@ -16,9 +16,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
      */
     public FrmRegistrarDatosProducto() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(902, 545);
-        setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -34,16 +32,28 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jPanelRetPrincipal3 = new javax.swing.JPanel();
         jLabelRegDatProducto = new javax.swing.JLabel();
         jLabelCodigo = new javax.swing.JLabel();
-        jTextFieldCodigo = new javax.swing.JTextField();
+        jTextFieldBlister = new javax.swing.JTextField();
         jLabelNombre = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jLabelPeso = new javax.swing.JLabel();
         jTextFieldPeso = new javax.swing.JTextField();
         jLabelPrecioVenta = new javax.swing.JLabel();
-        jTextFieldPrecioVenta = new javax.swing.JTextField();
+        jTextFieldPrecioVentaCaja = new javax.swing.JTextField();
         jLabelMarca = new javax.swing.JLabel();
-        jTextFieldMarca = new javax.swing.JTextField();
-        jButtonGuardarDatProducto = new javax.swing.JButton();
+        jButtonGuardarDatMedicamento = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jButtonModificarDatProducto = new javax.swing.JButton();
+        jLabelCodigo1 = new javax.swing.JLabel();
+        jComboBoxMarca = new javax.swing.JComboBox<>();
+        jTextFieldNumBlister = new javax.swing.JTextField();
+        jLabelCodigo2 = new javax.swing.JLabel();
+        jTextFieldPrecioVentaBlister = new javax.swing.JTextField();
+        jLabelPrecioVenta1 = new javax.swing.JLabel();
+        jLabelCodigo3 = new javax.swing.JLabel();
+        jTextFieldCodigoBlister = new javax.swing.JTextField();
+        jLabelCodigo4 = new javax.swing.JLabel();
+        jTextFieldCodigoCaja = new javax.swing.JTextField();
+        jTextFieldCaja = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,7 +78,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanelBaseRegDatosProducto.add(jPanelRetPrincipal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 410, 70, 60));
+        jPanelBaseRegDatosProducto.add(jPanelRetPrincipal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 600, 70, 60));
 
         jLabelRegDatProducto.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelRegDatProducto.setForeground(new java.awt.Color(0, 0, 51));
@@ -79,81 +89,156 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelCodigo.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelCodigo.setForeground(new java.awt.Color(0, 0, 51));
         jLabelCodigo.setText("CÓDIGO: ");
-        jPanelBaseRegDatosProducto.add(jLabelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 90, 20));
+        jPanelBaseRegDatosProducto.add(jLabelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 90, 20));
 
-        jTextFieldCodigo.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldCodigo.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProducto.add(jTextFieldCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 240, 40));
+        jTextFieldBlister.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldBlister.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldBlister.setText("Blister");
+        jTextFieldBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldBlister.setEnabled(false);
+        jPanelBaseRegDatosProducto.add(jTextFieldBlister, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, 240, 40));
 
         jLabelNombre.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(0, 0, 51));
         jLabelNombre.setText("NOMBRE:");
-        jPanelBaseRegDatosProducto.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 90, 20));
+        jPanelBaseRegDatosProducto.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, 20));
 
         jTextFieldNombre.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldNombre.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldNombre.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProducto.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 240, 40));
+        jPanelBaseRegDatosProducto.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 240, 40));
 
         jLabelPeso.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelPeso.setForeground(new java.awt.Color(0, 0, 51));
         jLabelPeso.setText("PESO:");
-        jPanelBaseRegDatosProducto.add(jLabelPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 90, 20));
+        jPanelBaseRegDatosProducto.add(jLabelPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 90, 20));
 
         jTextFieldPeso.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldPeso.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldPeso.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldPeso.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProducto.add(jTextFieldPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, 120, 40));
+        jPanelBaseRegDatosProducto.add(jTextFieldPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 120, 40));
 
         jLabelPrecioVenta.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelPrecioVenta.setForeground(new java.awt.Color(0, 0, 51));
         jLabelPrecioVenta.setText("PRECIO VENTA:");
-        jPanelBaseRegDatosProducto.add(jLabelPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 150, 20));
+        jPanelBaseRegDatosProducto.add(jLabelPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 150, 20));
 
-        jTextFieldPrecioVenta.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldPrecioVenta.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldPrecioVenta.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldPrecioVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProducto.add(jTextFieldPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 240, 40));
+        jTextFieldPrecioVentaCaja.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldPrecioVentaCaja.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldPrecioVentaCaja.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPrecioVentaCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldPrecioVentaCaja.setEnabled(false);
+        jPanelBaseRegDatosProducto.add(jTextFieldPrecioVentaCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 170, 40));
 
         jLabelMarca.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelMarca.setForeground(new java.awt.Color(0, 0, 51));
-        jLabelMarca.setText("MARCA:");
-        jPanelBaseRegDatosProducto.add(jLabelMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 90, 20));
+        jLabelMarca.setText("FABRICANTE:");
+        jPanelBaseRegDatosProducto.add(jLabelMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 140, 20));
 
-        jTextFieldMarca.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldMarca.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldMarca.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldMarca.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseRegDatosProducto.add(jTextFieldMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 290, 40));
+        jButtonGuardarDatMedicamento.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jButtonGuardarDatMedicamento.setText("GUARDAR");
+        jPanelBaseRegDatosProducto.add(jButtonGuardarDatMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 120, 40));
+        jPanelBaseRegDatosProducto.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 790, 10));
 
-        jButtonGuardarDatProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonGuardarDatProducto.setText("GUARDAR");
-        jPanelBaseRegDatosProducto.add(jButtonGuardarDatProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 322, 110, 40));
+        jButtonModificarDatProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jButtonModificarDatProducto.setText("GUARDAR");
+        jButtonModificarDatProducto.setEnabled(false);
+        jPanelBaseRegDatosProducto.add(jButtonModificarDatProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 540, 120, 40));
+
+        jLabelCodigo1.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelCodigo1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelCodigo1.setText("TIPO: ");
+        jPanelBaseRegDatosProducto.add(jLabelCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 90, 20));
+
+        jComboBoxMarca.setBackground(new java.awt.Color(0, 0, 38));
+        jComboBoxMarca.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jComboBoxMarca.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelBaseRegDatosProducto.add(jComboBoxMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 290, 40));
+
+        jTextFieldNumBlister.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldNumBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldNumBlister.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldNumBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseRegDatosProducto.add(jTextFieldNumBlister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 240, 40));
+
+        jLabelCodigo2.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelCodigo2.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelCodigo2.setText("NUMERO DE BLISTER:");
+        jPanelBaseRegDatosProducto.add(jLabelCodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 220, 20));
+
+        jTextFieldPrecioVentaBlister.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldPrecioVentaBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldPrecioVentaBlister.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPrecioVentaBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldPrecioVentaBlister.setEnabled(false);
+        jPanelBaseRegDatosProducto.add(jTextFieldPrecioVentaBlister, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 170, 40));
+
+        jLabelPrecioVenta1.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelPrecioVenta1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelPrecioVenta1.setText("PRECIO VENTA:");
+        jPanelBaseRegDatosProducto.add(jLabelPrecioVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 150, 20));
+
+        jLabelCodigo3.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelCodigo3.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelCodigo3.setText("TIPO: ");
+        jPanelBaseRegDatosProducto.add(jLabelCodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 90, 20));
+
+        jTextFieldCodigoBlister.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldCodigoBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldCodigoBlister.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldCodigoBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldCodigoBlister.setEnabled(false);
+        jPanelBaseRegDatosProducto.add(jTextFieldCodigoBlister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, 240, 40));
+
+        jLabelCodigo4.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
+        jLabelCodigo4.setForeground(new java.awt.Color(0, 0, 51));
+        jLabelCodigo4.setText("CÓDIGO: ");
+        jPanelBaseRegDatosProducto.add(jLabelCodigo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 90, 20));
+
+        jTextFieldCodigoCaja.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldCodigoCaja.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldCodigoCaja.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldCodigoCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldCodigoCaja.setEnabled(false);
+        jPanelBaseRegDatosProducto.add(jTextFieldCodigoCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 240, 40));
+
+        jTextFieldCaja.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldCaja.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jTextFieldCaja.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldCaja.setText("Caja");
+        jTextFieldCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldCaja.setEnabled(false);
+        jTextFieldCaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCajaActionPerformed(evt);
+            }
+        });
+        jPanelBaseRegDatosProducto.add(jTextFieldCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 240, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBaseRegDatosProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanelBaseRegDatosProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBaseRegDatosProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jPanelBaseRegDatosProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal3MouseClicked
-        FrmPrincipal ret3 = new FrmPrincipal();
-        ret3.setVisible(true);
-        dispose();
+
     }//GEN-LAST:event_jPanelRetPrincipal3MouseClicked
+
+    private void jTextFieldCajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCajaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCajaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,6 +266,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmRegistrarDatosProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -191,19 +277,31 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonGuardarDatProducto;
+    public javax.swing.JButton jButtonGuardarDatMedicamento;
+    public javax.swing.JButton jButtonModificarDatProducto;
+    public javax.swing.JComboBox<String> jComboBoxMarca;
     private javax.swing.JLabel jLabelCodigo;
+    private javax.swing.JLabel jLabelCodigo1;
+    private javax.swing.JLabel jLabelCodigo2;
+    private javax.swing.JLabel jLabelCodigo3;
+    private javax.swing.JLabel jLabelCodigo4;
     private javax.swing.JLabel jLabelMarca;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelPeso;
     private javax.swing.JLabel jLabelPrecioVenta;
+    private javax.swing.JLabel jLabelPrecioVenta1;
     private javax.swing.JLabel jLabelRegDatProducto;
     private javax.swing.JPanel jPanelBaseRegDatosProducto;
-    private javax.swing.JPanel jPanelRetPrincipal3;
-    public javax.swing.JTextField jTextFieldCodigo;
-    public javax.swing.JTextField jTextFieldMarca;
+    public javax.swing.JPanel jPanelRetPrincipal3;
+    private javax.swing.JSeparator jSeparator1;
+    public javax.swing.JTextField jTextFieldBlister;
+    public javax.swing.JTextField jTextFieldCaja;
+    public javax.swing.JTextField jTextFieldCodigoBlister;
+    public javax.swing.JTextField jTextFieldCodigoCaja;
     public javax.swing.JTextField jTextFieldNombre;
+    public javax.swing.JTextField jTextFieldNumBlister;
     public javax.swing.JTextField jTextFieldPeso;
-    public javax.swing.JTextField jTextFieldPrecioVenta;
+    public javax.swing.JTextField jTextFieldPrecioVentaBlister;
+    public javax.swing.JTextField jTextFieldPrecioVentaCaja;
     // End of variables declaration//GEN-END:variables
 }

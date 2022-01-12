@@ -23,7 +23,7 @@ public class OrdenCompraDAO {
      */
     public static void insertar(OrdenCompraDTO nuevo) {
         String sql = "INSERT INTO tbl_orden_compra(id_proveedor,fecha_compra,fecha_entrega,estado) VALUES(?,?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getProveedor());
             pst.setDate(2, new java.sql.Date(nuevo.getFechaCompra().getTime()));
@@ -41,7 +41,7 @@ public class OrdenCompraDAO {
      */
     public static void modificar(OrdenCompraDTO modificado) {
         String sql = "UPDATE tbl_orden_compra SET id_proveedor=?,fecha_compra=?,fecha_entrega=?,estado=? WHERE id_compra=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getProveedor());
             pst.setDate(2, new java.sql.Date(modificado.getFechaCompra().getTime()));
@@ -60,7 +60,7 @@ public class OrdenCompraDAO {
      */
     public static void eliminar(int idCompra) {
         String sql = "DELETE FROM tbl_orden_compra WHERE id_compra=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idCompra);
             pst.executeUpdate();
@@ -76,7 +76,7 @@ public class OrdenCompraDAO {
      */
     public static OrdenCompraDTO buscar(int idCompra) {
         String sql = "SELECT * FROM tbl_orden_compra WHERE id_compra=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idCompra);
             ResultSet rst = pst.executeQuery();

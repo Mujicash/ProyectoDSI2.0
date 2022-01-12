@@ -64,7 +64,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jLabelNomBotica.setBackground(new java.awt.Color(204, 204, 255));
         jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jLabelNomBotica.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomBotica.setText("CRUZ DE MAYO");
         jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 380, 40));
@@ -226,45 +225,45 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelBotBuscarOrdenCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotBuscarOrdenCompraMouseClicked
-        FrmBuscarOrdenCompra ordCompra = new FrmBuscarOrdenCompra();
-        ordCompra.setVisible(true);
-        dispose();
+//        FrmBuscarOrdenCompra ordCompra = new FrmBuscarOrdenCompra();
+//        ordCompra.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotBuscarOrdenCompraMouseClicked
 
     private void jPanelBotRegistrarGuiaRemisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
-        FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
-        regGuiaRemision.setVisible(true);
-        dispose();
+//        FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
+//        regGuiaRemision.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
 
     private void jPanelBotBuscarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotBuscarProductoMouseClicked
-        FrmBuscarProducto busProducto = new FrmBuscarProducto();
-        busProducto.setVisible(true);
-        dispose();
+//        FrmBuscarProducto busProducto = new FrmBuscarProducto();
+//        busProducto.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotBuscarProductoMouseClicked
 
     private void jPanelBotRegistrarDatosProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarDatosProductoMouseClicked
-        FrmRegistrarDatosProducto regDatProducto = new FrmRegistrarDatosProducto();
-        regDatProducto.setVisible(true);
-        dispose();
+//        FrmRegistrarDatosProducto regDatProducto = new FrmRegistrarDatosProducto();
+//        regDatProducto.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarDatosProductoMouseClicked
 
     private void jPanelBotRegistrarDatosProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarDatosProveedorMouseClicked
-        FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
-        regDatProveedor.setVisible(true);
-        dispose();
+//        FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
+//        regDatProveedor.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarDatosProveedorMouseClicked
 
     private void jPanelBotRegistrarOrdenCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarOrdenCompraMouseClicked
-        FrmRegistrarOrdenCompra regOrdCompra = new FrmRegistrarOrdenCompra();
-        regOrdCompra.setVisible(true);
-        dispose();
+//        FrmRegistrarOrdenCompra regOrdCompra = new FrmRegistrarOrdenCompra();
+//        regOrdCompra.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarOrdenCompraMouseClicked
 
     private void jPanelBotRegistrarOrdenSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarOrdenSalidaMouseClicked
-        FrmRegistrarOrdenSalida regOrdSalida = new FrmRegistrarOrdenSalida();
-        regOrdSalida.setVisible(true);
-        dispose();
+//        FrmRegistrarOrdenSalida regOrdSalida = new FrmRegistrarOrdenSalida();
+//        regOrdSalida.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarOrdenSalidaMouseClicked
 
     private void jPanelInferiorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelInferiorMouseClicked
@@ -297,6 +296,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -317,13 +317,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabellRegistrarOrdenCompra;
     private javax.swing.JLabel jLabellRegistrarOrdenSalida;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanelBotBuscarOrdenCompra;
-    private javax.swing.JPanel jPanelBotBuscarProducto;
-    private javax.swing.JPanel jPanelBotRegistrarDatosProducto;
-    private javax.swing.JPanel jPanelBotRegistrarDatosProveedor;
-    private javax.swing.JPanel jPanelBotRegistrarGuiaRemision;
-    private javax.swing.JPanel jPanelBotRegistrarOrdenCompra;
-    private javax.swing.JPanel jPanelBotRegistrarOrdenSalida;
+    public javax.swing.JPanel jPanelBotBuscarOrdenCompra;
+    public javax.swing.JPanel jPanelBotBuscarProducto;
+    public javax.swing.JPanel jPanelBotRegistrarDatosProducto;
+    public javax.swing.JPanel jPanelBotRegistrarDatosProveedor;
+    public javax.swing.JPanel jPanelBotRegistrarGuiaRemision;
+    public javax.swing.JPanel jPanelBotRegistrarOrdenCompra;
+    public javax.swing.JPanel jPanelBotRegistrarOrdenSalida;
     private javax.swing.JPanel jPanelCentral;
     private javax.swing.JPanel jPanelFranja1;
     private javax.swing.JPanel jPanelInferior;

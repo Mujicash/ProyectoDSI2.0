@@ -24,7 +24,7 @@ public class DetalleCompraDAO {
      */
     public static boolean insertar(DetalleCompraDTO nuevo) {
         String sql = "INSERT INTO tbl_detalle_compra(id_orden,id_medicamento,unidades,precio) VALUES(?,?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getIdOrdenCompra());
             pst.setInt(2, nuevo.getIdMedicamento());
@@ -45,7 +45,7 @@ public class DetalleCompraDAO {
      */
     public static void modificar(DetalleCompraDTO modificado) {
         String sql = "UPDATE tbl_detalle_compra SET unidades=?,precio=? WHERE id_orden=? AND id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getUnidades());
             pst.setDouble(2, modificado.getPrecio());
@@ -64,7 +64,7 @@ public class DetalleCompraDAO {
      */
     public static void eliminar(int idOrdenCompra, int idMedicamento) {//Quizas solo pedir la id
         String sql = "DELETE FROM tbl_detalle_compra WHERE id_orden=? AND id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idOrdenCompra);
             pst.setInt(2, idMedicamento);
@@ -82,7 +82,7 @@ public class DetalleCompraDAO {
      */
     public static DetalleCompraDTO buscar(int idOrdenCompra, int idMedicamento) {
         String sql = "SELECT * FROM tbl_detalle_compra WHERE id_orden=? AND id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idOrdenCompra);
             pst.setInt(2, idMedicamento);

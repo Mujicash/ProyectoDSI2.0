@@ -21,35 +21,39 @@ public class MedicamentoDAO {
      *
      * @param nuevo Usuario ha registrar en la base de datos
      */
-    public static void insertar(MedicamentoDTO nuevo) {
-        String sql = "INSERT INTO tbl_medicamento(id_fabricante,nombre,medida) VALUES(?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+    public static boolean insertar(MedicamentoDTO nuevo) {
+        String sql = "INSERT INTO tbl_medicamento(id_fabricante,nombre,medida,num_blister) VALUES(?,?,?,?)";
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getIdFabricante());
             pst.setString(2, nuevo.getNombre());
             pst.setString(3, nuevo.getMedida());
-            pst.executeUpdate();
+            pst.setInt(4, nuevo.getNum_blister());
+            return pst.executeUpdate() > 0;
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.insertar:\n" + ex);
         }
+        return false;
     }
 
     /**
      *
      * @param modificado Usuario ha modificar en la base de datos
      */
-    public static void modificar(MedicamentoDTO modificado) {
-        String sql = "UPDATE tbl_medicamento SET id_fabricante=?,nombre=?,medida=? WHERE id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+    public static boolean modificar(MedicamentoDTO modificado) {
+        String sql = "UPDATE tbl_medicamento SET id_fabricante=?,nombre=?,medida=?,num_blister=? WHERE id_medicamento=?";
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getIdFabricante());
             pst.setString(2, modificado.getNombre());
             pst.setString(3, modificado.getMedida());
-            pst.setInt(4, modificado.getIdMedicamento());
-            pst.executeUpdate();
+            pst.setInt(4, modificado.getNum_blister());
+            pst.setInt(5, modificado.getIdMedicamento());
+            return pst.executeUpdate() > 0;
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.modificar:\n" + ex);
         }
+        return false;
     }
 
     /**
@@ -58,7 +62,7 @@ public class MedicamentoDAO {
      */
     public static void eliminar(int idMedicamento) {
         String sql = "DELETE FROM tbl_medicamento WHERE id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idMedicamento);
             pst.executeUpdate();
@@ -74,17 +78,31 @@ public class MedicamentoDAO {
      */
     public static MedicamentoDTO buscar(int idMedicamento) {
         String sql = "SELECT * FROM tbl_medicamento WHERE id_medicamento=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idMedicamento);
             ResultSet rst = pst.executeQuery();
             if (rst.next()) {
-                return new MedicamentoDTO(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4));
+                return new MedicamentoDTO(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4), rst.getInt(5));
             }
         } catch (SQLException ex) {
             System.err.println("Clase MedicamentoDAO.buscar:\n" + ex);
         }
         return null;
+    }
+
+    public static int ultimoID() {
+        String sql = "SELECT MAX(id_medicamento) FROM tbl_medicamento";
+        Connection conn = Conexion.getInstance();
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rst = pst.executeQuery();
+            if (rst.next()) {
+                return rst.getInt(1);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase MedicamentoDAO.buscar:\n" + ex);
+        }
+        return 0;
     }
 
 }
