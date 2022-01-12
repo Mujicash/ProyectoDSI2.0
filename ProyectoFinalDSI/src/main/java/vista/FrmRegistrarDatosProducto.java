@@ -16,6 +16,10 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
      */
     public FrmRegistrarDatosProducto() {
         initComponents();
+        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+        setSize(840, 721);
+        setResizable(false);
+        setLocationRelativeTo(null);
         
     }
 
@@ -222,7 +226,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBaseRegDatosProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanelBaseRegDatosProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +237,9 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal3MouseClicked
-
+        FrmPrincipal ret3 = new FrmPrincipal();
+        ret3.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal3MouseClicked
 
     private void jTextFieldCajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCajaActionPerformed
