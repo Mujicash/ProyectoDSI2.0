@@ -28,7 +28,7 @@ import vista.FrmRegistrarOrdenCompra;
  *
  * @author Andre Mujica
  */
-public class CtrlRegistrarordenCompra implements ActionListener, ControlStrategy {
+public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy {
     
     private FrmRegistrarOrdenCompra vista;
     private CtrlMaster ctrl;
@@ -37,7 +37,7 @@ public class CtrlRegistrarordenCompra implements ActionListener, ControlStrategy
     private ArrayList<Integer> cantidades;
     private ArrayList<Double> precios;
 
-    public CtrlRegistrarordenCompra(CtrlMaster ctrl) {
+    public CtrlRegistrarOrdenCompra(CtrlMaster ctrl) {
         this.vista = new FrmRegistrarOrdenCompra();
         this.ctrl = ctrl;
         this.cbProveedor = ProveedorDAO.mostrar();

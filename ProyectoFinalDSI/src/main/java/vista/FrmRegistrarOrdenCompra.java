@@ -106,8 +106,8 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
 
         jLabelCodProducto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelCodProducto.setForeground(new java.awt.Color(0, 0, 51));
-        jLabelCodProducto.setText("CÓDIGO PRODUCTO:");
-        jPanelBaseRegOrdenCompra.add(jLabelCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 180, -1));
+        jLabelCodProducto.setText("CÓDIGO MEDICAMENTO:");
+        jPanelBaseRegOrdenCompra.add(jLabelCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 210, -1));
 
         jTextFieldCodProducto.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldCodProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
