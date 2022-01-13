@@ -128,7 +128,7 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
         
         if(e.getSource() == vista.jButtonCrearOrden){
             
-            EncargadoBoticaDTO usuario = new EncargadoBoticaDTO(CtrlMaster.usuario.getIdUsuario());
+            EncargadoBoticaDTO usuario = new EncargadoBoticaDTO(ctrl.usuario.getIdUsuario());
             Object[] datosOrden = new Object[]{Calendar.getInstance().getTime(), vista.jTextFieldMotSalida.getText()};
             Object[][] datosDetalle = new Object[idMedicamento.size()][];
             
