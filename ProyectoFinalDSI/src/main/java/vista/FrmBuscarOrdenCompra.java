@@ -5,11 +5,15 @@
  */
 package vista;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
  */
 public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
+    
+    public static DefaultTableModel modelCompra;
 
     /**
      * Creates new form FrmBuscarOrdenCompra
@@ -33,12 +37,13 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
 
         jPanelBaseBusOrdenCompra = new javax.swing.JPanel();
         jPanelRetPrincipal2 = new javax.swing.JPanel();
-        jTextFieldNomProveedor = new javax.swing.JTextField();
         jLabelBusOrdenCompra = new javax.swing.JLabel();
         jLabelNomProveedor = new javax.swing.JLabel();
         jButtonBusOrdenCompra = new javax.swing.JButton();
         jScrollPaneBusOrdCompra = new javax.swing.JScrollPane();
         jTableBusOrdCompra = new javax.swing.JTable();
+        jbtnDetalle = new javax.swing.JButton();
+        jcbProveedores = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,13 +68,7 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanelBaseBusOrdenCompra.add(jPanelRetPrincipal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 550, 50, 40));
-
-        jTextFieldNomProveedor.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldNomProveedor.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNomProveedor.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldNomProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseBusOrdenCompra.add(jTextFieldNomProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 440, 40));
+        jPanelBaseBusOrdenCompra.add(jPanelRetPrincipal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 560, 50, 40));
 
         jLabelBusOrdenCompra.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelBusOrdenCompra.setForeground(new java.awt.Color(0, 0, 51));
@@ -122,6 +121,12 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
 
         jPanelBaseBusOrdenCompra.add(jScrollPaneBusOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 1070, 320));
 
+        jbtnDetalle.setText("VER DETALLE");
+        jbtnDetalle.setPreferredSize(new java.awt.Dimension(150, 40));
+        jPanelBaseBusOrdenCompra.add(jbtnDetalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, -1, -1));
+
+        jPanelBaseBusOrdenCompra.add(jcbProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 410, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,7 +135,7 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBaseBusOrdenCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jPanelBaseBusOrdenCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
         );
 
         pack();
@@ -178,13 +183,14 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBusOrdenCompra;
+    public javax.swing.JButton jButtonBusOrdenCompra;
     private javax.swing.JLabel jLabelBusOrdenCompra;
     private javax.swing.JLabel jLabelNomProveedor;
     private javax.swing.JPanel jPanelBaseBusOrdenCompra;
-    private javax.swing.JPanel jPanelRetPrincipal2;
+    public javax.swing.JPanel jPanelRetPrincipal2;
     public javax.swing.JScrollPane jScrollPaneBusOrdCompra;
     public javax.swing.JTable jTableBusOrdCompra;
-    public javax.swing.JTextField jTextFieldNomProveedor;
+    public javax.swing.JButton jbtnDetalle;
+    public javax.swing.JComboBox<String> jcbProveedores;
     // End of variables declaration//GEN-END:variables
 }

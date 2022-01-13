@@ -67,7 +67,7 @@ public class CtrlDetalleOrdeCompra implements ActionListener, ControlStrategy {
     
     private void retroceder(MouseEvent e){
         if (e.getSource() == this.vista.jPanelRetBuscarOdenCompra) {
-            this.ctrl.visualizar(new CtrlPrincipal(this.ctrl));
+            this.ctrl.visualizar(new CtrlBuscarOrdenCompra(this.ctrl));
         } 
     }
 

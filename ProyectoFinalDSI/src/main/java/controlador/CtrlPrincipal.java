@@ -54,7 +54,7 @@ public class CtrlPrincipal implements MouseListener, ControlStrategy {
     public void mouseClicked(MouseEvent e) {
 
         if (e.getSource() == this.vista.jPanelBotBuscarOrdenCompra) {
-            //this.ctrl.visualizar(new CtrlPrincipal(this.ctrl));
+            this.ctrl.visualizar(new CtrlBuscarOrdenCompra(this.ctrl));
         }
         if (e.getSource() == this.vista.jPanelBotBuscarProducto) {
 

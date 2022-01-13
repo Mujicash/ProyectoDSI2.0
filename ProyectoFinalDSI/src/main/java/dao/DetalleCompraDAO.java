@@ -114,5 +114,22 @@ public class DetalleCompraDAO {
         }
         return lista;
     }
+    
+    public static double costoTotal(int idOrdenCompra){
+        String sql = "select unidades, precio from tbl_detalle_compra where id_orden = ?";
+        Connection conn = Conexion.getInstance();
+        double costoTotal = 0;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idOrdenCompra);
+            ResultSet rst = pst.executeQuery();
+            while(rst.next()){
+                costoTotal += rst.getInt(1) * rst.getDouble(2);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase DetalleCompraDAO.eliminar:\n" + ex);
+        }
+        
+        return costoTotal;
+    }
 
 }
