@@ -1,4 +1,3 @@
-
 package controlador;
 
 import dao.MedicamentoDAO;
@@ -29,7 +28,7 @@ import vista.FrmRegistrarOrdenCompra;
  * @author Andre Mujica
  */
 public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy {
-    
+
     private FrmRegistrarOrdenCompra vista;
     private CtrlMaster ctrl;
     private List<ProveedorDTO> cbProveedor;
@@ -45,13 +44,12 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
         this.cantidades = new ArrayList<>();
         this.precios = new ArrayList<>();
     }
-    
 
     @Override
     public void iniciar() {
 
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(980, 650);
+        this.vista.setSize(990, 660);
         this.vista.jPanelRetPrincipal6.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -69,24 +67,24 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
         this.vista.setVisible(true);
         inicializarTabla();
     }
-    
-    private void inicializarTabla(){
+
+    private void inicializarTabla() {
         String[] colums = {"ID", "NOMBRE", "CANTIDAD", "COSTO UNITARIO", "TOTAL"};
-        FrmRegistrarOrdenCompra.modelCompra = new DefaultTableModel(null,colums);        
+        FrmRegistrarOrdenCompra.modelCompra = new DefaultTableModel(null, colums);
         vista.jTableOrdCompra.setModel(FrmRegistrarOrdenCompra.modelCompra);
     }
-    
-    private void CargarTabla(int id, String nombre, int cantida, double costo){
-        
+
+    private void CargarTabla(int id, String nombre, int cantida, double costo) {
+
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
-        
-        Object[] fila = {id, nombre, cantida, costo, cantida*costo};
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+        Object[] fila = {id, nombre, cantida, costo, cantida * costo};
         FrmRegistrarOrdenCompra.modelCompra.addRow(fila);
-        
+
         vista.jTableOrdCompra.setModel(FrmRegistrarOrdenCompra.modelCompra);
-        
-        for(int i = 0; i < vista.jTableOrdCompra.getColumnCount(); i++){
+
+        for (int i = 0; i < vista.jTableOrdCompra.getColumnCount(); i++) {
             vista.jTableOrdCompra.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
@@ -96,57 +94,56 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
         this.vista.dispose();
         this.ctrl = null;
     }
-    
-    public void limpiarCajas(){
+
+    public void limpiarCajas() {
         vista.jTextFieldCodProducto.setText("");
         vista.jTextFieldCantidad.setText("");
-        vista.jTextFieldPrecCompra.setText("");        
+        vista.jTextFieldPrecCompra.setText("");
         vista.jTextFieldTotal.setText(String.valueOf(calcularTotal()));
     }
-    
-    public double calcularTotal(){
+
+    public double calcularTotal() {
         double suma = 0;
-        for(int i = 0; i < cantidades.size(); i++){
-            suma += cantidades.get(i)*precios.get(i);
+        for (int i = 0; i < cantidades.size(); i++) {
+            suma += cantidades.get(i) * precios.get(i);
         }
-        
+
         return suma;
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource() == vista.jbtnAgregar){
+        if (e.getSource() == vista.jbtnAgregar) {
             MedicamentoDTO medicamento = MedicamentoDAO.buscar(Integer.valueOf(vista.jTextFieldCodProducto.getText()));
-            if(medicamento != null){
+            if (medicamento != null) {
                 codigos.add(Integer.valueOf(vista.jTextFieldCodProducto.getText()));
                 cantidades.add(Integer.valueOf(vista.jTextFieldCantidad.getText()));
                 precios.add(Double.valueOf(vista.jTextFieldPrecCompra.getText()));
-                
+
                 CargarTabla(Integer.valueOf(vista.jTextFieldCodProducto.getText()), medicamento.getNombre(), Integer.valueOf(vista.jTextFieldCantidad.getText()), Double.valueOf(vista.jTextFieldPrecCompra.getText()));
                 limpiarCajas();
             }
-            
+
         }
-        
-        if(e.getSource() == vista.jbtnGuardar){
-            
+
+        if (e.getSource() == vista.jbtnGuardar) {
+
             //CreadorOrden usuario = (CreadorOrden) CtrlMaster.usuario;
             //JefeAlmacenDTO usuario = (JefeAlmacenDTO) CtrlMaster.usuario;
-            JefeAlmacenDTO usuario = new JefeAlmacenDTO(CtrlMaster.usuario.getIdUsuario());
-            Object[] datosOrden = new Object[]{cbProveedor.get(vista.JComboProveedor.getSelectedIndex()).getIdProveedor(),Calendar.getInstance().getTime(), Calendar.getInstance().getTime()};
+            JefeAlmacenDTO usuario = new JefeAlmacenDTO(this.ctrl.getUsuario().getIdUsuario());
+            Object[] datosOrden = new Object[]{cbProveedor.get(vista.JComboProveedor.getSelectedIndex()).getIdProveedor(), Calendar.getInstance().getTime(), Calendar.getInstance().getTime()};
             Object[][] datosDetalle = new Object[codigos.size()][];
-            
-            for(int i = 0; i < codigos.size(); i++){
+
+            for (int i = 0; i < codigos.size(); i++) {
                 datosDetalle[i] = new Object[]{codigos.get(i), cantidades.get(i), precios.get(i)};
             }
-            
+
             Orden compra = usuario.crearOrden(datosOrden);
             OrdenCompraDAO.insertar((OrdenCompraDTO) compra);
             System.out.println(((OrdenCompraDTO) compra).getIdOrdenCompra());
             JOptionPane.showMessageDialog(null, compra.generarDetalle(datosDetalle));
-            
-            
+
             codigos = new ArrayList<>();
             cantidades = new ArrayList<>();
             precios = new ArrayList<>();
@@ -157,11 +154,8 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
     }
 
     public void retroceder(MouseEvent e) {
-        if (e.getSource() == this.vista.jPanelRetPrincipal6) {
-            this.ctrl.visualizar(new CtrlPrincipal(this.ctrl));
-        }    
+
+        this.ctrl.visualizar(new CtrlPrincipal(this.ctrl));
     }
-    
-    
-    
+
 }

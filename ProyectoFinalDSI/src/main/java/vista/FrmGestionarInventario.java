@@ -143,9 +143,9 @@ public class FrmGestionarInventario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal8MouseClicked
-        FrmRegistrarGuiaRemision ret8 = new FrmRegistrarGuiaRemision();
-        ret8.setVisible(true);
-        dispose();
+//        FrmRegistrarGuiaRemision ret8 = new FrmRegistrarGuiaRemision();
+//        ret8.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal8MouseClicked
 
     /**

@@ -256,9 +256,9 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal5MouseClicked
-        FrmPrincipal ret5 = new FrmPrincipal();
-        ret5.setVisible(true);
-        dispose();
+//        FrmPrincipal ret5 = new FrmPrincipal();
+//        ret5.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal5MouseClicked
 
     private void jButtonSubirGuiaRemisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubirGuiaRemisionActionPerformed

@@ -159,9 +159,9 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal2MouseClicked
-        FrmPrincipal ret2 = new FrmPrincipal();
-        ret2.setVisible(true);
-        dispose();
+//        FrmPrincipal ret2 = new FrmPrincipal();
+//        ret2.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal2MouseClicked
 
     /**

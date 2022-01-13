@@ -183,9 +183,9 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal7MouseClicked
-        FrmPrincipal ret7 = new FrmPrincipal();
-        ret7.setVisible(true);
-        dispose();
+//        FrmPrincipal ret7 = new FrmPrincipal();
+//        ret7.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal7MouseClicked
 
     /**

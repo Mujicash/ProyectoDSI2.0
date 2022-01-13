@@ -129,9 +129,9 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetBuscarOdenCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetBuscarOdenCompraMouseClicked
-        FrmBuscarOrdenCompra ret8 = new FrmBuscarOrdenCompra();
-        ret8.setVisible(true);
-        dispose();
+//        FrmBuscarOrdenCompra ret8 = new FrmBuscarOrdenCompra();
+//        ret8.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetBuscarOdenCompraMouseClicked
 
     /**

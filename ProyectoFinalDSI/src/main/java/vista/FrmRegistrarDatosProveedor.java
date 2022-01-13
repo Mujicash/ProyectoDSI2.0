@@ -16,10 +16,10 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
      */
     public FrmRegistrarDatosProveedor() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(835, 584);
-        setResizable(false);       
-        setLocationRelativeTo(null);
+//        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+//        setSize(835, 584);
+//        setResizable(false);       
+//        setLocationRelativeTo(null);
         
     }
 
@@ -144,9 +144,9 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal4MouseClicked
-        FrmPrincipal ret4 = new FrmPrincipal();
-        ret4.setVisible(true);
-        dispose();
+//        FrmPrincipal ret4 = new FrmPrincipal();
+//        ret4.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal4MouseClicked
 
     /**

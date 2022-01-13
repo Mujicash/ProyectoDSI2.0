@@ -32,7 +32,7 @@ public class CtrlLogin implements MouseListener, ControlStrategy {
     @Override
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(920, 615);
+        this.vista.setSize(1128, 658);
         this.vista.setResizable(false);
         this.vista.jPanelBotonIngresar.addMouseListener(this);
 
@@ -52,8 +52,8 @@ public class CtrlLogin implements MouseListener, ControlStrategy {
         if (e.getSource() == this.vista.jPanelBotonIngresar) {
             UsuarioDTO user = UsuarioDAO.buscar(this.vista.jTextFieldUsuario.getText(), String.valueOf(this.vista.jPasswordFieldContraseña.getPassword()));
             if (user != null) {
-                CtrlMaster.usuario = user;
-                System.out.println(CtrlMaster.usuario);
+                this.ctrl.setUsuario(user);
+                System.out.println(this.ctrl.getUsuario());
                 this.ctrl.visualizar(new CtrlPrincipal(this.ctrl));
             }
         }

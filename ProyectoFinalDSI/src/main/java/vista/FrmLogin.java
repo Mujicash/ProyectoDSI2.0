@@ -214,9 +214,9 @@ public class FrmLogin extends javax.swing.JFrame {
 //        String Pass = new String(jPasswordFieldContraseña.getPassword());
 //        
 //        if(jTextFieldUsuario.getText().equals(usuario)&& Pass.equals(contra)){
-            FrmPrincipal principal = new FrmPrincipal(); 
-            principal.setVisible(true); 
-            dispose(); 
+//            FrmPrincipal principal = new FrmPrincipal(); 
+//            principal.setVisible(true); 
+//            dispose(); 
 //        }
 //        else{
 //            

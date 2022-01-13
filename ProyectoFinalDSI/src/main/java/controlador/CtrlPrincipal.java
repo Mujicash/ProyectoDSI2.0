@@ -30,7 +30,7 @@ public class CtrlPrincipal implements MouseListener, ControlStrategy {
     @Override
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(1070, 650);
+        this.vista.setSize(1039, 660);
         this.vista.setResizable(false);
         this.vista.jPanelBotBuscarOrdenCompra.addMouseListener(this);
         this.vista.jPanelBotBuscarProducto.addMouseListener(this);

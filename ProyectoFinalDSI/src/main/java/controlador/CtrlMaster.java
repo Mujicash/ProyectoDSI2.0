@@ -15,10 +15,18 @@ import interfaces.ControlStrategy;
 public class CtrlMaster {
 
     private ControlStrategy ctrl;
-    public static UsuarioDTO usuario;
+    public UsuarioDTO usuario;
 
     public CtrlMaster() {
         //Inicialmente se debe establecer el ControlStrategy por el setCtrl()
+    }
+
+    public UsuarioDTO getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioDTO usuario) {
+        this.usuario = usuario;
     }
 
     public void setCtrl(ControlStrategy ctrl) {

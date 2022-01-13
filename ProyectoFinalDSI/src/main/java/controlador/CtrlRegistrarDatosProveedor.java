@@ -35,7 +35,7 @@ public class CtrlRegistrarDatosProveedor implements ActionListener, MouseListene
     @Override
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(840, 590);
+        this.vista.setSize(835, 584);
         this.vista.setResizable(false);
         this.vista.setLocationRelativeTo(null);
         this.vista.jPanelRetPrincipal4.addMouseListener(this);

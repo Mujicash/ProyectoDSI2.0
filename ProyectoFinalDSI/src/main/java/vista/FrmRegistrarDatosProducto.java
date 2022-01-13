@@ -237,9 +237,9 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal3MouseClicked
-        FrmPrincipal ret3 = new FrmPrincipal();
-        ret3.setVisible(true);
-        dispose();
+//        FrmPrincipal ret3 = new FrmPrincipal();
+//        ret3.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal3MouseClicked
 
     private void jTextFieldCajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCajaActionPerformed

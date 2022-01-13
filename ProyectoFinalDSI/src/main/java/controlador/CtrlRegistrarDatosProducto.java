@@ -43,7 +43,7 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
     @Override
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(805, 700);
+        this.vista.setSize(840, 721);
         this.vista.jPanelRetPrincipal3.addMouseListener(this);
         this.vista.jButtonGuardarDatMedicamento.addActionListener(this);
         this.vista.jButtonModificarDatProducto.addActionListener(this);

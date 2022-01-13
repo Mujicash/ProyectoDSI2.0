@@ -20,10 +20,10 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
      */
     public FrmRegistrarOrdenCompra() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(990, 660);
-        setResizable(false);
-        setLocationRelativeTo(null);
+//        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+//        setSize(990, 660);
+//        setResizable(false);
+//        setLocationRelativeTo(null);
     }
 
     /**
@@ -205,9 +205,9 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal6MouseClicked
-        FrmPrincipal ret6 = new FrmPrincipal();
-        ret6.setVisible(true);
-        dispose();
+//        FrmPrincipal ret6 = new FrmPrincipal();
+//        ret6.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal6MouseClicked
 
     private void jTextFieldPrecCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPrecCompraActionPerformed

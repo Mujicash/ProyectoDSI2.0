@@ -17,11 +17,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");      
         
-        setSize(1039, 660);
-        setResizable(false);
-        setLocationRelativeTo(null);
     }
 
     /**
@@ -225,45 +221,45 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelBotBuscarOrdenCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotBuscarOrdenCompraMouseClicked
-        FrmBuscarOrdenCompra ordCompra = new FrmBuscarOrdenCompra();
-        ordCompra.setVisible(true);
-        dispose();
+//        FrmBuscarOrdenCompra ordCompra = new FrmBuscarOrdenCompra();
+//        ordCompra.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotBuscarOrdenCompraMouseClicked
 
     private void jPanelBotRegistrarGuiaRemisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
-        FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
-        regGuiaRemision.setVisible(true);
-        dispose();
+//        FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
+//        regGuiaRemision.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
 
     private void jPanelBotBuscarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotBuscarProductoMouseClicked
-        FrmBuscarProducto busProducto = new FrmBuscarProducto();
-        busProducto.setVisible(true);
-        dispose();
+//        FrmBuscarProducto busProducto = new FrmBuscarProducto();
+//        busProducto.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotBuscarProductoMouseClicked
 
     private void jPanelBotRegistrarDatosProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarDatosProductoMouseClicked
-        FrmRegistrarDatosProducto regDatProducto = new FrmRegistrarDatosProducto();
-        regDatProducto.setVisible(true);
-        dispose();
+//        FrmRegistrarDatosProducto regDatProducto = new FrmRegistrarDatosProducto();
+//        regDatProducto.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarDatosProductoMouseClicked
 
     private void jPanelBotRegistrarDatosProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarDatosProveedorMouseClicked
-        FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
-        regDatProveedor.setVisible(true);
-        dispose();
+//        FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
+//        regDatProveedor.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarDatosProveedorMouseClicked
 
     private void jPanelBotRegistrarOrdenCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarOrdenCompraMouseClicked
-        FrmRegistrarOrdenCompra regOrdCompra = new FrmRegistrarOrdenCompra();
-        regOrdCompra.setVisible(true);
-        dispose();
+//        FrmRegistrarOrdenCompra regOrdCompra = new FrmRegistrarOrdenCompra();
+//        regOrdCompra.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarOrdenCompraMouseClicked
 
     private void jPanelBotRegistrarOrdenSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarOrdenSalidaMouseClicked
-        FrmRegistrarOrdenSalida regOrdSalida = new FrmRegistrarOrdenSalida();
-        regOrdSalida.setVisible(true);
-        dispose();
+//        FrmRegistrarOrdenSalida regOrdSalida = new FrmRegistrarOrdenSalida();
+//        regOrdSalida.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelBotRegistrarOrdenSalidaMouseClicked
 
     private void jPanelInferiorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelInferiorMouseClicked
