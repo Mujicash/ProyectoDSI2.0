@@ -13,13 +13,13 @@ public class FrmLogin extends javax.swing.JFrame {
     public FrmLogin() {
         initComponents();
         
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-
-        setSize(1128, 658);
-        setResizable(false);       
-        setLocationRelativeTo(null);
-       
-        Conexion.getInstance();
+//        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+//
+//        setSize(1128, 658);
+//        setResizable(false);       
+//        setLocationRelativeTo(null);
+//       
+//        Conexion.getInstance();
         
     }
    
