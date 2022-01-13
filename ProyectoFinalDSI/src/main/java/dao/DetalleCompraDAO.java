@@ -112,6 +112,7 @@ public class DetalleCompraDAO {
         } catch (SQLException ex) {
             System.err.println("Clase DetalleCompraDAO.eliminar:\n" + ex);
         }
+        
         return lista;
     }
     
