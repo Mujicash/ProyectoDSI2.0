@@ -17,6 +17,10 @@ public class EncargadoBoticaDTO extends UsuarioDTO implements CreadorOrden {
     public EncargadoBoticaDTO() {
     }
 
+    public EncargadoBoticaDTO(int idUsuario) {
+        super(idUsuario);
+    }
+
     public EncargadoBoticaDTO(int idUsuario, String username, String password, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaCreacion, Date ultimaConexion, int idTipoUsuario) {
         super(idUsuario, username, password, nombres, apellidoPaterno, apellidoMaterno, fechaCreacion, ultimaConexion, idTipoUsuario);
     }

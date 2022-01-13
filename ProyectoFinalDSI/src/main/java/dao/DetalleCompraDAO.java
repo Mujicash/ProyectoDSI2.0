@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -94,6 +96,41 @@ public class DetalleCompraDAO {
             System.err.println("Clase DetalleCompraDAO.eliminar:\n" + ex);
         }
         return null;
+    }
+    
+    public static List<DetalleCompraDTO> detalle(int idOrdenCompra){
+        String sql = "select * from tbl_detalle_compra where id_orden = ?";
+        Connection conn = Conexion.getInstance();
+        List<DetalleCompraDTO> lista = null;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idOrdenCompra);
+            ResultSet rst = pst.executeQuery();
+            lista = new LinkedList<>();
+            while(rst.next()){
+                lista.add(new DetalleCompraDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getDouble(4)));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase DetalleCompraDAO.eliminar:\n" + ex);
+        }
+        
+        return lista;
+    }
+    
+    public static double costoTotal(int idOrdenCompra){
+        String sql = "select unidades, precio from tbl_detalle_compra where id_orden = ?";
+        Connection conn = Conexion.getInstance();
+        double costoTotal = 0;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idOrdenCompra);
+            ResultSet rst = pst.executeQuery();
+            while(rst.next()){
+                costoTotal += rst.getInt(1) * rst.getDouble(2);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase DetalleCompraDAO.eliminar:\n" + ex);
+        }
+        
+        return costoTotal;
     }
 
 }

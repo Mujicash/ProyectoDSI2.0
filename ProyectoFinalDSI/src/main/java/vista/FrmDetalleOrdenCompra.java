@@ -5,11 +5,15 @@
  */
 package vista;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
  */
 public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
+    
+    public static DefaultTableModel modelCompra; 
 
     /**
      * Creates new form FrmDetalleOrdenCompra
@@ -37,7 +41,6 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
         jTableDetOrdCompra = new javax.swing.JTable();
         jButtonEditar = new javax.swing.JButton();
         jLabelDetOrdenCompra = new javax.swing.JLabel();
-        jButtonGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,29 +73,21 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
         jTableDetOrdCompra.setForeground(new java.awt.Color(255, 255, 255));
         jTableDetOrdCompra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "CÓDIGO", "NOMBRE PRODUCTO", "CANTIDAD", "COSTO C/U", "PRECIO TOTAL", "FECHA VENC"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         jTableDetOrdCompra.setRowHeight(32);
         jTableDetOrdCompra.setSelectionBackground(new java.awt.Color(228, 241, 254));
         jTableDetOrdCompra.setSelectionForeground(new java.awt.Color(0, 0, 0));
@@ -102,17 +97,14 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
 
         jButtonEditar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonEditar.setText("EDITAR");
-        jPanelBaseDetOrdenCompra.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, -1, -1));
+        jButtonEditar.setPreferredSize(new java.awt.Dimension(110, 40));
+        jPanelBaseDetOrdenCompra.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 470, -1, -1));
 
         jLabelDetOrdenCompra.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelDetOrdenCompra.setForeground(new java.awt.Color(0, 0, 51));
         jLabelDetOrdenCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelDetOrdenCompra.setText("DETALLE ORDEN DE COMPRA");
         jPanelBaseDetOrdenCompra.add(jLabelDetOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
-
-        jButtonGuardar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonGuardar.setText("GUARDAR");
-        jPanelBaseDetOrdenCompra.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,11 +162,10 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonEditar;
-    private javax.swing.JButton jButtonGuardar;
+    public javax.swing.JButton jButtonEditar;
     private javax.swing.JLabel jLabelDetOrdenCompra;
     private javax.swing.JPanel jPanelBaseDetOrdenCompra;
-    private javax.swing.JPanel jPanelRetBuscarOdenCompra;
+    public javax.swing.JPanel jPanelRetBuscarOdenCompra;
     public javax.swing.JScrollPane jScrollPaneDetOrdCompra;
     public javax.swing.JTable jTableDetOrdCompra;
     // End of variables declaration//GEN-END:variables
