@@ -54,6 +54,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jcbTipo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 660));
 
         jPanelBaseRegOrdenSalida.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBaseRegOrdenSalida.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
