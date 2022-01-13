@@ -201,9 +201,11 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
 
         jPanelBaseRegGuiaRemision.add(panelArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 330, 240));
 
+
         botonGuardar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         botonGuardar.setText("GUARDAR");
         botonGuardar.addActionListener(new java.awt.event.ActionListener() {
+
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarActionPerformed(evt);
             }
@@ -261,9 +263,9 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelRetPrincipal5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal5MouseClicked
-        FrmPrincipal ret5 = new FrmPrincipal();
-        ret5.setVisible(true);
-        dispose();
+//        FrmPrincipal ret5 = new FrmPrincipal();
+//        ret5.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jPanelRetPrincipal5MouseClicked
 
     private void botonArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArchivoActionPerformed
@@ -281,6 +283,12 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     private void textArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textArchivoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textArchivoActionPerformed
+
+    private void jButtonGuardarGuiaRemisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarGuiaRemisionMouseClicked
+        FrmGestionarInventario guardar = new FrmGestionarInventario();
+        guardar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonGuardarGuiaRemisionMouseClicked
 
     /**
      * @param args the command line arguments

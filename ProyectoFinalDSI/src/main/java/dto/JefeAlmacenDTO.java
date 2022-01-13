@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package dto;
 
 import interfaces.CreadorOrden;
@@ -15,6 +12,10 @@ import java.sql.Date;
 public class JefeAlmacenDTO extends UsuarioDTO implements CreadorOrden {
     
     public JefeAlmacenDTO() {
+    }
+
+    public JefeAlmacenDTO(int idUsuario) {
+        super(idUsuario);
     }
 
     public JefeAlmacenDTO(int idUsuario, String username, String password, String nombres, String apellidoPaterno, String apellidoMaterno, Date fechaCreacion, Date ultimaConexion, int idTipoUsuario) {

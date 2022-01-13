@@ -23,7 +23,7 @@ public class OrdenSalidaDAO {
      */
     public static void insertar(OrdenSalidaDTO nuevo) {
         String sql = "INSERT INTO tbl_orden_salida(fecha,motivo,id_usuario) VALUES(?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setDate(1, new java.sql.Date(nuevo.getFecha().getTime()));
             pst.setString(2, nuevo.getMotivo());
@@ -40,7 +40,7 @@ public class OrdenSalidaDAO {
      */
     public static void modificar(OrdenSalidaDTO modificado) {
         String sql = "UPDATE tbl_orden_salida SET fecha=?,motivo=?,id_usuario=? WHERE id_salida=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setDate(1, new java.sql.Date(modificado.getFecha().getTime()));
             pst.setString(2, modificado.getMotivo());
@@ -58,7 +58,7 @@ public class OrdenSalidaDAO {
      */
     public static void eliminar(int idOrdenSalida) {//Quizas solo pedir la id
         String sql = "DELETE FROM tbl_orden_salida WHERE id_salida=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idOrdenSalida);
             pst.executeUpdate();
@@ -74,7 +74,7 @@ public class OrdenSalidaDAO {
      */
     public static OrdenSalidaDTO buscar(int idOrdenSalida) {
         String sql = "SELECT * FROM tbl_orden_salida WHERE id_salida=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idOrdenSalida);
             ResultSet rst = pst.executeQuery();

@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -23,7 +25,7 @@ public class ProveedorDAO {
      */
     public static void insertar(ProveedorDTO nuevo) {
         String sql = "INSERT INTO tbl_proveedor(nombre,ruc,telefono,direccion) VALUES(?,?,?,?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, nuevo.getNombre());
             pst.setString(2, nuevo.getRuc());
@@ -41,7 +43,7 @@ public class ProveedorDAO {
      */
     public static void modificar(ProveedorDTO modificado) {
         String sql = "UPDATE tbl_proveedor SET nombre=?,ruc=?,telefono=?,direccion=? WHERE id_proveedor=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, modificado.getNombre());
             pst.setString(2, modificado.getRuc());
@@ -60,7 +62,7 @@ public class ProveedorDAO {
      */
     public static void eliminar(int idProveedor) {
         String sql = "DELETE FROM tbl_proveedor WHERE id_proveedor=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idProveedor);
             pst.executeUpdate();
@@ -76,7 +78,7 @@ public class ProveedorDAO {
      */
     public static ProveedorDTO buscar(int idProveedor) {
         String sql = "SELECT * FROM tbl_proveedor WHERE id_proveedor=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idProveedor);
             ResultSet rst = pst.executeQuery();
@@ -91,7 +93,7 @@ public class ProveedorDAO {
 
     public static ProveedorDTO buscar(String nombre) {
         String sql = "SELECT * FROM tbl_proveedor WHERE nombre=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, nombre);
             ResultSet rst = pst.executeQuery();
@@ -104,19 +106,35 @@ public class ProveedorDAO {
         return null;
     }
 
-    public static ProveedorDTO buscarRUC(String ruc) {
-        String sql = "SELECT * FROM tbl_proveedor WHERE nombre=?";
-        Connection conn = Conexion.getInstance().getConn();
+    public static boolean buscarRUC(String ruc) {
+        String sql = "SELECT * FROM tbl_proveedor WHERE ruc=?";
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, ruc);
             ResultSet rst = pst.executeQuery();
-            if (rst.next()) {
-                return new ProveedorDTO(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5));
-            }
+            return rst.next();
+
+//            return rst.getString(3).equals(ruc);
         } catch (SQLException ex) {
             System.err.println("Clase ProveedorDAO.buscar:\n" + ex);
         }
-        return null;
+        return false;
+    }
+    
+    public static List<ProveedorDTO> mostrar() {
+        String sql = "SELECT * FROM tbl_proveedor";
+        Connection conn = Conexion.getInstance();
+        List<ProveedorDTO> lista = null;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rst = pst.executeQuery();
+            lista = new LinkedList<>();
+            while (rst.next()) {
+                lista.add(new ProveedorDTO(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5)));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase FabricanteDAO.buscar:\n" + ex);
+        }
+        return lista;
     }
 
 }

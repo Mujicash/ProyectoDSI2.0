@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -23,7 +25,7 @@ public class FabricanteDAO {
      */
     public static void insertar(FabricanteDTO nuevo) {
         String sql = "INSERT INTO tbl_fabricante(nombre) VALUES(?)";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, nuevo.getNombre());
             pst.executeUpdate();
@@ -38,7 +40,7 @@ public class FabricanteDAO {
      */
     public static void modificar(FabricanteDTO modificado) {
         String sql = "UPDATE tbl_fabricante SET nombre=? WHERE id_fabricante=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, modificado.getNombre());
             pst.setInt(2, modificado.getIdFabricante());
@@ -54,7 +56,7 @@ public class FabricanteDAO {
      */
     public static void eliminar(int idFabricante) {
         String sql = "DELETE FROM tbl_fabricante WHERE id_fabricante=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idFabricante);
             pst.executeUpdate();
@@ -70,7 +72,7 @@ public class FabricanteDAO {
      */
     public static FabricanteDTO buscar(int idFabricante) {
         String sql = "SELECT * FROM tbl_fabricante WHERE id_fabricante=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idFabricante);
             ResultSet rst = pst.executeQuery();
@@ -85,7 +87,7 @@ public class FabricanteDAO {
 
     public static FabricanteDTO buscar(String nombre) {
         String sql = "SELECT * FROM tbl_fabricante WHERE nombre=?";
-        Connection conn = Conexion.getInstance().getConn();
+        Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, nombre);
             ResultSet rst = pst.executeQuery();
@@ -96,6 +98,22 @@ public class FabricanteDAO {
             System.err.println("Clase FabricanteDAO.buscar:\n" + ex);
         }
         return null;
+    }
+
+    public static List<FabricanteDTO> mostrar() {
+        String sql = "SELECT * FROM tbl_fabricante";
+        Connection conn = Conexion.getInstance();
+        List<FabricanteDTO> lista = null;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rst = pst.executeQuery();
+            lista = new LinkedList<>();
+            while (rst.next()) {
+                lista.add(new FabricanteDTO(rst.getInt(1), rst.getString(2)));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase FabricanteDAO.buscar:\n" + ex);
+        }
+        return lista;
     }
 
 }
