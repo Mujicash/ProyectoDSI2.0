@@ -18,6 +18,15 @@ public class GuiaRemisionDTO {
     private Date fechaInicio;
     private Date fechaEntrega;
     private Foto guia;
+    private boolean gestionado;
+
+    public boolean isGestionado() {
+        return gestionado;
+    }
+
+    public void setGestionado(boolean gestionado) {
+        this.gestionado = gestionado;
+    }
     
 
     public GuiaRemisionDTO() {
@@ -35,6 +44,17 @@ public class GuiaRemisionDTO {
         this.fechaInicio = fechaInicio;
         this.fechaEntrega = fechaEntrega;
     }
+    
+    public GuiaRemisionDTO(int idGuia, String numGuia, String puntoPartida, String motivo, Date fechaInicio, Date fechaEntrega, boolean gestionado) {
+        this.idGuia = idGuia;
+        this.numGuia = numGuia;
+        this.puntoPartida = puntoPartida;
+        this.motivo = motivo;
+        this.fechaInicio = fechaInicio;
+        this.fechaEntrega = fechaEntrega;
+        this.gestionado = gestionado;
+    }
+
 
     public int getIdGuia() {
         return idGuia;

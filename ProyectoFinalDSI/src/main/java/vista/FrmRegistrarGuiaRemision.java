@@ -72,12 +72,13 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         textAnio = new javax.swing.JTextField();
         botonBuscar = new javax.swing.JButton();
         panelArchivo = new javax.swing.JPanel();
-        botonGuardar = new javax.swing.JButton();
+        botonGestionar = new javax.swing.JButton();
         textArchivo = new javax.swing.JTextField();
         jLabelNumGuiaRemision = new javax.swing.JLabel();
         textMotivo = new javax.swing.JTextField();
         textDia = new javax.swing.JTextField();
         textMes = new javax.swing.JTextField();
+        botonGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -201,16 +202,14 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
 
         jPanelBaseRegGuiaRemision.add(panelArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 330, 240));
 
-
-        botonGuardar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        botonGuardar.setText("GUARDAR");
-        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
-
+        botonGestionar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        botonGestionar.setText("GESTIONAR");
+        botonGestionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonGuardarActionPerformed(evt);
+                botonGestionarActionPerformed(evt);
             }
         });
-        jPanelBaseRegGuiaRemision.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 110, 40));
+        jPanelBaseRegGuiaRemision.add(botonGestionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 460, 130, 40));
 
         textArchivo.setEditable(false);
         textArchivo.setBackground(new java.awt.Color(0, 0, 38));
@@ -248,6 +247,15 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         textMes.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseRegGuiaRemision.add(textMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 50, 40));
 
+        botonGuardar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        botonGuardar.setText("GUARDAR");
+        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarActionPerformed(evt);
+            }
+        });
+        jPanelBaseRegGuiaRemision.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 110, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -276,9 +284,9 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonBuscarActionPerformed
 
-    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+    private void botonGestionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGestionarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonGuardarActionPerformed
+    }//GEN-LAST:event_botonGestionarActionPerformed
 
     private void textArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textArchivoActionPerformed
         // TODO add your handling code here:
@@ -289,6 +297,10 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         guardar.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonGuardarGuiaRemisionMouseClicked
+
+    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -328,6 +340,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton botonArchivo;
     public javax.swing.JButton botonBuscar;
+    public javax.swing.JButton botonGestionar;
     public javax.swing.JButton botonGuardar;
     private javax.swing.JLabel jLabelFechaIniTraslado;
     private javax.swing.JLabel jLabelMotTraslado;

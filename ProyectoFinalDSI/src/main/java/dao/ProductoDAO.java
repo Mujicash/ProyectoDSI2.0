@@ -55,6 +55,21 @@ public class ProductoDAO {
         }
         return false;
     }
+    
+    
+    public static boolean aumentarStock(int m,int t,int aum) {
+        String sql = "UPDATE tbl_producto SET stock=stock+? WHERE id_medicamento=? AND id_tipo=?";
+        Connection conn = Conexion.getInstance();
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, aum);
+            pst.setInt(2, m);
+            pst.setInt(3, t);
+            return pst.executeUpdate() > 0;
+        } catch (SQLException ex) {
+            System.err.println("Clase ProductoDAO.modificar:\n" + ex);
+        }
+        return false;
+    }
 
     /**
      *
