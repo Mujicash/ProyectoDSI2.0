@@ -1,7 +1,9 @@
 
 package dto;
 
+import extra.Foto;
 import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -15,6 +17,17 @@ public class GuiaRemisionDTO {
     private String motivo;
     private Date fechaInicio;
     private Date fechaEntrega;
+    private Foto guia;
+    private boolean gestionado;
+
+    public boolean isGestionado() {
+        return gestionado;
+    }
+
+    public void setGestionado(boolean gestionado) {
+        this.gestionado = gestionado;
+    }
+    
 
     public GuiaRemisionDTO() {
     }
@@ -31,6 +44,17 @@ public class GuiaRemisionDTO {
         this.fechaInicio = fechaInicio;
         this.fechaEntrega = fechaEntrega;
     }
+    
+    public GuiaRemisionDTO(int idGuia, String numGuia, String puntoPartida, String motivo, Date fechaInicio, Date fechaEntrega, boolean gestionado) {
+        this.idGuia = idGuia;
+        this.numGuia = numGuia;
+        this.puntoPartida = puntoPartida;
+        this.motivo = motivo;
+        this.fechaInicio = fechaInicio;
+        this.fechaEntrega = fechaEntrega;
+        this.gestionado = gestionado;
+    }
+
 
     public int getIdGuia() {
         return idGuia;
@@ -80,6 +104,14 @@ public class GuiaRemisionDTO {
         this.fechaEntrega = fechaEntrega;
     }
 
+    public void setFoto(Foto f){
+        this.guia = f;
+    }
+    
+    public Foto getFoto(){
+        return this.guia;
+    }
+    
     @Override
     public String toString() {
         return "GuiaRemisionDTO{" + "idGuia=" + idGuia + ", numGuia=" + numGuia + '}';

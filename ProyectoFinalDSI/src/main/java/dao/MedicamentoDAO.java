@@ -6,6 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -20,6 +23,7 @@ public class MedicamentoDAO {
     /**
      *
      * @param nuevo Usuario ha registrar en la base de datos
+     * @return 
      */
     public static boolean insertar(MedicamentoDTO nuevo) {
         String sql = "INSERT INTO tbl_medicamento(id_fabricante,nombre,medida,num_blister) VALUES(?,?,?,?)";
@@ -39,6 +43,7 @@ public class MedicamentoDAO {
     /**
      *
      * @param modificado Usuario ha modificar en la base de datos
+     * @return 
      */
     public static boolean modificar(MedicamentoDTO modificado) {
         String sql = "UPDATE tbl_medicamento SET id_fabricante=?,nombre=?,medida=?,num_blister=? WHERE id_medicamento=?";
@@ -103,6 +108,22 @@ public class MedicamentoDAO {
             System.err.println("Clase MedicamentoDAO.buscar:\n" + ex);
         }
         return 0;
+    }
+    
+    public static List<MedicamentoDTO> mostrar() {
+        String sql = "SELECT * FROM tbl_medicamento";
+        Connection conn = Conexion.getInstance();
+        List<MedicamentoDTO> lista = null;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rst = pst.executeQuery();
+            lista = new LinkedList<>();
+            while (rst.next()) {
+                lista.add(new MedicamentoDTO(rst.getInt(1), rst.getInt(2), rst.getString(3), rst.getString(4), rst.getInt(5)));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase FabricanteDAO.buscar:\n" + ex);
+        }
+        return lista;
     }
 
 }

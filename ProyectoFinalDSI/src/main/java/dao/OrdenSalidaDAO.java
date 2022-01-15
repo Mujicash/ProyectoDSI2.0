@@ -28,10 +28,29 @@ public class OrdenSalidaDAO {
             pst.setDate(1, new java.sql.Date(nuevo.getFecha().getTime()));
             pst.setString(2, nuevo.getMotivo());
             pst.setInt(3, nuevo.getIdUsuario());
-            pst.executeUpdate();
+            if(pst.executeUpdate() > 0){
+                nuevo.setIdOrdenSalida(lastId());
+            }
         } catch (SQLException ex) {
             System.err.println("Clase OrdenSalidaDAO.insertar:\n" + ex);
         }
+    }
+    
+    public static int lastId(){
+        String sql = "select id_salida from tbl_orden_salida order by id_salida desc limit 1";
+        int id = -1;
+        Connection conn = Conexion.getInstance();
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()){
+                id = rs.getInt("id_salida");
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase OrdenSalidaDAO.insertar:\n" + ex);
+        }
+        
+        return id;
     }
 
     /**

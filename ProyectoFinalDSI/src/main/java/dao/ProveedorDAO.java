@@ -122,7 +122,7 @@ public class ProveedorDAO {
     }
     
     public static List<ProveedorDTO> mostrar() {
-        String sql = "SELECT * FROM tbl_proveedor";
+        String sql = "SELECT * FROM tbl_proveedor order by id_proveedor";
         Connection conn = Conexion.getInstance();
         List<ProveedorDTO> lista = null;
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {

@@ -1,0 +1,125 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controlador;
+
+import dao.DetalleCompraDAO;
+import dao.MedicamentoDAO;
+import dao.ProveedorDAO;
+import dto.DetalleCompraDTO;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import vista.FrmBotGestionar;
+import vista.FrmGestionarInventario;
+
+/**
+ *
+ * @author Usuario
+ */
+public class CtrlGestionarInventario implements MouseListener {
+    
+    private FrmGestionarInventario vent;
+    private CtrlGuiaRemision padre;
+    private final List<DetalleCompraDTO> compra;
+    
+    public CtrlGestionarInventario(FrmGestionarInventario v,CtrlGuiaRemision c){
+        this.vent = v;
+        this.padre = c;
+        this.compra = DetalleCompraDAO.detalle(padre.getOrden().getIdOrdenCompra());
+        this.vent.setVisible(true);
+        
+        this.vent.textOrden.setText(String.valueOf(padre.getOrden().getIdOrdenCompra()));
+       
+        String prov = ProveedorDAO.buscar(padre.getOrden().getProveedor()).getNombre();
+        this.vent.textProveedor.setText(prov);
+        
+        this.vent.btnRetro.addMouseListener(this);
+        this.vent.btnAceptar.addMouseListener(this);
+        this.vent.tblDetalle.addMouseListener(this);
+        
+        this.inicializarTabla();
+    }
+
+     private void inicializarTabla(){
+        String[] colums = {"MEDICAMENTO", "CANTIDAD", "GESTIONAR"};
+        FrmGestionarInventario.modelCompra = new DefaultTableModel(null,colums);        
+        vent.tblDetalle.setModel( FrmGestionarInventario.modelCompra);
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        String c = "GESTIONAR";
+        for(DetalleCompraDTO i : compra){
+            Object[] fila = { MedicamentoDAO.buscar(i.getIdMedicamento()).getNombre(), i.getUnidades(), c};
+            FrmGestionarInventario.modelCompra.addRow(fila);
+        }
+        
+       vent.tblDetalle.setModel(FrmGestionarInventario.modelCompra);
+        for(int i = 0; i < vent.tblDetalle.getColumnCount(); i++){
+            vent.tblDetalle.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+    
+
+     private boolean validarGestion(){
+         boolean resp = true;
+         
+         for(DetalleCompraDTO i : compra){
+             if(i.isGestionado()){
+                 resp = true;
+             }else{
+                 resp = false;
+                 break;
+             }
+         }
+         
+         return resp;
+     }
+  
+     
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        
+        int fila = this.vent.tblDetalle.rowAtPoint(e.getPoint());
+        int columna = this.vent.tblDetalle.columnAtPoint(e.getPoint());
+        
+        if (e.getSource() == this.vent.btnRetro) {
+            this.vent.setVisible(false);
+            this.vent.dispose();
+        } 
+        
+        if(columna==2){
+            if(!compra.get(fila).isGestionado()){
+                CtrlGestionarDetalle cd = new CtrlGestionarDetalle(new FrmBotGestionar(),compra.get(fila)); 
+            }else{
+                JOptionPane.showMessageDialog(null, "Este campo ya esta gestionado");
+            }        
+        }
+        
+        if(e.getSource()==this.vent.btnAceptar){
+            if(this.validarGestion()){
+                padre.setGestion(true);
+                DetalleCompraDAO.actulizarOrden(padre.getOrden().getIdOrdenCompra());
+                this.vent.setVisible(false);
+                this.vent.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Porfavor, termine de gestionar el inventario");
+            }
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {}
+    @Override
+    public void mouseReleased(MouseEvent e) {}
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+    @Override
+    public void mouseExited(MouseEvent e) {}
+    
+}

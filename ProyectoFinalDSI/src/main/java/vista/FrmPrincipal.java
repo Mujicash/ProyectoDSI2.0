@@ -6,6 +6,9 @@
 package vista;
 
 
+import controlador.CtrlGuiaRemision;
+
+
 /**
  *
  * @author USER
@@ -227,9 +230,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelBotBuscarOrdenCompraMouseClicked
 
     private void jPanelBotRegistrarGuiaRemisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
-//        FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
-//        regGuiaRemision.setVisible(true);
-//        dispose();
+
+        FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
+        CtrlGuiaRemision ctrl = new CtrlGuiaRemision(regGuiaRemision);
+        //regGuiaRemision.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
 
     private void jPanelBotBuscarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotBuscarProductoMouseClicked
@@ -245,9 +251,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelBotRegistrarDatosProductoMouseClicked
 
     private void jPanelBotRegistrarDatosProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarDatosProveedorMouseClicked
-//        FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
-//        regDatProveedor.setVisible(true);
-//        dispose();
+
+        FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
+        
+        regDatProveedor.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_jPanelBotRegistrarDatosProveedorMouseClicked
 
     private void jPanelBotRegistrarOrdenCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarOrdenCompraMouseClicked

@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -107,6 +109,22 @@ public class OrdenCompraDAO {
             System.err.println("Clase OrdenCompraDAO.buscar:\n" + ex);
         }
         return null;
+    }
+    
+    public static List<OrdenCompraDTO> mostrar() {
+        String sql = "SELECT * FROM tbl_orden_compra";
+        Connection conn = Conexion.getInstance();
+        List<OrdenCompraDTO> lista = null;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            ResultSet rst = pst.executeQuery();
+            lista = new LinkedList<>();
+            while (rst.next()) {
+                lista.add(new OrdenCompraDTO(rst.getInt(1), rst.getInt(2), rst.getDate(3), rst.getDate(4), true));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase FabricanteDAO.buscar:\n" + ex);
+        }
+        return lista;
     }
 
 }
