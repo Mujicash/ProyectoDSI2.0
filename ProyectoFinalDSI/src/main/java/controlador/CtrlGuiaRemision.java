@@ -23,6 +23,7 @@ import java.util.Date;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import vista.FrmGestionarInventario;
 import vista.FrmRegistrarGuiaRemision;
 
 /**
@@ -35,7 +36,8 @@ public class CtrlGuiaRemision implements MouseListener {
     private OrdenCompraDTO compraDTO = new OrdenCompraDTO();
     private final GuiaRemisionDTO model;
     private Foto imagenCargada;
-     
+    private boolean gestionado;
+    
     
     
     public CtrlGuiaRemision(FrmRegistrarGuiaRemision v){
@@ -44,7 +46,17 @@ public class CtrlGuiaRemision implements MouseListener {
         this.vista.setVisible(true);
         this.vista.botonArchivo.addMouseListener(this);
         this.vista.botonBuscar.addMouseListener(this);
+        this.vista.botonGestionar.addMouseListener(this);
         this.vista.botonGuardar.addMouseListener(this);
+        this.gestionado = false;
+    }
+    
+    public void setGestion(boolean g){
+        this.gestionado = g;
+    }
+    
+    public OrdenCompraDTO getOrden(){
+        return compraDTO;
     }
     
     private void limpiar(){
@@ -112,19 +124,29 @@ public class CtrlGuiaRemision implements MouseListener {
         
         }
         
+        if(this.vista.botonGestionar == e.getSource()){
+            CtrlGestionarInventario cg = new CtrlGestionarInventario(new FrmGestionarInventario(),this);
+        }
+        
         if(this.vista.botonGuardar == e.getSource()){
-            model.setNumGuia(vista.textNumero.getText());
-            model.setIdGuia(Integer.parseInt(vista.textOrden.getText()));
-            model.setMotivo(vista.textMotivo.getText());
-            model.setPuntoPartida(vista.textMotivo.getText());
-            model.setFechaInicio(new Date( Integer.parseInt(vista.textAnio.getText()),Integer.parseInt(vista.textMes.getText()) , Integer.parseInt(vista.textDia.getText())));
-            model.setFechaEntrega(Calendar.getInstance().getTime());
-            model.setFoto(imagenCargada);
+            if(gestionado){
+                model.setNumGuia(vista.textNumero.getText());
+                model.setIdGuia(Integer.parseInt(vista.textOrden.getText()));
+                model.setMotivo(vista.textMotivo.getText());
+                model.setPuntoPartida(vista.textMotivo.getText());
+                model.setFechaInicio(new Date( Integer.parseInt(vista.textAnio.getText()),Integer.parseInt(vista.textMes.getText()) , Integer.parseInt(vista.textDia.getText())));
+                model.setFechaEntrega(Calendar.getInstance().getTime());
+                model.setFoto(imagenCargada);
+                model.setGestionado(true);
             
-            GuiaRemisionDAO.insertar(model);
-            compraDTO.setEstado(true);
-            OrdenCompraDAO.modificar(compraDTO);
-            this.limpiar();
+                GuiaRemisionDAO.insertar(model);
+                compraDTO.setEstado(true);
+                OrdenCompraDAO.modificar(compraDTO);
+                this.limpiar();
+            }else{
+                 JOptionPane.showMessageDialog(null, "Porfavor, Gestione el inventario");
+            }
+            
             
         }
         
