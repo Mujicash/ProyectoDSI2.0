@@ -118,7 +118,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelEmpresa.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelEmpresa.setForeground(new java.awt.Color(0, 0, 51));
         jLabelEmpresa.setText("PROVEEDOR:");
-        jPanelBaseRegOrdenCompra.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 100, -1));
+        jPanelBaseRegOrdenCompra.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 130, -1));
 
         jTextFieldCantidad.setBackground(new java.awt.Color(0, 0, 38));
         jTextFieldCantidad.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -173,7 +173,6 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jTextFieldTotal.setEditable(false);
         jTextFieldTotal.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTotal.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldTotal.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldTotal.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextFieldTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

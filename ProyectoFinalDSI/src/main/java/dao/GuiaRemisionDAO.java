@@ -23,7 +23,9 @@ public class GuiaRemisionDAO {
      */
     public static void insertar(GuiaRemisionDTO nuevo) {
 
+
         String sql = "INSERT INTO tbl_guia_remision(num_guia,punto_partida,motivo,fecha_inicio,fecha_entrega,id_guia,img,gestionado) VALUES(?,?,?,?,?,?,?,?)";
+      
         Connection conn = Conexion.getInstance();
 
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
