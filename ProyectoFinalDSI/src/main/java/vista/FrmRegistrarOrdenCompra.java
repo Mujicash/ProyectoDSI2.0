@@ -37,6 +37,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
 
         jPanelBaseRegOrdenCompra = new javax.swing.JPanel();
         jPanelRetPrincipal6 = new javax.swing.JPanel();
+        jLabelReturn = new javax.swing.JLabel();
         jLabelRegOrdenCompra = new javax.swing.JLabel();
         jLabelPrecioCompra = new javax.swing.JLabel();
         jTextFieldPrecCompra = new javax.swing.JTextField();
@@ -52,31 +53,41 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelTotal = new javax.swing.JLabel();
         jTextFieldTotal = new javax.swing.JTextField();
         jbtnAgregar = new javax.swing.JButton();
+        jPanelLinea1 = new javax.swing.JPanel();
+        jPanelLinea2 = new javax.swing.JPanel();
+        jPanelLinea3 = new javax.swing.JPanel();
+        jPanelFranjaDerecha = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanelBaseRegOrdenCompra.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBaseRegOrdenCompra.setBackground(new java.awt.Color(239, 248, 255));
         jPanelBaseRegOrdenCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelRetPrincipal6.setBackground(new java.awt.Color(0, 0, 51));
+        jPanelRetPrincipal6.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRetPrincipal6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRetPrincipal6MouseClicked(evt);
             }
         });
 
+        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+
         javax.swing.GroupLayout jPanelRetPrincipal6Layout = new javax.swing.GroupLayout(jPanelRetPrincipal6);
         jPanelRetPrincipal6.setLayout(jPanelRetPrincipal6Layout);
         jPanelRetPrincipal6Layout.setHorizontalGroup(
             jPanelRetPrincipal6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(jPanelRetPrincipal6Layout.createSequentialGroup()
+                .addComponent(jLabelReturn)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         jPanelRetPrincipal6Layout.setVerticalGroup(
             jPanelRetPrincipal6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(jPanelRetPrincipal6Layout.createSequentialGroup()
+                .addComponent(jLabelReturn)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        jPanelBaseRegOrdenCompra.add(jPanelRetPrincipal6, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 560, 40, 40));
+        jPanelBaseRegOrdenCompra.add(jPanelRetPrincipal6, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, 50, 50));
 
         jLabelRegOrdenCompra.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelRegOrdenCompra.setForeground(new java.awt.Color(0, 0, 51));
@@ -89,9 +100,11 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelPrecioCompra.setText("PRECIO COMPRA:");
         jPanelBaseRegOrdenCompra.add(jLabelPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 150, -1));
 
-        jTextFieldPrecCompra.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldPrecCompra.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPrecCompra.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldPrecCompra.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPrecCompra.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldPrecCompra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldPrecCompra.setBorder(null);
         jTextFieldPrecCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextFieldPrecCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,9 +122,11 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelCodProducto.setText("CÓDIGO MEDICAMENTO:");
         jPanelBaseRegOrdenCompra.add(jLabelCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 210, -1));
 
-        jTextFieldCodProducto.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldCodProducto.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCodProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCodProducto.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldCodProducto.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCodProducto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldCodProducto.setBorder(null);
         jTextFieldCodProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanelBaseRegOrdenCompra.add(jTextFieldCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, 40));
 
@@ -120,9 +135,11 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelEmpresa.setText("PROVEEDOR:");
         jPanelBaseRegOrdenCompra.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 130, -1));
 
-        jTextFieldCantidad.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldCantidad.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCantidad.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCantidad.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldCantidad.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldCantidad.setBorder(null);
         jTextFieldCantidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextFieldCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,9 +153,9 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelCantidad.setText("CANTIDAD:");
         jPanelBaseRegOrdenCompra.add(jLabelCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 120, -1));
 
-        JComboProveedor.setBackground(new java.awt.Color(0, 0, 38));
+        JComboProveedor.setBackground(new java.awt.Color(255, 255, 255));
         JComboProveedor.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        JComboProveedor.setForeground(new java.awt.Color(255, 255, 255));
+        JComboProveedor.setForeground(new java.awt.Color(0, 0, 0));
         JComboProveedor.setAutoscrolls(true);
         JComboProveedor.setBorder(null);
         JComboProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -184,6 +201,66 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jbtnAgregar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jbtnAgregar.setText("AGREGAR");
         jPanelBaseRegOrdenCompra.add(jbtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 110, 40));
+
+        jPanelLinea1.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea1Layout = new javax.swing.GroupLayout(jPanelLinea1);
+        jPanelLinea1.setLayout(jPanelLinea1Layout);
+        jPanelLinea1Layout.setHorizontalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        jPanelLinea1Layout.setVerticalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegOrdenCompra.add(jPanelLinea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 160, 3));
+
+        jPanelLinea2.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea2Layout = new javax.swing.GroupLayout(jPanelLinea2);
+        jPanelLinea2.setLayout(jPanelLinea2Layout);
+        jPanelLinea2Layout.setHorizontalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+        jPanelLinea2Layout.setVerticalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegOrdenCompra.add(jPanelLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 140, 3));
+
+        jPanelLinea3.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea3Layout = new javax.swing.GroupLayout(jPanelLinea3);
+        jPanelLinea3.setLayout(jPanelLinea3Layout);
+        jPanelLinea3Layout.setHorizontalGroup(
+            jPanelLinea3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+        );
+        jPanelLinea3Layout.setVerticalGroup(
+            jPanelLinea3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegOrdenCompra.add(jPanelLinea3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 120, 3));
+
+        jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranjaDerechaLayout = new javax.swing.GroupLayout(jPanelFranjaDerecha);
+        jPanelFranjaDerecha.setLayout(jPanelFranjaDerechaLayout);
+        jPanelFranjaDerechaLayout.setHorizontalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        jPanelFranjaDerechaLayout.setVerticalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegOrdenCompra.add(jPanelFranjaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 65, 60, 5));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -264,8 +341,13 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelEmpresa;
     private javax.swing.JLabel jLabelPrecioCompra;
     private javax.swing.JLabel jLabelRegOrdenCompra;
+    private javax.swing.JLabel jLabelReturn;
     private javax.swing.JLabel jLabelTotal;
     private javax.swing.JPanel jPanelBaseRegOrdenCompra;
+    private javax.swing.JPanel jPanelFranjaDerecha;
+    private javax.swing.JPanel jPanelLinea1;
+    private javax.swing.JPanel jPanelLinea2;
+    private javax.swing.JPanel jPanelLinea3;
     public javax.swing.JPanel jPanelRetPrincipal6;
     public javax.swing.JScrollPane jScrollPaneRegOrdCompra;
     public javax.swing.JTable jTableOrdCompra;

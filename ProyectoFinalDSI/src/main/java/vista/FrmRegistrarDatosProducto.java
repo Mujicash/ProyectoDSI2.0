@@ -34,6 +34,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
 
         jPanelBaseRegDatosProducto = new javax.swing.JPanel();
         jPanelRetPrincipal3 = new javax.swing.JPanel();
+        jLabelReturn = new javax.swing.JLabel();
         jLabelRegDatProducto = new javax.swing.JLabel();
         jLabelCodigo = new javax.swing.JLabel();
         jTextFieldBlister = new javax.swing.JTextField();
@@ -58,37 +59,46 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelCodigo4 = new javax.swing.JLabel();
         jTextFieldCodigoCaja = new javax.swing.JTextField();
         jTextFieldCaja = new javax.swing.JTextField();
+        jPanelLinea1 = new javax.swing.JPanel();
+        jPanelLinea2 = new javax.swing.JPanel();
+        jPanelLinea3 = new javax.swing.JPanel();
+        jPanelFranjaDerecha = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanelBaseRegDatosProducto.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBaseRegDatosProducto.setBackground(new java.awt.Color(239, 248, 255));
         jPanelBaseRegDatosProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelRetPrincipal3.setBackground(new java.awt.Color(0, 0, 51));
+        jPanelRetPrincipal3.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRetPrincipal3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRetPrincipal3MouseClicked(evt);
             }
         });
 
+        jLabelReturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+
         javax.swing.GroupLayout jPanelRetPrincipal3Layout = new javax.swing.GroupLayout(jPanelRetPrincipal3);
         jPanelRetPrincipal3.setLayout(jPanelRetPrincipal3Layout);
         jPanelRetPrincipal3Layout.setHorizontalGroup(
             jPanelRetPrincipal3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addComponent(jLabelReturn, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
         jPanelRetPrincipal3Layout.setVerticalGroup(
             jPanelRetPrincipal3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRetPrincipal3Layout.createSequentialGroup()
+                .addGap(0, 2, Short.MAX_VALUE)
+                .addComponent(jLabelReturn))
         );
 
-        jPanelBaseRegDatosProducto.add(jPanelRetPrincipal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 600, 70, 60));
+        jPanelBaseRegDatosProducto.add(jPanelRetPrincipal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 610, 55, 50));
 
         jLabelRegDatProducto.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelRegDatProducto.setForeground(new java.awt.Color(0, 0, 51));
         jLabelRegDatProducto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelRegDatProducto.setText("REGISTRAR DATOS DEL PRODUCTO");
-        jPanelBaseRegDatosProducto.add(jLabelRegDatProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 490, 50));
+        jPanelBaseRegDatosProducto.add(jLabelRegDatProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 490, 50));
 
         jLabelCodigo.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabelCodigo.setForeground(new java.awt.Color(0, 0, 51));
@@ -108,9 +118,11 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelNombre.setText("NOMBRE:");
         jPanelBaseRegDatosProducto.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, 20));
 
-        jTextFieldNombre.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldNombre.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNombre.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNombre.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldNombre.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldNombre.setBorder(null);
         jTextFieldNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseRegDatosProducto.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 240, 40));
 
@@ -119,9 +131,11 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelPeso.setText("PESO:");
         jPanelBaseRegDatosProducto.add(jLabelPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 90, 20));
 
-        jTextFieldPeso.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldPeso.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPeso.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldPeso.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldPeso.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldPeso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldPeso.setBorder(null);
         jTextFieldPeso.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseRegDatosProducto.add(jTextFieldPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 120, 40));
 
@@ -157,14 +171,17 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelCodigo1.setText("TIPO: ");
         jPanelBaseRegDatosProducto.add(jLabelCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 90, 20));
 
-        jComboBoxMarca.setBackground(new java.awt.Color(0, 0, 38));
+        jComboBoxMarca.setBackground(new java.awt.Color(255, 255, 255));
         jComboBoxMarca.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jComboBoxMarca.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxMarca.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxMarca.setBorder(null);
         jPanelBaseRegDatosProducto.add(jComboBoxMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 290, 40));
 
-        jTextFieldNumBlister.setBackground(new java.awt.Color(0, 0, 38));
+        jTextFieldNumBlister.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNumBlister.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldNumBlister.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNumBlister.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldNumBlister.setBorder(null);
         jTextFieldNumBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseRegDatosProducto.add(jTextFieldNumBlister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 240, 40));
 
@@ -221,6 +238,66 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
             }
         });
         jPanelBaseRegDatosProducto.add(jTextFieldCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 240, 40));
+
+        jPanelLinea1.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea1Layout = new javax.swing.GroupLayout(jPanelLinea1);
+        jPanelLinea1.setLayout(jPanelLinea1Layout);
+        jPanelLinea1Layout.setHorizontalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+        jPanelLinea1Layout.setVerticalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegDatosProducto.add(jPanelLinea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 240, 3));
+
+        jPanelLinea2.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea2Layout = new javax.swing.GroupLayout(jPanelLinea2);
+        jPanelLinea2.setLayout(jPanelLinea2Layout);
+        jPanelLinea2Layout.setHorizontalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+        );
+        jPanelLinea2Layout.setVerticalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegDatosProducto.add(jPanelLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 120, 3));
+
+        jPanelLinea3.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea3Layout = new javax.swing.GroupLayout(jPanelLinea3);
+        jPanelLinea3.setLayout(jPanelLinea3Layout);
+        jPanelLinea3Layout.setHorizontalGroup(
+            jPanelLinea3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+        jPanelLinea3Layout.setVerticalGroup(
+            jPanelLinea3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegDatosProducto.add(jPanelLinea3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 240, 3));
+
+        jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranjaDerechaLayout = new javax.swing.GroupLayout(jPanelFranjaDerecha);
+        jPanelFranjaDerecha.setLayout(jPanelFranjaDerechaLayout);
+        jPanelFranjaDerechaLayout.setHorizontalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        jPanelFranjaDerechaLayout.setVerticalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        jPanelBaseRegDatosProducto.add(jPanelFranjaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 65, 60, 5));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -297,7 +374,12 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPrecioVenta;
     private javax.swing.JLabel jLabelPrecioVenta1;
     private javax.swing.JLabel jLabelRegDatProducto;
+    private javax.swing.JLabel jLabelReturn;
     private javax.swing.JPanel jPanelBaseRegDatosProducto;
+    private javax.swing.JPanel jPanelFranjaDerecha;
+    private javax.swing.JPanel jPanelLinea1;
+    private javax.swing.JPanel jPanelLinea2;
+    private javax.swing.JPanel jPanelLinea3;
     public javax.swing.JPanel jPanelRetPrincipal3;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JTextField jTextFieldBlister;

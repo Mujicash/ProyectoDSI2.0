@@ -20,10 +20,10 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
      */
     public FrmBuscarOrdenCompra() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(1193, 660);
-        setResizable(false);
-        setLocationRelativeTo(null);
+//        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+//        setSize(1193, 660);
+//        setResizable(false);
+//        setLocationRelativeTo(null);
     }
 
     /**
@@ -37,6 +37,7 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
 
         jPanelBaseBusOrdenCompra = new javax.swing.JPanel();
         jPanelRetPrincipal2 = new javax.swing.JPanel();
+        jLabelReturn = new javax.swing.JLabel();
         jLabelBusOrdenCompra = new javax.swing.JLabel();
         jLabelNomProveedor = new javax.swing.JLabel();
         jButtonBusOrdenCompra = new javax.swing.JButton();
@@ -44,28 +45,33 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
         jTableBusOrdCompra = new javax.swing.JTable();
         jbtnDetalle = new javax.swing.JButton();
         jcbProveedores = new javax.swing.JComboBox<>();
+        jPanelFranjaDerecha = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanelBaseBusOrdenCompra.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBaseBusOrdenCompra.setBackground(new java.awt.Color(239, 248, 255));
         jPanelBaseBusOrdenCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelRetPrincipal2.setBackground(new java.awt.Color(0, 0, 51));
+        jPanelRetPrincipal2.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRetPrincipal2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRetPrincipal2MouseClicked(evt);
             }
         });
 
+        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+
         javax.swing.GroupLayout jPanelRetPrincipal2Layout = new javax.swing.GroupLayout(jPanelRetPrincipal2);
         jPanelRetPrincipal2.setLayout(jPanelRetPrincipal2Layout);
         jPanelRetPrincipal2Layout.setHorizontalGroup(
             jPanelRetPrincipal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(jLabelReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         jPanelRetPrincipal2Layout.setVerticalGroup(
             jPanelRetPrincipal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRetPrincipal2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanelBaseBusOrdenCompra.add(jPanelRetPrincipal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 560, 50, 40));
@@ -119,13 +125,30 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
         jTableBusOrdCompra.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPaneBusOrdCompra.setViewportView(jTableBusOrdCompra);
 
-        jPanelBaseBusOrdenCompra.add(jScrollPaneBusOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 1070, 320));
+        jPanelBaseBusOrdenCompra.add(jScrollPaneBusOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 1060, 320));
 
         jbtnDetalle.setText("VER DETALLE");
         jbtnDetalle.setPreferredSize(new java.awt.Dimension(150, 40));
         jPanelBaseBusOrdenCompra.add(jbtnDetalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, -1, -1));
 
-        jPanelBaseBusOrdenCompra.add(jcbProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 410, -1));
+        jcbProveedores.setBackground(new java.awt.Color(255, 255, 255));
+        jcbProveedores.setForeground(new java.awt.Color(0, 0, 0));
+        jPanelBaseBusOrdenCompra.add(jcbProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 410, 40));
+
+        jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranjaDerechaLayout = new javax.swing.GroupLayout(jPanelFranjaDerecha);
+        jPanelFranjaDerecha.setLayout(jPanelFranjaDerechaLayout);
+        jPanelFranjaDerechaLayout.setHorizontalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        jPanelFranjaDerechaLayout.setVerticalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        jPanelBaseBusOrdenCompra.add(jPanelFranjaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 65, 60, 5));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,7 +209,9 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
     public javax.swing.JButton jButtonBusOrdenCompra;
     private javax.swing.JLabel jLabelBusOrdenCompra;
     private javax.swing.JLabel jLabelNomProveedor;
+    private javax.swing.JLabel jLabelReturn;
     private javax.swing.JPanel jPanelBaseBusOrdenCompra;
+    private javax.swing.JPanel jPanelFranjaDerecha;
     public javax.swing.JPanel jPanelRetPrincipal2;
     public javax.swing.JScrollPane jScrollPaneBusOrdCompra;
     public javax.swing.JTable jTableBusOrdCompra;
