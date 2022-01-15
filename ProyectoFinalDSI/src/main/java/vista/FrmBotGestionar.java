@@ -32,47 +32,53 @@ public class FrmBotGestionar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelBaseGestionar = new javax.swing.JPanel();
-        jLabelNumOrdCompra = new javax.swing.JLabel();
+        textEncabezado = new javax.swing.JLabel();
         jLabelCajas = new javax.swing.JLabel();
-        jTextFieldCajas = new javax.swing.JTextField();
+        textCaja = new javax.swing.JTextField();
         jLabelBlisters = new javax.swing.JLabel();
-        jTextFieldBlisters = new javax.swing.JTextField();
-        jButtonAceptar = new javax.swing.JButton();
+        textBlister = new javax.swing.JTextField();
+        btnAceptar = new javax.swing.JButton();
+        textMedicamento = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanelBaseGestionar.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBaseGestionar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelNumOrdCompra.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jLabelNumOrdCompra.setForeground(new java.awt.Color(0, 0, 51));
-        jLabelNumOrdCompra.setText("Número de cajas = Número de blister");
-        jPanelBaseGestionar.add(jLabelNumOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 390, -1));
+        textEncabezado.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        textEncabezado.setForeground(new java.awt.Color(0, 0, 51));
+        textEncabezado.setText("Número de cajas = Número de blister");
+        jPanelBaseGestionar.add(textEncabezado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 390, -1));
 
         jLabelCajas.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelCajas.setForeground(new java.awt.Color(0, 0, 51));
         jLabelCajas.setText("CAJAS:");
-        jPanelBaseGestionar.add(jLabelCajas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 80, -1));
+        jPanelBaseGestionar.add(jLabelCajas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 80, -1));
 
-        jTextFieldCajas.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldCajas.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCajas.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldCajas.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseGestionar.add(jTextFieldCajas, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 75, 180, 30));
+        textCaja.setBackground(new java.awt.Color(0, 0, 38));
+        textCaja.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textCaja.setForeground(new java.awt.Color(255, 255, 255));
+        textCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseGestionar.add(textCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 180, 30));
 
         jLabelBlisters.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelBlisters.setForeground(new java.awt.Color(0, 0, 51));
         jLabelBlisters.setText("BLISTERS:");
-        jPanelBaseGestionar.add(jLabelBlisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 90, -1));
+        jPanelBaseGestionar.add(jLabelBlisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 90, -1));
 
-        jTextFieldBlisters.setBackground(new java.awt.Color(0, 0, 38));
-        jTextFieldBlisters.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldBlisters.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldBlisters.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanelBaseGestionar.add(jTextFieldBlisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 135, 180, 30));
+        textBlister.setBackground(new java.awt.Color(0, 0, 38));
+        textBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        textBlister.setForeground(new java.awt.Color(255, 255, 255));
+        textBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanelBaseGestionar.add(textBlister, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 180, 30));
 
-        jButtonAceptar.setText("ACEPTAR");
-        jPanelBaseGestionar.add(jButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+        btnAceptar.setText("ACEPTAR");
+        jPanelBaseGestionar.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, -1));
+
+        textMedicamento.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        textMedicamento.setForeground(new java.awt.Color(0, 0, 51));
+        textMedicamento.setText("Medicamento");
+        jPanelBaseGestionar.add(textMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 390, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,12 +130,13 @@ public class FrmBotGestionar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAceptar;
+    public javax.swing.JButton btnAceptar;
     private javax.swing.JLabel jLabelBlisters;
     private javax.swing.JLabel jLabelCajas;
-    private javax.swing.JLabel jLabelNumOrdCompra;
     private javax.swing.JPanel jPanelBaseGestionar;
-    public javax.swing.JTextField jTextFieldBlisters;
-    public javax.swing.JTextField jTextFieldCajas;
+    public javax.swing.JTextField textBlister;
+    public javax.swing.JTextField textCaja;
+    public javax.swing.JLabel textEncabezado;
+    public javax.swing.JLabel textMedicamento;
     // End of variables declaration//GEN-END:variables
 }

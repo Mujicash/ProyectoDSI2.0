@@ -11,6 +11,15 @@ public class DetalleCompraDTO {
     private int idMedicamento;
     private int unidades;
     private double precio;
+    private boolean gestionado;
+
+    public boolean isGestionado() {
+        return gestionado;
+    }
+
+    public void setGestionado(boolean gestionado) {
+        this.gestionado = gestionado;
+    }
 
     public DetalleCompraDTO() {
     }
@@ -25,6 +34,14 @@ public class DetalleCompraDTO {
         this.idMedicamento = idMedicamento;
         this.unidades = unidades;
         this.precio = precio;
+    }
+    
+    public DetalleCompraDTO(int idOrdenCompra, int idMedicamento, int unidades, double precio,boolean gestionado) {
+        this.idOrdenCompra = idOrdenCompra;
+        this.idMedicamento = idMedicamento;
+        this.unidades = unidades;
+        this.precio = precio;
+        this.gestionado = gestionado;
     }
 
     public int getIdOrdenCompra() {

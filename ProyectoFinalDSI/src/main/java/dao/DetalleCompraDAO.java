@@ -25,13 +25,14 @@ public class DetalleCompraDAO {
      * @return 
      */
     public static boolean insertar(DetalleCompraDTO nuevo) {
-        String sql = "INSERT INTO tbl_detalle_compra(id_orden,id_medicamento,unidades,precio) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO tbl_detalle_compra(id_orden,id_medicamento,unidades,precio,gestionado) VALUES(?,?,?,?,?)";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, nuevo.getIdOrdenCompra());
             pst.setInt(2, nuevo.getIdMedicamento());
             pst.setInt(3, nuevo.getUnidades());
             pst.setDouble(4, nuevo.getPrecio());
+            pst.setBoolean(5,false);
             if(pst.executeUpdate() > 0){
                 return true;
             }
@@ -46,19 +47,36 @@ public class DetalleCompraDAO {
      * @param modificado DTO del Detalle de compra ha modificar en la base de datos
      */
     public static void modificar(DetalleCompraDTO modificado) {
-        String sql = "UPDATE tbl_detalle_compra SET unidades=?,precio=? WHERE id_orden=? AND id_medicamento=?";
+        String sql = "UPDATE tbl_detalle_compra SET unidades=?,precio=?,gestionado = ? WHERE id_orden=? AND id_medicamento=?";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, modificado.getUnidades());
             pst.setDouble(2, modificado.getPrecio());
-            pst.setInt(3, modificado.getIdOrdenCompra());
-            pst.setInt(4, modificado.getIdMedicamento());
+            pst.setBoolean(3, modificado.isGestionado());
+            pst.setInt(4, modificado.getIdOrdenCompra());
+            pst.setInt(5, modificado.getIdMedicamento());
+            
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.err.println("Clase DetalleCompraDAO.modificar:\n" + ex);
         }
     }
 
+    
+    public static void actulizarOrden(int orden) {
+        String sql = "UPDATE tbl_detalle_compra SET gestionado = 1 WHERE id_orden=? ";
+        Connection conn = Conexion.getInstance();
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, orden);
+
+            
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println("Clase DetalleCompraDAO.modificar:\n" + ex);
+        }
+    }
+
+    
     /**
      *
      * @param idOrdenCompra ID de la Orden de Compra del Detalle de compra ha eliminar en la base de datos
@@ -90,7 +108,7 @@ public class DetalleCompraDAO {
             pst.setInt(2, idMedicamento);
             ResultSet rst = pst.executeQuery();
             if (rst.next()) {
-                return new DetalleCompraDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getFloat(4));
+                return new DetalleCompraDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getFloat(4),rst.getBoolean(5));
             }
         } catch (SQLException ex) {
             System.err.println("Clase DetalleCompraDAO.eliminar:\n" + ex);
@@ -107,7 +125,7 @@ public class DetalleCompraDAO {
             ResultSet rst = pst.executeQuery();
             lista = new LinkedList<>();
             while(rst.next()){
-                lista.add(new DetalleCompraDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getDouble(4)));
+                lista.add(new DetalleCompraDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getDouble(4),rst.getBoolean(5)));
             }
         } catch (SQLException ex) {
             System.err.println("Clase DetalleCompraDAO.eliminar:\n" + ex);
