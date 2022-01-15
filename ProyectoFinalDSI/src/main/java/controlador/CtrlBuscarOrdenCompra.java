@@ -39,7 +39,7 @@ public class CtrlBuscarOrdenCompra implements ActionListener, ControlStrategy {
     @Override
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(1160, 620);
+        this.vista.setSize(1160, 658);
         this.vista.jPanelRetPrincipal2.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
