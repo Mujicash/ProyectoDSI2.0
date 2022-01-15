@@ -39,7 +39,6 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
         jPanelRetBuscarOdenCompra = new javax.swing.JPanel();
         jScrollPaneDetOrdCompra = new javax.swing.JScrollPane();
         jTableDetOrdCompra = new javax.swing.JTable();
-        jButtonEditar = new javax.swing.JButton();
         jLabelDetOrdenCompra = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,11 +93,6 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
         jScrollPaneDetOrdCompra.setViewportView(jTableDetOrdCompra);
 
         jPanelBaseDetOrdenCompra.add(jScrollPaneDetOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 920, 340));
-
-        jButtonEditar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButtonEditar.setText("EDITAR");
-        jButtonEditar.setPreferredSize(new java.awt.Dimension(110, 40));
-        jPanelBaseDetOrdenCompra.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 470, -1, -1));
 
         jLabelDetOrdenCompra.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelDetOrdenCompra.setForeground(new java.awt.Color(0, 0, 51));
@@ -162,7 +156,6 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonEditar;
     private javax.swing.JLabel jLabelDetOrdenCompra;
     private javax.swing.JPanel jPanelBaseDetOrdenCompra;
     public javax.swing.JPanel jPanelRetBuscarOdenCompra;

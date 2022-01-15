@@ -17,7 +17,7 @@ import vista.FrmDetalleOrdenCompra;
  *
  * @author Andre Mujica
  */
-public class CtrlDetalleOrdeCompra implements ActionListener, ControlStrategy {
+public class CtrlDetalleOrdeCompra implements ControlStrategy {
     
     private final FrmDetalleOrdenCompra vista;
     private CtrlMaster ctrl;
@@ -40,7 +40,6 @@ public class CtrlDetalleOrdeCompra implements ActionListener, ControlStrategy {
                 retroceder(evt);
             }
         });
-        vista.jButtonEditar.addActionListener(this);
         //vista.jButtonGuardar.addActionListener(this);
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
@@ -75,15 +74,6 @@ public class CtrlDetalleOrdeCompra implements ActionListener, ControlStrategy {
     public void cerrar() {
         this.vista.dispose();
         this.ctrl = null;
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-        if(e.getSource() == vista.jButtonEditar){
-            //Funcionalidad de Edicion
-        }
-
     }
     
 }
