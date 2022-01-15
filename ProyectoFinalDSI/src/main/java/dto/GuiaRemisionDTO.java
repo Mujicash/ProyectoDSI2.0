@@ -2,6 +2,7 @@
 package dto;
 
 import extra.Foto;
+import extra.ImagenMySQL;
 import java.util.Date;
 import java.util.Calendar;
 
@@ -19,6 +20,39 @@ public class GuiaRemisionDTO {
     private Date fechaEntrega;
     private Foto guia;
     private boolean gestionado;
+    private ImagenMySQL img;
+
+    public GuiaRemisionDTO(int idGuia, String numGuia, String puntoPartida, String motivo, Date fechaInicio, boolean gestionado, ImagenMySQL img) {
+        this.idGuia = idGuia;
+        this.numGuia = numGuia;
+        this.puntoPartida = puntoPartida;
+        this.motivo = motivo;
+        this.fechaInicio = fechaInicio;
+        this.gestionado = gestionado;
+        this.img = img;
+    }
+
+    
+    
+    
+    public ImagenMySQL getImg() {
+        return img;
+    }
+
+    public void setImg(ImagenMySQL img) {
+        this.img = img;
+    }
+
+
+    public Foto getGuia() {
+        return guia;
+    }
+
+    public void setGuia(Foto guia) {
+        this.guia = guia;
+    }
+
+
 
     public boolean isGestionado() {
         return gestionado;

@@ -56,7 +56,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelBaseRegGuiaRemision = new javax.swing.JPanel();
-        jPanelRetPrincipal5 = new javax.swing.JPanel();
+        btnRetro = new javax.swing.JPanel();
         jLabelRegGuiaRemision = new javax.swing.JLabel();
         jLabelNumOrdCompra = new javax.swing.JLabel();
         textOrden = new javax.swing.JTextField();
@@ -85,25 +85,25 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jPanelBaseRegGuiaRemision.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBaseRegGuiaRemision.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelRetPrincipal5.setBackground(new java.awt.Color(0, 0, 51));
-        jPanelRetPrincipal5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRetro.setBackground(new java.awt.Color(0, 0, 51));
+        btnRetro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelRetPrincipal5MouseClicked(evt);
+                btnRetroMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelRetPrincipal5Layout = new javax.swing.GroupLayout(jPanelRetPrincipal5);
-        jPanelRetPrincipal5.setLayout(jPanelRetPrincipal5Layout);
-        jPanelRetPrincipal5Layout.setHorizontalGroup(
-            jPanelRetPrincipal5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout btnRetroLayout = new javax.swing.GroupLayout(btnRetro);
+        btnRetro.setLayout(btnRetroLayout);
+        btnRetroLayout.setHorizontalGroup(
+            btnRetroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
         );
-        jPanelRetPrincipal5Layout.setVerticalGroup(
-            jPanelRetPrincipal5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        btnRetroLayout.setVerticalGroup(
+            btnRetroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanelBaseRegGuiaRemision.add(jPanelRetPrincipal5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 450, 60, 60));
+        jPanelBaseRegGuiaRemision.add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 450, 60, 60));
 
         jLabelRegGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelRegGuiaRemision.setForeground(new java.awt.Color(0, 0, 51));
@@ -270,11 +270,11 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanelRetPrincipal5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRetPrincipal5MouseClicked
+    private void btnRetroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetroMouseClicked
 //        FrmPrincipal ret5 = new FrmPrincipal();
 //        ret5.setVisible(true);
 //        dispose();
-    }//GEN-LAST:event_jPanelRetPrincipal5MouseClicked
+    }//GEN-LAST:event_btnRetroMouseClicked
 
     private void botonArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArchivoActionPerformed
         
@@ -342,6 +342,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     public javax.swing.JButton botonBuscar;
     public javax.swing.JButton botonGestionar;
     public javax.swing.JButton botonGuardar;
+    public javax.swing.JPanel btnRetro;
     private javax.swing.JLabel jLabelFechaIniTraslado;
     private javax.swing.JLabel jLabelMotTraslado;
     private javax.swing.JLabel jLabelNombreArchivo;
@@ -351,7 +352,6 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPunPartida;
     private javax.swing.JLabel jLabelRegGuiaRemision;
     private javax.swing.JPanel jPanelBaseRegGuiaRemision;
-    private javax.swing.JPanel jPanelRetPrincipal5;
     public javax.swing.JPanel panelArchivo;
     public javax.swing.JTextField textAnio;
     public javax.swing.JTextField textArchivo;

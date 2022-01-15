@@ -17,8 +17,6 @@ import java.awt.image.BufferedImage;
 public class ImagenMySQL extends javax.swing.JPanel{
         
     private BufferedImage ruta;
-    private int ancho;
-    private int alto;
     private boolean ban;
 
     public boolean isBan() {
@@ -46,14 +44,7 @@ public class ImagenMySQL extends javax.swing.JPanel{
     @Override
     public void paint(Graphics g){
         Dimension h = getSize();
-        //ImageIcon img = new ImageIcon(getClass().getResource(ruta));
-        //Image imgExt = new ImageIcon(ruta).getImage();
-        
-        BufferedImage img = ruta;
-        
-        //g.drawImage(img.getImage(),0,0,h.width,h.height,null);
-        //g.drawImage(imgExt,0,0,h.width,h.height,null);
-        g.drawImage(img,0,0,h.width,h.height,null);
+        g.drawImage(ruta,0,0,h.width,h.height,null);
         setOpaque(false);
         super.paintComponent(g);
     }

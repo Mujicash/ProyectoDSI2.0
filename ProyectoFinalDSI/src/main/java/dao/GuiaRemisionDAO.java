@@ -2,10 +2,14 @@ package dao;
 
 import conexion.Conexion;
 import dto.GuiaRemisionDTO;
+import extra.ImagenMySQL;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -33,8 +37,9 @@ public class GuiaRemisionDAO {
             pst.setDate(4, new java.sql.Date(nuevo.getFechaInicio().getTime()));
             pst.setDate(5, new java.sql.Date(nuevo.getFechaEntrega().getTime()));
             pst.setInt(6, nuevo.getIdGuia());
-            pst.setBoolean(7, true);
             pst.setBinaryStream(7, nuevo.getFoto().getFis(), (int) nuevo.getFoto().getFich().length());
+            pst.setBoolean(8, true);
+            
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.err.println("Clase GuiaRemisionDAO.insertar:\n" + ex);
@@ -83,14 +88,41 @@ public class GuiaRemisionDAO {
      * @param idGuia ID con el que se registro el Fabricante
      * @return La guia de remision buscada
      */
-    public static GuiaRemisionDTO buscar(int idGuia) {
+    public static GuiaRemisionDTO buscar(int idGuia){
+        
+        InputStream imp;
+        ImagenMySQL img = new ImagenMySQL();
+        
         String sql = "SELECT * FROM tbl_guia_remision WHERE id_guia=?";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, idGuia);
             ResultSet rst = pst.executeQuery();
+            
+            
+            
+            
+            
             if (rst.next()) {
-                return new GuiaRemisionDTO(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getDate(5), rst.getDate(6),rst.getBoolean(7));
+                
+                imp=rst.getBinaryStream(7);
+                
+                if(imp ==null){
+                    img.setBan(false);
+                }else{
+                    img.setBan(true);
+                    
+                    try{
+                       img.setRuta(ImageIO.read(imp));  
+                    }catch(IOException ex){
+                        System.out.println(ex);
+                    }
+                    
+                    
+                }
+                
+                
+                return new GuiaRemisionDTO(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getDate(5),rst.getBoolean(8),img);
             }
         } catch (SQLException ex) {
             System.err.println("Clase GuiaRemisionDAO.buscar:\n" + ex);

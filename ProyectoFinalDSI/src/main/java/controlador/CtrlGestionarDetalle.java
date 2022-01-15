@@ -10,6 +10,7 @@ import dao.MedicamentoDAO;
 import dao.ProductoDAO;
 import dto.DetalleCompraDTO;
 import dto.MedicamentoDTO;
+import interfaces.ControlStrategy;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
@@ -19,23 +20,20 @@ import vista.FrmBotGestionar;
  *
  * @author Usuario
  */
-public class CtrlGestionarDetalle implements MouseListener {
+public class CtrlGestionarDetalle implements MouseListener, ControlStrategy {
     
     private final FrmBotGestionar vent;
     private final DetalleCompraDTO padre;
     private final MedicamentoDTO med;
+    private CtrlMaster ctrl;
 
-    public CtrlGestionarDetalle(FrmBotGestionar vent, DetalleCompraDTO padre) {
-        this.vent = vent;
+    public CtrlGestionarDetalle( DetalleCompraDTO padre,CtrlMaster ctrl) {
+        this.vent = new FrmBotGestionar();
         this.padre = padre;
-        
-        this.vent.setVisible(true);
-        this.vent.btnAceptar.addMouseListener(this);
+        this.ctrl = ctrl;
         
         med = MedicamentoDAO.buscar(this.padre.getIdMedicamento());
         
-        this.vent.textMedicamento.setText(med.getNombre() + " " + med.getMedida() + " " + FabricanteDAO.buscar(med.getIdFabricante()).getNombre());
-        this.vent.textEncabezado.setText("1 caja = "+ med.getNum_blister() +" blisters");
     }
     
 
@@ -44,22 +42,19 @@ public class CtrlGestionarDetalle implements MouseListener {
         if(e.getSource() == this.vent.btnAceptar){
             int cajas = Integer.parseInt(this.vent.textCaja.getText());
             int blister = Integer.parseInt(this.vent.textBlister.getText());
-            int factor = cajas*med.getNum_blister() + blister;
+            int factor = cajas + blister;
             
-            if(factor == padre.getUnidades()*med.getNum_blister()){
+            if(factor == padre.getUnidades()){
                 ProductoDAO.aumentarStock(med.getIdMedicamento(),1, cajas);
-                ProductoDAO.aumentarStock(med.getIdMedicamento(),2, blister);
+                ProductoDAO.aumentarStock(med.getIdMedicamento(),2, blister*med.getNum_blister());
                 
                 padre.setGestionado(true);
                 
                 JOptionPane.showMessageDialog(null, "Stock Actualizado");
+          
+                this.cerrar();
                 
-                
-                
-                this.vent.setVisible(false);
-                this.vent.dispose();
-                
-            }else if(factor <=  padre.getUnidades()*med.getNum_blister() ){
+            }else if(factor <=  padre.getUnidades() ){
                 
                 JOptionPane.showMessageDialog(null, "Aun le sobran unidades, porfavor revise sus valores ");
                 
@@ -67,7 +62,9 @@ public class CtrlGestionarDetalle implements MouseListener {
                 JOptionPane.showMessageDialog(null, "Se ha excedido en las unidades, porfavor revise sus valores ");
             }
      
-        }   
+        }
+        
+        
     }
 
     @Override
@@ -81,5 +78,19 @@ public class CtrlGestionarDetalle implements MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {}
+
+    @Override
+    public void iniciar() {
+        this.vent.setVisible(true);
+        this.vent.btnAceptar.addMouseListener(this);
+        this.vent.textMedicamento.setText(med.getNombre() + " " + med.getMedida() + " " + FabricanteDAO.buscar(med.getIdFabricante()).getNombre());
+        this.vent.textEncabezado.setText("1 caja = "+ med.getNum_blister() +" blisters");
+    }
+
+    @Override
+    public void cerrar() {
+        this.vent.dispose();
+        //this.ctrl = null;
+    }
     
 }

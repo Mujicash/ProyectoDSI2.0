@@ -231,11 +231,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void jPanelBotRegistrarGuiaRemisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
 
-        FrmRegistrarGuiaRemision regGuiaRemision = new FrmRegistrarGuiaRemision();
-        CtrlGuiaRemision ctrl = new CtrlGuiaRemision(regGuiaRemision);
-        //regGuiaRemision.setVisible(true);
-        dispose();
-
     }//GEN-LAST:event_jPanelBotRegistrarGuiaRemisionMouseClicked
 
     private void jPanelBotBuscarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotBuscarProductoMouseClicked
@@ -254,7 +249,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
         
-        regDatProveedor.setVisible(true);
+        //regDatProveedor.setVisible(true);
         dispose();
 
     }//GEN-LAST:event_jPanelBotRegistrarDatosProveedorMouseClicked

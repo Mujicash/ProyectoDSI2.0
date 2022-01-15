@@ -9,6 +9,7 @@ import dao.DetalleCompraDAO;
 import dao.MedicamentoDAO;
 import dao.ProveedorDAO;
 import dto.DetalleCompraDTO;
+import interfaces.ControlStrategy;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
@@ -23,28 +24,20 @@ import vista.FrmGestionarInventario;
  *
  * @author Usuario
  */
-public class CtrlGestionarInventario implements MouseListener {
+public class CtrlGestionarInventario implements MouseListener,ControlStrategy {
     
     private FrmGestionarInventario vent;
     private CtrlGuiaRemision padre;
     private final List<DetalleCompraDTO> compra;
+    private CtrlMaster ctrl;
     
-    public CtrlGestionarInventario(FrmGestionarInventario v,CtrlGuiaRemision c){
-        this.vent = v;
+    public CtrlGestionarInventario(CtrlGuiaRemision c,CtrlMaster ctrl){
+        this.vent = new FrmGestionarInventario();
         this.padre = c;
         this.compra = DetalleCompraDAO.detalle(padre.getOrden().getIdOrdenCompra());
-        this.vent.setVisible(true);
+        this.ctrl = ctrl;
         
-        this.vent.textOrden.setText(String.valueOf(padre.getOrden().getIdOrdenCompra()));
-       
-        String prov = ProveedorDAO.buscar(padre.getOrden().getProveedor()).getNombre();
-        this.vent.textProveedor.setText(prov);
-        
-        this.vent.btnRetro.addMouseListener(this);
-        this.vent.btnAceptar.addMouseListener(this);
-        this.vent.tblDetalle.addMouseListener(this);
-        
-        this.inicializarTabla();
+      
     }
 
      private void inicializarTabla(){
@@ -95,7 +88,8 @@ public class CtrlGestionarInventario implements MouseListener {
         
         if(columna==2){
             if(!compra.get(fila).isGestionado()){
-                CtrlGestionarDetalle cd = new CtrlGestionarDetalle(new FrmBotGestionar(),compra.get(fila)); 
+                //CtrlGestionarDetalle cd = new CtrlGestionarDetalle(compra.get(fila),this.ctrl); 
+                this.ctrl.emergente(new CtrlGestionarDetalle(compra.get(fila),this.ctrl));
             }else{
                 JOptionPane.showMessageDialog(null, "Este campo ya esta gestionado");
             }        
@@ -105,10 +99,9 @@ public class CtrlGestionarInventario implements MouseListener {
             if(this.validarGestion()){
                 padre.setGestion(true);
                 DetalleCompraDAO.actulizarOrden(padre.getOrden().getIdOrdenCompra());
-                this.vent.setVisible(false);
-                this.vent.dispose();
+                this.cerrar();
             }else{
-                JOptionPane.showMessageDialog(null, "Porfavor, termine de gestionar el inventario");
+                JOptionPane.showMessageDialog(null, "Por favor, termine de gestionar el inventario");
             }
         }
     }
@@ -121,5 +114,24 @@ public class CtrlGestionarInventario implements MouseListener {
     public void mouseEntered(MouseEvent e) {}
     @Override
     public void mouseExited(MouseEvent e) {}
+
+    @Override
+    public void iniciar() {
+        this.vent.setVisible(true);
+        this.vent.textOrden.setText(String.valueOf(padre.getOrden().getIdOrdenCompra()));
+        String prov = ProveedorDAO.buscar(padre.getOrden().getProveedor()).getNombre();
+        this.vent.textProveedor.setText(prov);
+        this.vent.btnRetro.addMouseListener(this);
+        this.vent.btnAceptar.addMouseListener(this);
+        this.vent.tblDetalle.addMouseListener(this);
+        
+        this.inicializarTabla();
+    }
+
+    @Override
+    public void cerrar() {
+        this.vent.dispose();
+       // this.ctrl = null;
+    }
     
 }

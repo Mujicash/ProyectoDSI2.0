@@ -140,7 +140,7 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
         jTableBusProducto.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPaneBusProducto.setViewportView(jTableBusProducto);
 
-        jPanelBaseBusProducto.add(jScrollPaneBusProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 1070, 320));
+        jPanelBaseBusProducto.add(jScrollPaneBusProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 1070, 320));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
