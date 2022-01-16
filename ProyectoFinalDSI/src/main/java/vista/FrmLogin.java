@@ -54,7 +54,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanelBase.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBase.setBackground(new java.awt.Color(255, 255, 255));
         jPanelBase.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
@@ -106,19 +106,19 @@ public class FrmLogin extends javax.swing.JFrame {
         jPanelCentral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNomBotica.setBackground(new java.awt.Color(0, 0, 0));
-        jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jLabelNomBotica.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 48)); // NOI18N
+        jLabelNomBotica.setForeground(new java.awt.Color(0, 5, 25));
         jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomBotica.setText("CRUZ DE MAYO");
         jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 40));
 
         jLabelNomContraseña.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
-        jLabelNomContraseña.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNomContraseña.setForeground(new java.awt.Color(0, 5, 25));
         jLabelNomContraseña.setText("CONTRASEÑA:");
         jPanelCentral.add(jLabelNomContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 160, 30));
 
         jLabelNomUsuario.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
-        jLabelNomUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNomUsuario.setForeground(new java.awt.Color(0, 5, 25));
         jLabelNomUsuario.setText("USUARIO:");
         jPanelCentral.add(jLabelNomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 160, 30));
 
@@ -155,9 +155,11 @@ public class FrmLogin extends javax.swing.JFrame {
         jPanelCentral.add(jPanelBotonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 180, 40));
 
         jLabelUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelUser.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\user.png")); // NOI18N
         jPanelCentral.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 175, 50, 50));
 
         jLabelPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelPassword.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\password.png")); // NOI18N
         jPanelCentral.add(jLabelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 303, 40, 50));
 
         jPanelBase.add(jPanelCentral, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 430, 490));
