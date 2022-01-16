@@ -1,4 +1,3 @@
-
 package controlador;
 
 import dao.MedicamentoDAO;
@@ -29,7 +28,7 @@ import vista.FrmRegistrarOrdenSalida;
  * @author Andre Mujica
  */
 public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy {
-    
+
     private final FrmRegistrarOrdenSalida vista;
     private CtrlMaster ctrl;
     private final List<MedicamentoDTO> cbMedicamentos;
@@ -47,8 +46,6 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
         idMedicamento = new ArrayList<>();
         cantidades = new ArrayList<>();
     }
-    
-    
 
     @Override
     public void iniciar() {
@@ -65,34 +62,34 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
         vista.jButtonCrearOrden.addActionListener(this);
         vista.jButtonDescartar.addActionListener(this);
         vista.jButtonDescartarProducto.addActionListener(this);
-        
+
         this.cbMedicamentos.forEach(item -> this.vista.jcbMedicamentos.addItem(item.getNombre()));
         this.cbTipoProducto.forEach(item -> this.vista.jcbTipo.addItem(item.getFormato()));
-        
+
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
         inicializarTabla();
     }
-    
-    private void inicializarTabla(){
+
+    private void inicializarTabla() {
         String[] colums = {"IDPRODUCTO", "NOMBRE", "CANTIDAD"};
-        FrmRegistrarOrdenSalida.modelSalida = new DefaultTableModel(null,colums);        
+        FrmRegistrarOrdenSalida.modelSalida = new DefaultTableModel(null, colums);
         vista.jTableRegOrdSalida.setModel(FrmRegistrarOrdenSalida.modelSalida);
     }
-    
-    private void cargarTabla(int idMedicamento, int idTipo, String nombreProducto, int cantidad){
+
+    private void cargarTabla(int idMedicamento, int idTipo, String nombreProducto, int cantidad) {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         StringBuilder sb = new StringBuilder();
         sb.append(idMedicamento);
         sb.append(idTipo);
-        
+
         Object[] fila = {sb.toString(), nombreProducto, cantidad};
         FrmRegistrarOrdenSalida.modelSalida.addRow(fila);
-        
+
         vista.jTableRegOrdSalida.setModel(FrmRegistrarOrdenSalida.modelSalida);
-        
-        for(int i = 0; i < vista.jTableRegOrdSalida.getColumnCount(); i++){
+
+        for (int i = 0; i < vista.jTableRegOrdSalida.getColumnCount(); i++) {
             vista.jTableRegOrdSalida.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
@@ -102,55 +99,55 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
         this.vista.dispose();
         this.ctrl = null;
     }
-    
-    private void limpiarCajas(){
+
+    private void limpiarCajas() {
         vista.jcbMedicamentos.setSelectedIndex(-1);
         vista.jcbTipo.setSelectedIndex(-1);
         vista.jTextFieldCantProducto.setText("");
     }
-    
-    public void retroceder(MouseEvent e){
+
+    public void retroceder(MouseEvent e) {
         if (e.getSource() == this.vista.jPanelRetPrincipal7) {
             this.ctrl.visualizar(new CtrlPrincipal(this.ctrl));
-        } 
+        }
     }
-    
-    private void descartar(){
+
+    private void descartar() {
         idMedicamento = new ArrayList<>();
         idTipo = new ArrayList<>();
         cantidades = new ArrayList<>();
         limpiarCajas();
-        inicializarTabla(); 
+        inicializarTabla();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        if(e.getSource() == vista.jButtonCrearOrden){
-            
-            EncargadoBoticaDTO usuario = new EncargadoBoticaDTO(ctrl.usuario.getIdUsuario());
+
+        if (e.getSource() == vista.jButtonCrearOrden) {
+
+            EncargadoBoticaDTO usuario = new EncargadoBoticaDTO(ctrl.getUsuario().getIdUsuario());
             Object[] datosOrden = new Object[]{Calendar.getInstance().getTime(), vista.jTextFieldMotSalida.getText()};
             Object[][] datosDetalle = new Object[idMedicamento.size()][];
-            
-            for(int i = 0; i < idMedicamento.size(); i++){
+
+            for (int i = 0; i < idMedicamento.size(); i++) {
                 datosDetalle[i] = new Object[]{idTipo.get(i), idMedicamento.get(i), cantidades.get(i)};
             }
-            
+
             Orden salida = usuario.crearOrden(datosOrden);
             OrdenSalidaDAO.insertar((OrdenSalidaDTO) salida);
             System.out.println(((OrdenSalidaDTO) salida).getIdOrdenSalida());
             JOptionPane.showMessageDialog(null, salida.generarDetalle(datosDetalle));
-            
+
             descartar();
         }
-        
-        if(e.getSource() == vista.jButtonDescartar){
-            
+
+        if (e.getSource() == vista.jButtonDescartar) {
+
             descartar();
-                    
+
         }
-        
-        if(e.getSource() == vista.jButtonDescartarProducto){
+
+        if (e.getSource() == vista.jButtonDescartarProducto) {
             //Funcionalidad para eliminar un registro producto de la tabla
             
             int filaSelec = vista.jTableRegOrdSalida.getSelectedRow();
@@ -174,23 +171,23 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
             }
             
         }
-        
-        if(e.getSource() == vista.jbtnAgregarProducto){
-            int idMe = vista.jcbMedicamentos.getSelectedIndex()+1;
-            int idTip = vista.jcbTipo.getSelectedIndex()+1;
+
+        if (e.getSource() == vista.jbtnAgregarProducto) {
+            int idMe = vista.jcbMedicamentos.getSelectedIndex() + 1;
+            int idTip = vista.jcbTipo.getSelectedIndex() + 1;
             int cant = Integer.valueOf(vista.jTextFieldCantProducto.getText());
             ProductoDTO producto = ProductoDAO.buscar(idMe, idTip);
-            if(producto != null){
+            if (producto != null) {
                 idMedicamento.add(idMe);
                 idTipo.add(idTip);
                 cantidades.add(cant);
-                
+
                 cargarTabla(idMe, idTip, MedicamentoDAO.buscar(idMe).getNombre(), cant);
                 limpiarCajas();
             }
-            
+
         }
 
     }
-    
+
 }
