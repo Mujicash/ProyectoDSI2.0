@@ -39,10 +39,12 @@ public class FrmBotGestionar extends javax.swing.JFrame {
         textBlister = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
         textMedicamento = new javax.swing.JLabel();
+        jPanelLinea1 = new javax.swing.JPanel();
+        jPanelLinea2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanelBaseGestionar.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBaseGestionar.setBackground(new java.awt.Color(239, 248, 255));
         jPanelBaseGestionar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textEncabezado.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -53,22 +55,26 @@ public class FrmBotGestionar extends javax.swing.JFrame {
         jLabelCajas.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelCajas.setForeground(new java.awt.Color(0, 0, 51));
         jLabelCajas.setText("CAJAS:");
-        jPanelBaseGestionar.add(jLabelCajas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 80, -1));
+        jPanelBaseGestionar.add(jLabelCajas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 80, 30));
 
-        textCaja.setBackground(new java.awt.Color(0, 0, 38));
+        textCaja.setBackground(new java.awt.Color(255, 255, 255));
         textCaja.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textCaja.setForeground(new java.awt.Color(255, 255, 255));
+        textCaja.setForeground(new java.awt.Color(0, 0, 0));
+        textCaja.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCaja.setBorder(null);
         textCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseGestionar.add(textCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 180, 30));
 
         jLabelBlisters.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelBlisters.setForeground(new java.awt.Color(0, 0, 51));
         jLabelBlisters.setText("BLISTERS:");
-        jPanelBaseGestionar.add(jLabelBlisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 90, -1));
+        jPanelBaseGestionar.add(jLabelBlisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 90, 30));
 
-        textBlister.setBackground(new java.awt.Color(0, 0, 38));
+        textBlister.setBackground(new java.awt.Color(255, 255, 255));
         textBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textBlister.setForeground(new java.awt.Color(255, 255, 255));
+        textBlister.setForeground(new java.awt.Color(0, 0, 0));
+        textBlister.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textBlister.setBorder(null);
         textBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseGestionar.add(textBlister, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 180, 30));
 
@@ -79,6 +85,36 @@ public class FrmBotGestionar extends javax.swing.JFrame {
         textMedicamento.setForeground(new java.awt.Color(0, 0, 51));
         textMedicamento.setText("Medicamento");
         jPanelBaseGestionar.add(textMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 390, -1));
+
+        jPanelLinea1.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea1Layout = new javax.swing.GroupLayout(jPanelLinea1);
+        jPanelLinea1.setLayout(jPanelLinea1Layout);
+        jPanelLinea1Layout.setHorizontalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        jPanelLinea1Layout.setVerticalGroup(
+            jPanelLinea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseGestionar.add(jPanelLinea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 180, 3));
+
+        jPanelLinea2.setBackground(new java.awt.Color(0, 5, 25));
+
+        javax.swing.GroupLayout jPanelLinea2Layout = new javax.swing.GroupLayout(jPanelLinea2);
+        jPanelLinea2.setLayout(jPanelLinea2Layout);
+        jPanelLinea2Layout.setHorizontalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        jPanelLinea2Layout.setVerticalGroup(
+            jPanelLinea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jPanelBaseGestionar.add(jPanelLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 180, 3));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,6 +170,8 @@ public class FrmBotGestionar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBlisters;
     private javax.swing.JLabel jLabelCajas;
     private javax.swing.JPanel jPanelBaseGestionar;
+    private javax.swing.JPanel jPanelLinea1;
+    private javax.swing.JPanel jPanelLinea2;
     public javax.swing.JTextField textBlister;
     public javax.swing.JTextField textCaja;
     public javax.swing.JLabel textEncabezado;
