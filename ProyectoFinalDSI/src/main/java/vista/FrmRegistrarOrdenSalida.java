@@ -70,8 +70,6 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
             }
         });
 
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
-
         javax.swing.GroupLayout jPanelRetPrincipal7Layout = new javax.swing.GroupLayout(jPanelRetPrincipal7);
         jPanelRetPrincipal7.setLayout(jPanelRetPrincipal7Layout);
         jPanelRetPrincipal7Layout.setHorizontalGroup(
@@ -105,9 +103,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jLabelCantProducto.setText("CANTIDAD PRODUCTO");
         jPanelBaseRegOrdenSalida.add(jLabelCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 190, -1));
 
-        jTextFieldCantProducto.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCantProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCantProducto.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCantProducto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCantProducto.setBorder(null);
         jTextFieldCantProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -123,9 +119,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jLabelMotSalida.setText("MOTIVO SALIDA");
         jPanelBaseRegOrdenSalida.add(jLabelMotSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 150, -1));
 
-        jTextFieldMotSalida.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMotSalida.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldMotSalida.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMotSalida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldMotSalida.setBorder(null);
         jTextFieldMotSalida.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

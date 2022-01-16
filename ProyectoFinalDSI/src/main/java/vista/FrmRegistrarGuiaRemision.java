@@ -57,7 +57,6 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
 
         jPanelBaseRegGuiaRemision = new javax.swing.JPanel();
         btnRetro = new javax.swing.JPanel();
-        jPanelRetPrincipal5 = new javax.swing.JPanel();
         jLabelReturn = new javax.swing.JLabel();
         jLabelRegGuiaRemision = new javax.swing.JLabel();
         jLabelNumOrdCompra = new javax.swing.JLabel();
@@ -97,35 +96,29 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jPanelBaseRegGuiaRemision.setBackground(new java.awt.Color(239, 248, 255));
         jPanelBaseRegGuiaRemision.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-
-        btnRetro.setBackground(new java.awt.Color(0, 0, 51));
+        btnRetro.setBackground(new java.awt.Color(255, 255, 255));
         btnRetro.addMouseListener(new java.awt.event.MouseAdapter() {
-
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRetroMouseClicked(evt);
             }
         });
 
-
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
-
-        javax.swing.GroupLayout jPanelRetPrincipal5Layout = new javax.swing.GroupLayout(jPanelRetPrincipal5);
-        jPanelRetPrincipal5.setLayout(jPanelRetPrincipal5Layout);
-        jPanelRetPrincipal5Layout.setHorizontalGroup(
-            jPanelRetPrincipal5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRetPrincipal5Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnRetroLayout = new javax.swing.GroupLayout(btnRetro);
+        btnRetro.setLayout(btnRetroLayout);
+        btnRetroLayout.setHorizontalGroup(
+            btnRetroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRetroLayout.createSequentialGroup()
                 .addGap(0, 2, Short.MAX_VALUE)
                 .addComponent(jLabelReturn))
         );
-        jPanelRetPrincipal5Layout.setVerticalGroup(
-            jPanelRetPrincipal5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRetPrincipal5Layout.createSequentialGroup()
+        btnRetroLayout.setVerticalGroup(
+            btnRetroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRetroLayout.createSequentialGroup()
                 .addGap(0, 2, Short.MAX_VALUE)
                 .addComponent(jLabelReturn))
         );
 
-        jPanelBaseRegGuiaRemision.add(jPanelRetPrincipal5, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 455, 50, 50));
-
+        jPanelBaseRegGuiaRemision.add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 460, 50, 50));
 
         jLabelRegGuiaRemision.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelRegGuiaRemision.setForeground(new java.awt.Color(0, 0, 51));
@@ -138,9 +131,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jLabelNumOrdCompra.setText("N° ORDEN COMPRA");
         jPanelBaseRegGuiaRemision.add(jLabelNumOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 260, -1));
 
-        textOrden.setBackground(new java.awt.Color(255, 255, 255));
         textOrden.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textOrden.setForeground(new java.awt.Color(0, 0, 0));
         textOrden.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textOrden.setBorder(null);
         textOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -160,9 +151,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jLabelProveedor.setText("PROVEEDOR");
         jPanelBaseRegGuiaRemision.add(jLabelProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 260, -1));
 
-        textPartida.setBackground(new java.awt.Color(255, 255, 255));
         textPartida.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textPartida.setForeground(new java.awt.Color(0, 0, 0));
         textPartida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPartida.setBorder(null);
         textPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -178,9 +167,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jLabelNombreArchivo.setText("NOMBRE:");
         jPanelBaseRegGuiaRemision.add(jLabelNombreArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 80, 30));
 
-        textNumero.setBackground(new java.awt.Color(255, 255, 255));
         textNumero.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textNumero.setForeground(new java.awt.Color(0, 0, 0));
         textNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textNumero.setBorder(null);
         textNumero.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -191,9 +178,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jLabelMotTraslado.setText("MOTIVO TRASLADO");
         jPanelBaseRegGuiaRemision.add(jLabelMotTraslado, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 200, -1));
 
-        textProveedor.setBackground(new java.awt.Color(255, 255, 255));
         textProveedor.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textProveedor.setForeground(new java.awt.Color(0, 0, 0));
         textProveedor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textProveedor.setBorder(null);
         textProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -204,9 +189,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jLabelFechaIniTraslado.setText("FECHA INICIO TRASLADO");
         jPanelBaseRegGuiaRemision.add(jLabelFechaIniTraslado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 240, -1));
 
-        textAnio.setBackground(new java.awt.Color(255, 255, 255));
         textAnio.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textAnio.setForeground(new java.awt.Color(0, 0, 0));
         textAnio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textAnio.setBorder(null);
         textAnio.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -246,7 +229,6 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         textArchivo.setEditable(false);
         textArchivo.setBackground(new java.awt.Color(255, 255, 255));
         textArchivo.setFont(new java.awt.Font("Sitka Text", 1, 20)); // NOI18N
-        textArchivo.setForeground(new java.awt.Color(0, 0, 0));
         textArchivo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textArchivo.setBorder(null);
         textArchivo.addActionListener(new java.awt.event.ActionListener() {
@@ -261,25 +243,19 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
         jLabelNumGuiaRemision.setText("N° GUÍA REMISIÓN");
         jPanelBaseRegGuiaRemision.add(jLabelNumGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 190, -1));
 
-        textMotivo.setBackground(new java.awt.Color(255, 255, 255));
         textMotivo.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textMotivo.setForeground(new java.awt.Color(0, 0, 0));
         textMotivo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textMotivo.setBorder(null);
         textMotivo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseRegGuiaRemision.add(textMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 320, 40));
 
-        textDia.setBackground(new java.awt.Color(255, 255, 255));
         textDia.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textDia.setForeground(new java.awt.Color(0, 0, 0));
         textDia.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textDia.setBorder(null);
         textDia.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseRegGuiaRemision.add(textDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 50, 40));
 
-        textMes.setBackground(new java.awt.Color(255, 255, 255));
         textMes.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        textMes.setForeground(new java.awt.Color(0, 0, 0));
         textMes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textMes.setBorder(null);
         textMes.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -541,7 +517,6 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRegGuiaRemision;
     private javax.swing.JLabel jLabelReturn;
     private javax.swing.JPanel jPanelBaseRegGuiaRemision;
-
     private javax.swing.JPanel jPanelFranjaDerecha;
     private javax.swing.JPanel jPanelLinea1;
     private javax.swing.JPanel jPanelLinea2;
@@ -552,8 +527,6 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelLinea7;
     private javax.swing.JPanel jPanelLinea8;
     private javax.swing.JPanel jPanelLinea9;
-    private javax.swing.JPanel jPanelRetPrincipal5;
-
     public javax.swing.JPanel panelArchivo;
     public javax.swing.JTextField textAnio;
     public javax.swing.JTextField textArchivo;
