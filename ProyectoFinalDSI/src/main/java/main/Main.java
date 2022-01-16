@@ -29,6 +29,7 @@ public class Main {
 //        UsuarioDTO nuevo = new UsuarioDTO(1, "Ghrand", "123456789", "Gianfranco", "Perez", "Aquise", new Date(new java.util.Date().getTime()), new Date(new java.util.Date().getTime()), 1);
 //        UsuarioDAO.insertar(nuevo);
 
+
         CtrlMaster controlador = new CtrlMaster();
         controlador.setCtrl(new CtrlLogin(controlador));
         controlador.visualizar();
