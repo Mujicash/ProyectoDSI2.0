@@ -62,12 +62,17 @@ public class CtrlRegistrarDatosProveedor implements ActionListener, MouseListene
             }
         }
         if (e.getSource() == this.vista.jButtonGuardarDatProveedor1) {
-            ProveedorDTO nuevo = new ProveedorDTO(0,
-                    this.vista.jTextFieldEmpresa.getText(),
-                    this.vista.jTextFieldRUC.getText(),
-                    this.vista.jTextFieldTelefono.getText(),
-                    this.vista.jTextFieldDireccion.getText());
-            ProveedorDAO.insertar(nuevo);
+            if (ProveedorDAO.buscarRUC(this.vista.jTextFieldRUC.getText())) {
+                JOptionPane.showMessageDialog(this.vista, "Este RUC se encuentra registrado", "RUC encontrado", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                ProveedorDTO nuevo = new ProveedorDTO(0,
+                        this.vista.jTextFieldEmpresa.getText(),
+                        this.vista.jTextFieldRUC.getText(),
+                        this.vista.jTextFieldTelefono.getText(),
+                        this.vista.jTextFieldDireccion.getText());
+                ProveedorDAO.insertar(nuevo);
+            }
+
         }
     }
 

@@ -88,7 +88,7 @@ public class CtrlBuscarProducto implements ActionListener, ControlStrategy {
             int idMedicamento = Integer.parseInt(this.vista.jTextFieldCodigo.getText());
             List<MedicamentoDTO> medicamentos = MedicamentoDAO.listar(idMedicamento);
             if (medicamentos.isEmpty()) {
-                JOptionPane.showMessageDialog(this.vista, "No se encontro el ID", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this.vista, "El codigo no esta registrado", "ERROR", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 llenarTabla(medicamentos);
             }
@@ -98,7 +98,7 @@ public class CtrlBuscarProducto implements ActionListener, ControlStrategy {
             String nombre = this.vista.jTextFieldNomProducto.getText();
             List<MedicamentoDTO> medicamentos = MedicamentoDAO.listar(nombre);
             if (medicamentos.isEmpty()) {
-                JOptionPane.showMessageDialog(this.vista, "No se encontro el nombre", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this.vista, "El nombre no esta registrado", "ERROR", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 llenarTabla(medicamentos);
             }
