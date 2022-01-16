@@ -85,7 +85,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
                 .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanelBaseRegOrdenSalida.add(jPanelRetPrincipal7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 540, 50, 50));
+        jPanelBaseRegOrdenSalida.add(jPanelRetPrincipal7, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 550, 50, 50));
 
         jLabelRegDatProducto.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelRegDatProducto.setForeground(new java.awt.Color(0, 0, 51));
@@ -101,18 +101,18 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jLabelCantProducto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelCantProducto.setForeground(new java.awt.Color(0, 0, 51));
         jLabelCantProducto.setText("CANTIDAD PRODUCTO");
-        jPanelBaseRegOrdenSalida.add(jLabelCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 190, -1));
+        jPanelBaseRegOrdenSalida.add(jLabelCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 190, -1));
 
         jTextFieldCantProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jTextFieldCantProducto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCantProducto.setBorder(null);
         jTextFieldCantProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextFieldCantProducto.setPreferredSize(new java.awt.Dimension(23, 30));
-        jPanelBaseRegOrdenSalida.add(jTextFieldCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 190, 40));
+        jPanelBaseRegOrdenSalida.add(jTextFieldCantProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 190, 35));
 
         jButtonCrearOrden.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonCrearOrden.setText("CREAR ORDEN");
-        jPanelBaseRegOrdenSalida.add(jButtonCrearOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 550, 130, 40));
+        jPanelBaseRegOrdenSalida.add(jButtonCrearOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 550, 130, 50));
 
         jLabelMotSalida.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelMotSalida.setForeground(new java.awt.Color(0, 0, 51));
@@ -127,16 +127,16 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
 
         jButtonDescartarProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonDescartarProducto.setText("DESCARTAR PRODUCTO");
-        jPanelBaseRegOrdenSalida.add(jButtonDescartarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, 200, 40));
+        jPanelBaseRegOrdenSalida.add(jButtonDescartarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 550, 200, 50));
 
         jButtonDescartar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jButtonDescartar.setText("DESCARTAR");
-        jPanelBaseRegOrdenSalida.add(jButtonDescartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 120, 40));
+        jPanelBaseRegOrdenSalida.add(jButtonDescartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 550, 120, 50));
 
         jbtnAgregarProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jbtnAgregarProducto.setText("AÑADIR");
         jbtnAgregarProducto.setPreferredSize(new java.awt.Dimension(70, 40));
-        jPanelBaseRegOrdenSalida.add(jbtnAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 110, 40));
+        jPanelBaseRegOrdenSalida.add(jbtnAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 230, 110, 40));
 
         jTableRegOrdSalida.setBackground(new java.awt.Color(0, 0, 38));
         jTableRegOrdSalida.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -155,9 +155,10 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jTableRegOrdSalida.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollRegOrdSalida.setViewportView(jTableRegOrdSalida);
 
-        jPanelBaseRegOrdenSalida.add(jScrollRegOrdSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 870, 220));
+        jPanelBaseRegOrdenSalida.add(jScrollRegOrdSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 900, 230));
 
-        jPanelBaseRegOrdenSalida.add(jcbMedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 180, 30));
+        jcbMedicamentos.setPreferredSize(new java.awt.Dimension(23, 35));
+        jPanelBaseRegOrdenSalida.add(jcbMedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 190, 35));
 
         jLabelCodProducto1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelCodProducto1.setForeground(new java.awt.Color(0, 0, 51));
@@ -165,7 +166,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         jPanelBaseRegOrdenSalida.add(jLabelCodProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 200, -1));
 
         jcbTipo.setPreferredSize(new java.awt.Dimension(23, 35));
-        jPanelBaseRegOrdenSalida.add(jcbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 190, -1));
+        jPanelBaseRegOrdenSalida.add(jcbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 190, 35));
 
         jPanelLinea1.setBackground(new java.awt.Color(0, 5, 25));
 
@@ -220,7 +221,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBaseRegOrdenSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+            .addComponent(jPanelBaseRegOrdenSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         pack();
