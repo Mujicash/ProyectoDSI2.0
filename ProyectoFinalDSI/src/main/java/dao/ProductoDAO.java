@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -55,9 +57,8 @@ public class ProductoDAO {
         }
         return false;
     }
-    
-    
-    public static boolean aumentarStock(int m,int t,int aum) {
+
+    public static boolean aumentarStock(int m, int t, int aum) {
         String sql = "UPDATE tbl_producto SET stock=stock+? WHERE id_medicamento=? AND id_tipo=?";
         Connection conn = Conexion.getInstance();
         try ( PreparedStatement pst = conn.prepareStatement(sql)) {
@@ -107,6 +108,23 @@ public class ProductoDAO {
             System.err.println("Clase ProductoDAO.buscar:\n" + ex);
         }
         return null;
+    }
+
+    public static List<ProductoDTO> buscar(int idMedicamento) {
+        String sql = "SELECT * FROM tbl_producto WHERE id_medicamento=?";
+        Connection conn = Conexion.getInstance();
+        List<ProductoDTO> lista = null;
+        try ( PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, idMedicamento);
+            ResultSet rst = pst.executeQuery();
+            lista = new LinkedList<>();
+            while (rst.next()) {
+                lista.add(new ProductoDTO(rst.getInt(1), rst.getInt(2), rst.getInt(3), rst.getFloat(4)));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Clase ProductoDAO.buscar:\n" + ex);
+        }
+        return lista;
     }
 
 }

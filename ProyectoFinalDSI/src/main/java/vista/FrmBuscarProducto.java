@@ -16,10 +16,7 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
      */
     public FrmBuscarProducto() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(1180, 666);
-        setResizable(false);
-        setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -112,23 +109,23 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
         jTableBusProducto.setForeground(new java.awt.Color(255, 255, 255));
         jTableBusProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "N° ORDEN", "FECHA COMPRA", "FECHA ENTREGA", "RUC PROVEEDOR", "COSTO TOTAL"
+                "CÓD. DEL PRODUCTO", "NOMBRE", "STOCK", "COSTO UNITARIO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -200,13 +197,13 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBusCodProducto;
-    private javax.swing.JButton jButtonBusNomProducto;
+    public javax.swing.JButton jButtonBusCodProducto;
+    public javax.swing.JButton jButtonBusNomProducto;
     private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelNomProducto;
     private javax.swing.JLabel jLabelRegDatProducto;
     private javax.swing.JPanel jPanelBaseBusProducto;
-    private javax.swing.JPanel jPanelRetPrincipal2;
+    public javax.swing.JPanel jPanelRetPrincipal2;
     public javax.swing.JScrollPane jScrollPaneBusProducto;
     public javax.swing.JTable jTableBusProducto;
     public javax.swing.JTextField jTextFieldCodigo;
