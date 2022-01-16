@@ -81,7 +81,7 @@ public class CtrlGuiaRemision implements MouseListener {
             }else{
                compraDTO = OrdenCompraDAO.buscar(Integer.parseInt(vista.textOrden.getText()));
                if(compraDTO != null){
-                   ProveedorDTO provDTO = new ProveedorDTO(compraDTO.getProveedor());
+                   ProveedorDTO provDTO;
                    provDTO = ProveedorDAO.buscar(compraDTO.getProveedor());
                    this.vista.textProveedor.setText(provDTO.getNombre());
                    
