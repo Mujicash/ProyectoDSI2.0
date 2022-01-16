@@ -15,7 +15,7 @@ import interfaces.ControlStrategy;
 public class CtrlMaster {
 
     private ControlStrategy ctrl;
-    public UsuarioDTO usuario;
+    private UsuarioDTO usuario;
 
     public CtrlMaster() {
         //Inicialmente se debe establecer el ControlStrategy por el setCtrl()
@@ -43,6 +43,10 @@ public class CtrlMaster {
         this.ctrl.iniciar();
     }
     
+    public void emergente(ControlStrategy ctrl) {
+        ctrl.iniciar();
+    }
+
     public void emergente(ControlStrategy ctrl) {
         ctrl.iniciar();
     }
