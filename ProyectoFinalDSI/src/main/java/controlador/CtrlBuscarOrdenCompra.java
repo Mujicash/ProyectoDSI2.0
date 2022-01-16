@@ -61,14 +61,15 @@ public class CtrlBuscarOrdenCompra implements ActionListener, ControlStrategy {
         
         for(int i = 0; i < ordenes.size(); i++){
             String costoTotal = "S/." + DetalleCompraDAO.costoTotal(ordenes.get(i).getIdOrdenCompra());
-            matriz[i] = new Object[]{ordenes.get(i).getIdOrdenCompra(), ordenes.get(i).getFechaCompra(), ordenes.get(i).getFechaEntrega(), ordenes.get(i).getProveedor(), costoTotal};
+            String estado = (ordenes.get(i).isEstado())? "ENTREGADO" : "NO ENTREGADO";
+            matriz[i] = new Object[]{ordenes.get(i).getIdOrdenCompra(), ordenes.get(i).getFechaCompra(), ProveedorDAO.buscar(ordenes.get(i).getProveedor()).getRuc(), costoTotal, estado};
         }
         
         inicializarTabla(matriz);
     }
     
     private void inicializarTabla(Object[][] datos){
-        String[] colums = {"N° ORDEN", "FECHA COMPRA", "FECHA ENTREGA", "RUC PROVEEDOR", "COSTO TOTAL"};
+        String[] colums = {"N° ORDEN", "FECHA COMPRA", "RUC PROVEEDOR", "COSTO TOTAL", "ESTADO"};
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         FrmBuscarOrdenCompra.modelCompra = new DefaultTableModel(null,colums);
@@ -110,7 +111,8 @@ public class CtrlBuscarOrdenCompra implements ActionListener, ControlStrategy {
             for(int i = 0; i < ordenes.size(); i++){
                 if(ordenes.get(i).getProveedor() == idProveedor){
                     String costoTotal = "S/." + DetalleCompraDAO.costoTotal(ordenes.get(i).getIdOrdenCompra());
-                    matriz[i] = new Object[]{ordenes.get(i).getIdOrdenCompra(), ordenes.get(i).getFechaCompra(), ordenes.get(i).getFechaEntrega(), ordenes.get(i).getProveedor(), costoTotal};
+                    String estado = (ordenes.get(i).isEstado())? "ENTREGADO" : "NO ENTREGADO";
+                    matriz[i] = new Object[]{ordenes.get(i).getIdOrdenCompra(), ordenes.get(i).getFechaCompra(), ProveedorDAO.buscar(ordenes.get(i).getProveedor()).getRuc(), costoTotal, estado};
                 }
             }
             

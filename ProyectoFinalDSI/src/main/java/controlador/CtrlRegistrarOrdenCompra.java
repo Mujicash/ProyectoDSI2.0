@@ -124,6 +124,10 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
                 CargarTabla(Integer.valueOf(vista.jTextFieldCodProducto.getText()), medicamento.getNombre(), Integer.valueOf(vista.jTextFieldCantidad.getText()), Double.valueOf(vista.jTextFieldPrecCompra.getText()));
                 limpiarCajas();
             }
+            else{
+                JOptionPane.showMessageDialog(null, "EL CODIGO DEL MEDICAMENTO NO EXISTE!!!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                limpiarCajas();
+            }
 
         }
 
