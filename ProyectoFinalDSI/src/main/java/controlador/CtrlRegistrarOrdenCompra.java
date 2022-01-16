@@ -1,8 +1,10 @@
 package controlador;
 
+import dao.FabricanteDAO;
 import dao.MedicamentoDAO;
 import dao.OrdenCompraDAO;
 import dao.ProveedorDAO;
+import dto.FabricanteDTO;
 import dto.JefeAlmacenDTO;
 import dto.MedicamentoDTO;
 import dto.OrdenCompraDTO;
@@ -69,17 +71,17 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
     }
 
     private void inicializarTabla() {
-        String[] colums = {"ID", "NOMBRE", "CANTIDAD", "COSTO UNITARIO", "TOTAL"};
+        String[] colums = {"ID", "NOMBRE", "MEDIDA", "FABRICANTE", "CANTIDAD", "COSTO UNITARIO", "TOTAL"};
         FrmRegistrarOrdenCompra.modelCompra = new DefaultTableModel(null, colums);
         vista.jTableOrdCompra.setModel(FrmRegistrarOrdenCompra.modelCompra);
     }
 
-    private void CargarTabla(int id, String nombre, int cantida, double costo) {
+    private void CargarTabla(int id, String nombre, String medida, String fabricante, int cantida, double costo) {
 
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
 
-        Object[] fila = {id, nombre, cantida, costo, cantida * costo};
+        Object[] fila = {id, nombre, medida, fabricante, cantida, costo, cantida * costo};
         FrmRegistrarOrdenCompra.modelCompra.addRow(fila);
 
         vista.jTableOrdCompra.setModel(FrmRegistrarOrdenCompra.modelCompra);
@@ -110,25 +112,56 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
 
         return suma;
     }
+    
+    private boolean validaciones(String cod, String cant, String prec){
+        
+        try{
+            int codigo = Integer.valueOf(cod);
+        } catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "EL CODIGO DEL MEDICAMENTO DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        
+        try{
+            int cantidad = Integer.valueOf(cant);
+        } catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        
+        try{
+            double precio = Double.valueOf(prec);
+        } catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "EL PRECIO DEBE SER UN NUMERO REAL", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        
+        return true;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == vista.jbtnAgregar) {
-            MedicamentoDTO medicamento = MedicamentoDAO.buscar(Integer.valueOf(vista.jTextFieldCodProducto.getText()));
-            if (medicamento != null) {
-                codigos.add(Integer.valueOf(vista.jTextFieldCodProducto.getText()));
-                cantidades.add(Integer.valueOf(vista.jTextFieldCantidad.getText()));
-                precios.add(Double.valueOf(vista.jTextFieldPrecCompra.getText()));
+            if(validaciones(vista.jTextFieldCodProducto.getText(), vista.jTextFieldCantidad.getText(), vista.jTextFieldPrecCompra.getText())){
+                MedicamentoDTO medicamento = MedicamentoDAO.buscar(Integer.valueOf(vista.jTextFieldCodProducto.getText()));
+                int codigo = Integer.valueOf(vista.jTextFieldCodProducto.getText());
+                int cantidad = Integer.valueOf(vista.jTextFieldCantidad.getText());
+                double precio = Double.valueOf(vista.jTextFieldPrecCompra.getText());
+                
+                if (medicamento != null) {                    
+                    FabricanteDTO fabricante = FabricanteDAO.buscar(medicamento.getIdFabricante());
+                    codigos.add(codigo);
+                    cantidades.add(cantidad);
+                    precios.add(precio);
 
-                CargarTabla(Integer.valueOf(vista.jTextFieldCodProducto.getText()), medicamento.getNombre(), Integer.valueOf(vista.jTextFieldCantidad.getText()), Double.valueOf(vista.jTextFieldPrecCompra.getText()));
-                limpiarCajas();
+                    CargarTabla(codigo, medicamento.getNombre(), medicamento.getMedida(), fabricante.getNombre(), cantidad, precio);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "EL CODIGO DEL MEDICAMENTO NO EXISTE!!!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
             }
-            else{
-                JOptionPane.showMessageDialog(null, "EL CODIGO DEL MEDICAMENTO NO EXISTE!!!", "ERROR", JOptionPane.ERROR_MESSAGE);
-                limpiarCajas();
-            }
-
+            limpiarCajas();
         }
 
         if (e.getSource() == vista.jbtnGuardar) {

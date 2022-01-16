@@ -1,5 +1,6 @@
 package controlador;
 
+import dao.FabricanteDAO;
 import dao.MedicamentoDAO;
 import dao.OrdenSalidaDAO;
 import dao.ProductoDAO;
@@ -64,7 +65,9 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
         vista.jButtonDescartarProducto.addActionListener(this);
 
         this.cbMedicamentos.forEach(item -> this.vista.jcbMedicamentos.addItem(item.getNombre()));
+        vista.jcbMedicamentos.setSelectedIndex(-1);
         this.cbTipoProducto.forEach(item -> this.vista.jcbTipo.addItem(item.getFormato()));
+        vista.jcbTipo.setSelectedIndex(-1);
 
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
@@ -72,19 +75,19 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
     }
 
     private void inicializarTabla() {
-        String[] colums = {"IDPRODUCTO", "NOMBRE", "CANTIDAD"};
+        String[] colums = {"IDPRODUCTO", "NOMBRE", "MEDIDA", "FABRICANTE", "CANTIDAD"};
         FrmRegistrarOrdenSalida.modelSalida = new DefaultTableModel(null, colums);
         vista.jTableRegOrdSalida.setModel(FrmRegistrarOrdenSalida.modelSalida);
     }
 
-    private void cargarTabla(int idMedicamento, int idTipo, String nombreProducto, int cantidad) {
+    private void cargarTabla(int idMedicamento, int idTipo, String nombreProducto, String medida, String fabricante, int cantidad) {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         StringBuilder sb = new StringBuilder();
         sb.append(idMedicamento);
         sb.append(idTipo);
 
-        Object[] fila = {sb.toString(), nombreProducto, cantidad};
+        Object[] fila = {sb.toString(), nombreProducto, medida, fabricante, cantidad};
         FrmRegistrarOrdenSalida.modelSalida.addRow(fila);
 
         vista.jTableRegOrdSalida.setModel(FrmRegistrarOrdenSalida.modelSalida);
@@ -164,7 +167,8 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
                 inicializarTabla();
                 
                 for(int i = 0; i < idMedicamento.size(); i++){
-                    cargarTabla(idMedicamento.get(i), idTipo.get(i), MedicamentoDAO.buscar(idMedicamento.get(i)).getNombre(), cantidades.get(i));
+                    MedicamentoDTO medicamento = MedicamentoDAO.buscar(idMedicamento.get(i));
+                    cargarTabla(idMedicamento.get(i), idTipo.get(i), medicamento.getNombre(), medicamento.getMedida(), FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre(), cantidades.get(i));
                 }
                 
                 
@@ -173,18 +177,26 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
         }
 
         if (e.getSource() == vista.jbtnAgregarProducto) {
-            int idMe = vista.jcbMedicamentos.getSelectedIndex() + 1;
-            int idTip = vista.jcbTipo.getSelectedIndex() + 1;
-            int cant = Integer.valueOf(vista.jTextFieldCantProducto.getText());
-            ProductoDTO producto = ProductoDAO.buscar(idMe, idTip);
-            if (producto != null) {
-                idMedicamento.add(idMe);
-                idTipo.add(idTip);
-                cantidades.add(cant);
+            
+            try{
+                int cant = Integer.valueOf(vista.jTextFieldCantProducto.getText());
+                int idMe = vista.jcbMedicamentos.getSelectedIndex() + 1;
+                int idTip = vista.jcbTipo.getSelectedIndex() + 1;
+                ProductoDTO producto = ProductoDAO.buscar(idMe, idTip);
+                if (producto != null) {
+                    idMedicamento.add(idMe);
+                    idTipo.add(idTip);
+                    cantidades.add(cant);
+                    MedicamentoDTO medicamento = MedicamentoDAO.buscar(idMe);
 
-                cargarTabla(idMe, idTip, MedicamentoDAO.buscar(idMe).getNombre(), cant);
-                limpiarCajas();
+                    cargarTabla(idMe, idTip, medicamento.getNombre(), medicamento.getMedida(), FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre(), cant);
+                }
+                
+            }catch(NumberFormatException ne){
+                JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                System.out.println(ne);
             }
+            limpiarCajas();
 
         }
 
