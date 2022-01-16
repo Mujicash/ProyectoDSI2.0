@@ -29,6 +29,9 @@ public class CtrlDetalleOrdeCompra implements ControlStrategy {
         this.vista = new FrmDetalleOrdenCompra();
     }
 
+    
+    
+    
 
     @Override
     public void iniciar() {
