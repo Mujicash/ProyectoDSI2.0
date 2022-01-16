@@ -59,8 +59,6 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
-
         javax.swing.GroupLayout jPanelRetPrincipal2Layout = new javax.swing.GroupLayout(jPanelRetPrincipal2);
         jPanelRetPrincipal2.setLayout(jPanelRetPrincipal2Layout);
         jPanelRetPrincipal2Layout.setHorizontalGroup(
@@ -74,7 +72,7 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
             jPanelRetPrincipal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRetPrincipal2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -91,17 +89,13 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
         jLabelCodigo.setText("CÓDIGO PRODUCTO:");
         jPanelBaseBusProducto.add(jLabelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 260, -1));
 
-        jTextFieldCodigo.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCodigo.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCodigo.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCodigo.setBorder(null);
         jTextFieldCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanelBaseBusProducto.add(jTextFieldCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 190, 40));
 
-        jTextFieldNomProducto.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNomProducto.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomProducto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldNomProducto.setBorder(null);
         jTextFieldNomProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -126,23 +120,23 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
         jTableBusProducto.setForeground(new java.awt.Color(255, 255, 255));
         jTableBusProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "N° ORDEN", "FECHA COMPRA", "FECHA ENTREGA", "RUC PROVEEDOR", "COSTO TOTAL"
+                "CODIGO", "NOMBRE", "STOCK", "PRECIO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -259,8 +253,8 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBusCodProducto;
-    private javax.swing.JButton jButtonBusNomProducto;
+    public javax.swing.JButton jButtonBusCodProducto;
+    public javax.swing.JButton jButtonBusNomProducto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelNomProducto;
@@ -269,7 +263,7 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelFranjaDerecha;
     private javax.swing.JPanel jPanelLinea1;
     private javax.swing.JPanel jPanelLinea2;
-    private javax.swing.JPanel jPanelRetPrincipal2;
+    public javax.swing.JPanel jPanelRetPrincipal2;
     public javax.swing.JScrollPane jScrollPaneBusProducto;
     public javax.swing.JTable jTableBusProducto;
     public javax.swing.JTextField jTextFieldCodigo;
