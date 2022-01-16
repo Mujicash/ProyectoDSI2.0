@@ -23,6 +23,7 @@ public class ProductoDAO {
     /**
      *
      * @param nuevo Usuario ha registrar en la base de datos
+     * @return 
      */
     public static boolean insertar(ProductoDTO nuevo) {
         String sql = "INSERT INTO tbl_producto(id_medicamento,id_tipo,stock,precio_venta) VALUES(?,?,?,?)";
@@ -42,6 +43,7 @@ public class ProductoDAO {
     /**
      *
      * @param modificado Usuario ha modificar en la base de datos
+     * @return 
      */
     public static boolean modificar(ProductoDTO modificado) {
         String sql = "UPDATE tbl_producto SET stock=?,precio_venta=? WHERE id_medicamento=? AND id_tipo=?";

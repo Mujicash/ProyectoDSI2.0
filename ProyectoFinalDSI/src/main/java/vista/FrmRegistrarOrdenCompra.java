@@ -70,8 +70,6 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
             }
         });
 
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
-
         javax.swing.GroupLayout jPanelRetPrincipal6Layout = new javax.swing.GroupLayout(jPanelRetPrincipal6);
         jPanelRetPrincipal6.setLayout(jPanelRetPrincipal6Layout);
         jPanelRetPrincipal6Layout.setHorizontalGroup(
@@ -180,7 +178,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jTableOrdCompra.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPaneRegOrdCompra.setViewportView(jTableOrdCompra);
 
-        jPanelBaseRegOrdenCompra.add(jScrollPaneRegOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 720, 240));
+        jPanelBaseRegOrdenCompra.add(jScrollPaneRegOrdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 870, 240));
 
         jLabelTotal.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelTotal.setForeground(new java.awt.Color(0, 0, 51));

@@ -1,8 +1,10 @@
 
 package controlador;
 
+import dao.FabricanteDAO;
 import dao.MedicamentoDAO;
 import dto.DetalleCompraDTO;
+import dto.MedicamentoDTO;
 import interfaces.ControlStrategy;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -50,14 +52,15 @@ public class CtrlDetalleOrdeCompra implements ControlStrategy {
     }
     
     private void inicializarTabla(){
-        String[] colums = {"ID", "MEDICAMENTO", "CANTIDAD", "COSTO UNITARIO", "TOTAL"};
+        String[] colums = {"ID", "NOMBRE", "MEDIDA", "FABRICANTE", "CANTIDAD", "COSTO UNITARIO", "TOTAL"};
         FrmDetalleOrdenCompra.modelCompra = new DefaultTableModel(null,colums);        
         vista.jTableDetOrdCompra.setModel(FrmDetalleOrdenCompra.modelCompra);
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         
         for(DetalleCompraDTO i : compra){
-            Object[] fila = {i.getIdMedicamento(), MedicamentoDAO.buscar(i.getIdMedicamento()).getNombre(), i.getUnidades(), i.getPrecio(), (i.getUnidades()*i.getPrecio())};
+            MedicamentoDTO medicamento = MedicamentoDAO.buscar(i.getIdMedicamento());
+            Object[] fila = {i.getIdMedicamento(), medicamento.getNombre(), medicamento.getMedida(), FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre(), i.getUnidades(), i.getPrecio(), (i.getUnidades()*i.getPrecio())};
             FrmDetalleOrdenCompra.modelCompra.addRow(fila);
         }
         
