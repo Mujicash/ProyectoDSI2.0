@@ -2,6 +2,7 @@
 package dto;
 
 import dao.DetalleSalidaDAO;
+import dao.ProductoDAO;
 import java.util.Date;
 import interfaces.Orden;
 
@@ -74,6 +75,7 @@ public class OrdenSalidaDTO implements Orden{
         for(Object[] dato : datos){
             DetalleSalidaDTO detalle = new DetalleSalidaDTO(this.idOrdenSalida, (Integer) dato[0], (Integer) dato[1], (Integer) dato[2]);
             insert = DetalleSalidaDAO.insertar(detalle);
+            ProductoDAO.aumentarStock((Integer) dato[1], (Integer) dato[0], (Integer) dato[2]);
         }
 
         if(insert){
