@@ -288,7 +288,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelBotRegistrarDatosProductoMouseClicked
 
     private void jPanelBotRegistrarDatosProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotRegistrarDatosProveedorMouseClicked
-//
+
 //        FrmRegistrarDatosProveedor regDatProveedor = new FrmRegistrarDatosProveedor();
 //        
 //        regDatProveedor.setVisible(true);

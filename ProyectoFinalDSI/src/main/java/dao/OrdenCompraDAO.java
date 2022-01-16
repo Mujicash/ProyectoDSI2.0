@@ -119,7 +119,7 @@ public class OrdenCompraDAO {
             ResultSet rst = pst.executeQuery();
             lista = new LinkedList<>();
             while (rst.next()) {
-                lista.add(new OrdenCompraDTO(rst.getInt(1), rst.getInt(2), rst.getDate(3), rst.getDate(4), true));
+                lista.add(new OrdenCompraDTO(rst.getInt(1), rst.getInt(2), rst.getDate(3), rst.getDate(4), rst.getBoolean(5)));
             }
         } catch (SQLException ex) {
             System.err.println("Clase FabricanteDAO.buscar:\n" + ex);

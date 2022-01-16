@@ -149,7 +149,27 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
 
         if (e.getSource() == vista.jButtonDescartarProducto) {
             //Funcionalidad para eliminar un registro producto de la tabla
-
+            
+            int filaSelec = vista.jTableRegOrdSalida.getSelectedRow();
+            if(filaSelec < 0){
+                JOptionPane.showMessageDialog(null, "SELECCIONE EL CODIGO DE UN PRODUCTO DE LA TABLA", "¡ERROR!", JOptionPane.ERROR_MESSAGE); 
+            }
+            else{
+                int filaModelo = vista.jTableRegOrdSalida.convertRowIndexToModel(filaSelec);
+                
+                idMedicamento.remove(filaModelo);
+                idTipo.remove(filaModelo);
+                cantidades.remove(filaModelo);
+                
+                inicializarTabla();
+                
+                for(int i = 0; i < idMedicamento.size(); i++){
+                    cargarTabla(idMedicamento.get(i), idTipo.get(i), MedicamentoDAO.buscar(idMedicamento.get(i)).getNombre(), cantidades.get(i));
+                }
+                
+                
+            }
+            
         }
 
         if (e.getSource() == vista.jbtnAgregarProducto) {
