@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import vista.FrmBuscarProducto;
 
@@ -86,13 +87,21 @@ public class CtrlBuscarProducto implements ActionListener, ControlStrategy {
         if (e.getSource() == this.vista.jButtonBusCodProducto) {
             int idMedicamento = Integer.parseInt(this.vista.jTextFieldCodigo.getText());
             List<MedicamentoDTO> medicamentos = MedicamentoDAO.listar(idMedicamento);
-            llenarTabla(medicamentos);
+            if (medicamentos.isEmpty()) {
+                JOptionPane.showMessageDialog(this.vista, "No se encontro el ID", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                llenarTabla(medicamentos);
+            }
         }
 
         if (e.getSource() == this.vista.jButtonBusNomProducto) {
             String nombre = this.vista.jTextFieldNomProducto.getText();
             List<MedicamentoDTO> medicamentos = MedicamentoDAO.listar(nombre);
-            llenarTabla(medicamentos);
+            if (medicamentos.isEmpty()) {
+                JOptionPane.showMessageDialog(this.vista, "No se encontro el nombre", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                llenarTabla(medicamentos);
+            }
         }
 
     }
