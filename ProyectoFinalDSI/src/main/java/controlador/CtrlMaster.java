@@ -47,8 +47,4 @@ public class CtrlMaster {
         ctrl.iniciar();
     }
 
-    public void emergente(ControlStrategy ctrl) {
-        ctrl.iniciar();
-    }
-
 }
