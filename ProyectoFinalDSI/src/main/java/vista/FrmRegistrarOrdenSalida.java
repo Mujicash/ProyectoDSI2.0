@@ -70,8 +70,6 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
             }
         });
 
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
-
         javax.swing.GroupLayout jPanelRetPrincipal7Layout = new javax.swing.GroupLayout(jPanelRetPrincipal7);
         jPanelRetPrincipal7.setLayout(jPanelRetPrincipal7Layout);
         jPanelRetPrincipal7Layout.setHorizontalGroup(
