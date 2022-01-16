@@ -43,20 +43,22 @@ public class FrmGestionarInventario extends javax.swing.JFrame {
         jScrollPaneBusProducto = new javax.swing.JScrollPane();
         tblDetalle = new javax.swing.JTable();
         btnRetro = new javax.swing.JPanel();
+        jLabelReturn = new javax.swing.JLabel();
         jLabelNumOrdenCompra1 = new javax.swing.JLabel();
         jLabelProveedor1 = new javax.swing.JLabel();
         btnAceptar = new javax.swing.JButton();
+        jPanelFranjaDerecha = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanelBaseGestionInventario.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBaseGestionInventario.setBackground(new java.awt.Color(239, 248, 255));
         jPanelBaseGestionInventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelRegDatProducto.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabelRegDatProducto.setForeground(new java.awt.Color(0, 0, 51));
         jLabelRegDatProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelRegDatProducto.setText("GESTIONAR INVENTARIO");
-        jPanelBaseGestionInventario.add(jLabelRegDatProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 390, -1));
+        jPanelBaseGestionInventario.add(jLabelRegDatProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 390, -1));
 
         textOrden.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         textOrden.setForeground(new java.awt.Color(0, 0, 51));
@@ -100,25 +102,30 @@ public class FrmGestionarInventario extends javax.swing.JFrame {
 
         jPanelBaseGestionInventario.add(jScrollPaneBusProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 890, 240));
 
-        btnRetro.setBackground(new java.awt.Color(0, 0, 51));
+        btnRetro.setBackground(new java.awt.Color(255, 255, 255));
         btnRetro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRetroMouseClicked(evt);
             }
         });
 
+        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+
         javax.swing.GroupLayout btnRetroLayout = new javax.swing.GroupLayout(btnRetro);
         btnRetro.setLayout(btnRetroLayout);
         btnRetroLayout.setHorizontalGroup(
             btnRetroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnRetroLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelReturn)
+                .addContainerGap())
         );
         btnRetroLayout.setVerticalGroup(
             btnRetroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabelReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, Short.MAX_VALUE)
         );
 
-        jPanelBaseGestionInventario.add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 570, 60, 40));
+        jPanelBaseGestionInventario.add(btnRetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 570, 60, 45));
 
         jLabelNumOrdenCompra1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabelNumOrdenCompra1.setForeground(new java.awt.Color(0, 0, 51));
@@ -138,6 +145,21 @@ public class FrmGestionarInventario extends javax.swing.JFrame {
         });
         jPanelBaseGestionInventario.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 570, 130, 40));
 
+        jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranjaDerechaLayout = new javax.swing.GroupLayout(jPanelFranjaDerecha);
+        jPanelFranjaDerecha.setLayout(jPanelFranjaDerechaLayout);
+        jPanelFranjaDerechaLayout.setHorizontalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        jPanelFranjaDerechaLayout.setVerticalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        jPanelBaseGestionInventario.add(jPanelFranjaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 65, 60, 5));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,7 +168,7 @@ public class FrmGestionarInventario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBaseGestionInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
+            .addComponent(jPanelBaseGestionInventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -203,7 +225,9 @@ public class FrmGestionarInventario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNumOrdenCompra1;
     private javax.swing.JLabel jLabelProveedor1;
     private javax.swing.JLabel jLabelRegDatProducto;
+    private javax.swing.JLabel jLabelReturn;
     private javax.swing.JPanel jPanelBaseGestionInventario;
+    private javax.swing.JPanel jPanelFranjaDerecha;
     public javax.swing.JScrollPane jScrollPaneBusProducto;
     public javax.swing.JTable tblDetalle;
     public javax.swing.JLabel textOrden;

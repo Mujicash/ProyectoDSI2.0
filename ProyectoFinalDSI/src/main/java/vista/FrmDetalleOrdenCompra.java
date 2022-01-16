@@ -37,34 +37,45 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
 
         jPanelBaseDetOrdenCompra = new javax.swing.JPanel();
         jPanelRetBuscarOdenCompra = new javax.swing.JPanel();
+        jLabelReturn = new javax.swing.JLabel();
         jScrollPaneDetOrdCompra = new javax.swing.JScrollPane();
         jTableDetOrdCompra = new javax.swing.JTable();
         jLabelDetOrdenCompra = new javax.swing.JLabel();
+        jPanelFranjaDerecha = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanelBaseDetOrdenCompra.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBaseDetOrdenCompra.setBackground(new java.awt.Color(239, 248, 255));
         jPanelBaseDetOrdenCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelRetBuscarOdenCompra.setBackground(new java.awt.Color(0, 0, 51));
+        jPanelRetBuscarOdenCompra.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRetBuscarOdenCompra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRetBuscarOdenCompraMouseClicked(evt);
             }
         });
 
+        jLabelReturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+
         javax.swing.GroupLayout jPanelRetBuscarOdenCompraLayout = new javax.swing.GroupLayout(jPanelRetBuscarOdenCompra);
         jPanelRetBuscarOdenCompra.setLayout(jPanelRetBuscarOdenCompraLayout);
         jPanelRetBuscarOdenCompraLayout.setHorizontalGroup(
             jPanelRetBuscarOdenCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanelRetBuscarOdenCompraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelReturn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelRetBuscarOdenCompraLayout.setVerticalGroup(
             jPanelRetBuscarOdenCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(jPanelRetBuscarOdenCompraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
-        jPanelBaseDetOrdenCompra.add(jPanelRetBuscarOdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 470, 50, 40));
+        jPanelBaseDetOrdenCompra.add(jPanelRetBuscarOdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, 60, 55));
 
         jTableDetOrdCompra.setBackground(new java.awt.Color(0, 0, 38));
         jTableDetOrdCompra.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -99,6 +110,21 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
         jLabelDetOrdenCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelDetOrdenCompra.setText("DETALLE ORDEN DE COMPRA");
         jPanelBaseDetOrdenCompra.add(jLabelDetOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+
+        jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
+
+        javax.swing.GroupLayout jPanelFranjaDerechaLayout = new javax.swing.GroupLayout(jPanelFranjaDerecha);
+        jPanelFranjaDerecha.setLayout(jPanelFranjaDerechaLayout);
+        jPanelFranjaDerechaLayout.setHorizontalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        jPanelFranjaDerechaLayout.setVerticalGroup(
+            jPanelFranjaDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        jPanelBaseDetOrdenCompra.add(jPanelFranjaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 65, 60, 5));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,7 +183,9 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelDetOrdenCompra;
+    private javax.swing.JLabel jLabelReturn;
     private javax.swing.JPanel jPanelBaseDetOrdenCompra;
+    private javax.swing.JPanel jPanelFranjaDerecha;
     public javax.swing.JPanel jPanelRetBuscarOdenCompra;
     public javax.swing.JScrollPane jScrollPaneDetOrdCompra;
     public javax.swing.JTable jTableDetOrdCompra;
