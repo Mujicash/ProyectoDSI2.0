@@ -78,8 +78,8 @@ public class CtrlGuiaRemision implements MouseListener,ControlStrategy {
     private void llenar( GuiaRemisionDTO m){
         this.vista.textMotivo.setText(m.getMotivo());
         this.vista.textDia.setText(String.valueOf(m.getFechaInicio().getDay()));
-        this.vista.textMes.setText(String.valueOf(m.getFechaInicio().getMonth()));
-        this.vista.textAnio.setText(String.valueOf(m.getFechaInicio().getYear()));
+        this.vista.textMes.setText(String.valueOf(m.getFechaInicio().getMonth() +1));
+        this.vista.textAnio.setText(String.valueOf(m.getFechaInicio().getYear() + 1900));
         this.vista.textPartida.setText(m.getPuntoPartida());
         this.vista.textNumero.setText(m.getNumGuia());
         

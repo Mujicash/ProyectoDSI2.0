@@ -141,7 +141,16 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
                 this.vista.jTextFieldPrecioVentaBlister.setEnabled(false);
                 this.vista.jTextFieldPrecioVentaCaja.setEnabled(false);
                 this.vista.jButtonModificarDatProducto.setEnabled(false);
+                
+                this.vista.jTextFieldPrecioVentaBlister.setText(null);
+                this.vista.jTextFieldPrecioVentaCaja.setText(null);
 
+                this.vista.jTextFieldNombre.setText(null);
+                this.vista.jTextFieldNumBlister.setText(null);
+                this.vista.jTextFieldPeso.setText(null);
+                
+                JOptionPane.showMessageDialog(this.vista, "Se han registrado los precios", "Registrado", JOptionPane.INFORMATION_MESSAGE);
+                
             }
 
         }
