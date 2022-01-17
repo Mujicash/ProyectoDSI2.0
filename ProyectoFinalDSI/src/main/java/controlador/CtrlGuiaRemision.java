@@ -24,6 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -281,6 +282,14 @@ public class CtrlGuiaRemision implements MouseListener,ControlStrategy {
 
     @Override
     public void iniciar() {
+        
+        this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+        this.vista.setSize(1068, 569);
+        this.vista.setResizable(false);
+        this.vista.setLocationRelativeTo(null);
+        this.vista.exploradorColor();
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
+        
         this.vista.setVisible(true);
         this.vista.botonArchivo.addMouseListener(this);
         this.vista.botonBuscar.addMouseListener(this);

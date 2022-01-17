@@ -13,6 +13,7 @@ import dto.MedicamentoDTO;
 import interfaces.ControlStrategy;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import vista.FrmBotGestionar;
 
@@ -93,6 +94,14 @@ public class CtrlGestionarDetalle implements MouseListener, ControlStrategy {
 
     @Override
     public void iniciar() {
+        
+        this.vent.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+        this.vent.setSize(465, 260);
+        this.vent.setResizable(false);
+        this.vent.setLocationRelativeTo(null);
+        this.vent.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
+        
+        
         this.vent.setVisible(true);
         this.vent.btnAceptar.addMouseListener(this);
         this.vent.textMedicamento.setText(med.getNombre() + " " + med.getMedida() + " " + FabricanteDAO.buscar(med.getIdFabricante()).getNombre());

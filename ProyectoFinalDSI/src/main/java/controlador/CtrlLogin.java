@@ -5,6 +5,7 @@ import dao.UsuarioDAO;
 import dto.UsuarioDTO;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
 import vista.FrmLogin;
 
 /**
@@ -34,6 +35,7 @@ public class CtrlLogin implements MouseListener, ControlStrategy {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
         this.vista.setSize(1128, 658);
         this.vista.setResizable(false);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
         this.vista.jPanelBotonIngresar.addMouseListener(this);
 
         this.vista.setLocationRelativeTo(null);

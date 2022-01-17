@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,10 +21,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
      */
     public FrmRegistrarOrdenCompra() {
         initComponents();
-//        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-//        setSize(990, 660);
-//        setResizable(false);
-//        setLocationRelativeTo(null);
+        
     }
 
     /**

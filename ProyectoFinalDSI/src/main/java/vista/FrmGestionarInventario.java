@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,10 +22,7 @@ public class FrmGestionarInventario extends javax.swing.JFrame {
      */
     public FrmGestionarInventario() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(1000, 670);
-        setResizable(false);
-        setLocationRelativeTo(null);
+
     }
 
     /**

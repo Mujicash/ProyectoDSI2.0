@@ -18,6 +18,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -52,7 +53,13 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
     public void iniciar() {
 
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        this.vista.setSize(980, 650);
+        this.vista.setSize(1020, 660);
+        this.vista.setResizable(false);
+        this.vista.setLocationRelativeTo(null);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
+        
+        
+        
         vista.jPanelRetPrincipal7.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {

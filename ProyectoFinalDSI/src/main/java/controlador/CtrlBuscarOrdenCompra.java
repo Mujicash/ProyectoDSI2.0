@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -40,7 +41,7 @@ public class CtrlBuscarOrdenCompra implements ActionListener, ControlStrategy {
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
         this.vista.setSize(1193, 660);
-        //this.vista.setSize(1160, 620);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
         this.vista.jPanelRetPrincipal2.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {

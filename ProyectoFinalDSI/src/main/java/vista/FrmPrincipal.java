@@ -7,6 +7,7 @@ package vista;
 
 
 import controlador.CtrlGuiaRemision;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -20,6 +21,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
         
     }
 
@@ -34,19 +36,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanelCentral = new javax.swing.JPanel();
-        jLabelNomBotica = new javax.swing.JLabel();
-        jPanelBotRegistrarOrdenCompra = new javax.swing.JPanel();
-        jLabellRegistrarOrdenCompra = new javax.swing.JLabel();
         jPanelBotRegistrarOrdenSalida = new javax.swing.JPanel();
         jLabellRegistrarOrdenSalida = new javax.swing.JLabel();
+        jPanelBotRegistrarOrdenCompra = new javax.swing.JPanel();
+        jLabellRegistrarOrdenCompra = new javax.swing.JLabel();
         jPanelBotRegistrarDatosProveedor = new javax.swing.JPanel();
         jLabellRegistrarDatosProveedor = new javax.swing.JLabel();
         jPanelBotRegistrarDatosProducto = new javax.swing.JPanel();
         jLabellRegistrarDatosProducto = new javax.swing.JLabel();
-        jPanelBotBuscarProducto = new javax.swing.JPanel();
-        jLabellRegistrarGuiaRemision1 = new javax.swing.JLabel();
         jPanelBotRegistrarGuiaRemision = new javax.swing.JPanel();
         jLabellRegistrarGuiaRemision = new javax.swing.JLabel();
+        jLabelNomBotica = new javax.swing.JLabel();
+        jPanelBotBuscarProducto = new javax.swing.JPanel();
+        jLabellRegistrarGuiaRemision1 = new javax.swing.JLabel();
         jPanelBotBuscarOrdenCompra = new javax.swing.JPanel();
         jLabelBuscarOrdenCompra = new javax.swing.JLabel();
         jPanelFranja1 = new javax.swing.JPanel();
@@ -64,11 +66,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanelCentral.setBackground(new java.awt.Color(255, 255, 255));
         jPanelCentral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelNomBotica.setBackground(new java.awt.Color(204, 204, 255));
-        jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNomBotica.setText("CRUZ DE MAYO");
-        jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 410, 40));
+        jPanelBotRegistrarOrdenSalida.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBotRegistrarOrdenSalida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelBotRegistrarOrdenSalidaMouseClicked(evt);
+            }
+        });
+        jPanelBotRegistrarOrdenSalida.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabellRegistrarOrdenSalida.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabellRegistrarOrdenSalida.setForeground(new java.awt.Color(0, 5, 25));
+        jLabellRegistrarOrdenSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabellRegistrarOrdenSalida.setText("REGISTRAR ORDEN DE SALIDA");
+        jPanelBotRegistrarOrdenSalida.add(jLabellRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 20));
+
+        jPanelCentral.add(jPanelBotRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 380, 40));
 
         jPanelBotRegistrarOrdenCompra.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarOrdenCompra.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -84,23 +96,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarOrdenCompra.setText("REGISTRAR ORDEN DE COMPRA");
         jPanelBotRegistrarOrdenCompra.add(jLabellRegistrarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 380, 40));
-
-        jPanelBotRegistrarOrdenSalida.setBackground(new java.awt.Color(228, 241, 254));
-        jPanelBotRegistrarOrdenSalida.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelBotRegistrarOrdenSalidaMouseClicked(evt);
-            }
-        });
-        jPanelBotRegistrarOrdenSalida.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabellRegistrarOrdenSalida.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabellRegistrarOrdenSalida.setForeground(new java.awt.Color(0, 5, 25));
-        jLabellRegistrarOrdenSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabellRegistrarOrdenSalida.setText("REGISTRAR ORDEN DE SALIDA");
-        jPanelBotRegistrarOrdenSalida.add(jLabellRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 20));
-
-        jPanelCentral.add(jPanelBotRegistrarOrdenSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 380, 40));
+        jPanelCentral.add(jPanelBotRegistrarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 380, 40));
 
         jPanelBotRegistrarDatosProveedor.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarDatosProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,7 +112,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarDatosProveedor.setText("REGISTRAR DATOS DEL PROVEEDOR");
         jPanelBotRegistrarDatosProveedor.add(jLabellRegistrarDatosProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarDatosProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 380, 40));
+        jPanelCentral.add(jPanelBotRegistrarDatosProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 380, 40));
 
         jPanelBotRegistrarDatosProducto.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarDatosProducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -134,22 +130,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jPanelCentral.add(jPanelBotRegistrarDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 380, 40));
 
-        jPanelBotBuscarProducto.setBackground(new java.awt.Color(228, 241, 254));
-        jPanelBotBuscarProducto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelBotBuscarProductoMouseClicked(evt);
-            }
-        });
-        jPanelBotBuscarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabellRegistrarGuiaRemision1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabellRegistrarGuiaRemision1.setForeground(new java.awt.Color(0, 5, 25));
-        jLabellRegistrarGuiaRemision1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabellRegistrarGuiaRemision1.setText("BUSCAR PRODUCTO");
-        jPanelBotBuscarProducto.add(jLabellRegistrarGuiaRemision1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
-
-        jPanelCentral.add(jPanelBotBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 380, 40));
-
         jPanelBotRegistrarGuiaRemision.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotRegistrarGuiaRemision.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -164,7 +144,29 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabellRegistrarGuiaRemision.setText("REGISTRAR GUÍA DE REMISIÓN");
         jPanelBotRegistrarGuiaRemision.add(jLabellRegistrarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
 
-        jPanelCentral.add(jPanelBotRegistrarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 380, 40));
+        jPanelCentral.add(jPanelBotRegistrarGuiaRemision, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 380, 40));
+
+        jLabelNomBotica.setBackground(new java.awt.Color(204, 204, 255));
+        jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNomBotica.setText("CRUZ DE MAYO");
+        jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 410, 40));
+
+        jPanelBotBuscarProducto.setBackground(new java.awt.Color(228, 241, 254));
+        jPanelBotBuscarProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelBotBuscarProductoMouseClicked(evt);
+            }
+        });
+        jPanelBotBuscarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabellRegistrarGuiaRemision1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabellRegistrarGuiaRemision1.setForeground(new java.awt.Color(0, 5, 25));
+        jLabellRegistrarGuiaRemision1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabellRegistrarGuiaRemision1.setText("BUSCAR PRODUCTO");
+        jPanelBotBuscarProducto.add(jLabellRegistrarGuiaRemision1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
+
+        jPanelCentral.add(jPanelBotBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 380, 40));
 
         jPanelBotBuscarOrdenCompra.setBackground(new java.awt.Color(228, 241, 254));
         jPanelBotBuscarOrdenCompra.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -180,7 +182,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabelBuscarOrdenCompra.setText("BUSCAR ORDEN DE COMPRA");
         jPanelBotBuscarOrdenCompra.add(jLabelBuscarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 11, 320, 20));
 
-        jPanelCentral.add(jPanelBotBuscarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 380, 40));
+        jPanelCentral.add(jPanelBotBuscarOrdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 380, 40));
 
         jPanel1.add(jPanelCentral, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 490, 520));
 

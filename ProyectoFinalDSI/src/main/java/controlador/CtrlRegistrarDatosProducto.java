@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import vista.FrmRegistrarDatosProducto;
 
@@ -44,6 +45,7 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
         this.vista.setSize(840, 721);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
         this.vista.jPanelRetPrincipal3.addMouseListener(this);
         this.vista.jButtonGuardarDatMedicamento.addActionListener(this);
         this.vista.jButtonModificarDatProducto.addActionListener(this);

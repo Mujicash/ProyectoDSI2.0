@@ -3,6 +3,7 @@ package controlador;
 import interfaces.ControlStrategy;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
 import vista.FrmPrincipal;
 
 /**
@@ -32,6 +33,7 @@ public class CtrlPrincipal implements MouseListener, ControlStrategy {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
         this.vista.setSize(1035, 692);
         this.vista.setResizable(false);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
         this.vista.jPanelBotBuscarOrdenCompra.addMouseListener(this);
         this.vista.jPanelBotBuscarProducto.addMouseListener(this);
         this.vista.jPanelBotRegistrarDatosProducto.addMouseListener(this);

@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import vista.FrmBuscarProducto;
@@ -35,6 +36,9 @@ public class CtrlBuscarProducto implements ActionListener, ControlStrategy {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
         this.vista.setSize(1180, 666);
         this.vista.setResizable(false);
+        this.vista.setLocationRelativeTo(null);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
+        
 
         this.vista.jPanelRetPrincipal2.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override

@@ -26,12 +26,6 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
         initComponents();
         
         
-        
-       
-//        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-//        setSize(1193, 660);
-//        setResizable(false);
-//        setLocationRelativeTo(null);
     }
 
     /**

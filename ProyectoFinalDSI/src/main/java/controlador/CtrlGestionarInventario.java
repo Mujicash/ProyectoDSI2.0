@@ -6,13 +6,16 @@
 package controlador;
 
 import dao.DetalleCompraDAO;
+import dao.FabricanteDAO;
 import dao.MedicamentoDAO;
 import dao.ProveedorDAO;
 import dto.DetalleCompraDTO;
+import dto.MedicamentoDTO;
 import interfaces.ControlStrategy;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -42,13 +45,18 @@ public class CtrlGestionarInventario implements MouseListener,ControlStrategy {
 
      private void inicializarTabla(){
         String[] colums = {"MEDICAMENTO", "CANTIDAD", "GESTIONAR"};
+        MedicamentoDTO med;
         FrmGestionarInventario.modelCompra = new DefaultTableModel(null,colums);        
         vent.tblDetalle.setModel( FrmGestionarInventario.modelCompra);
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         String c = "GESTIONAR";
+        String nombre;
+        
         for(DetalleCompraDTO i : compra){
-            Object[] fila = { MedicamentoDAO.buscar(i.getIdMedicamento()).getNombre(), i.getUnidades(), c};
+            med = MedicamentoDAO.buscar(i.getIdMedicamento());
+            nombre = med.getNombre() + " " + med.getMedida()+" "+ FabricanteDAO.buscar(med.getIdFabricante()).getNombre();
+            Object[] fila = { nombre, i.getUnidades(), c};
             FrmGestionarInventario.modelCompra.addRow(fila);
         }
         
@@ -112,6 +120,14 @@ public class CtrlGestionarInventario implements MouseListener,ControlStrategy {
 
     @Override
     public void iniciar() {
+        
+        this.vent.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
+        this.vent.setSize(1000, 670);
+        this.vent.setResizable(false);
+        this.vent.setLocationRelativeTo(null);
+        this.vent.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
+        
+        
         this.vent.setVisible(true);
         this.vent.textOrden.setText(String.valueOf(padre.getOrden().getIdOrdenCompra()));
         String prov = ProveedorDAO.buscar(padre.getOrden().getProveedor()).getNombre();

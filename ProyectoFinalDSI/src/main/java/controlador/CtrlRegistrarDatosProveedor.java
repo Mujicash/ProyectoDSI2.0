@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import vista.FrmRegistrarDatosProveedor;
 
@@ -40,6 +41,7 @@ public class CtrlRegistrarDatosProveedor implements ActionListener, MouseListene
         this.vista.setSize(835, 584);
         this.vista.setResizable(false);
         this.vista.setLocationRelativeTo(null);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
         this.vista.jPanelRetPrincipal4.addMouseListener(this);
         this.vista.jButtonBuscarRUC.addActionListener(this);
         this.vista.jButtonGuardarDatProveedor1.addActionListener(this);

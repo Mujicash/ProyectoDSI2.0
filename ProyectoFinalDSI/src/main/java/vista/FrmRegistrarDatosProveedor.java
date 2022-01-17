@@ -5,6 +5,8 @@
  */
 package vista;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author USER
@@ -16,10 +18,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
      */
     public FrmRegistrarDatosProveedor() {
         initComponents();
-//        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-//        setSize(835, 584);
-//        setResizable(false);       
-//        setLocationRelativeTo(null);
+        
         
     }
 

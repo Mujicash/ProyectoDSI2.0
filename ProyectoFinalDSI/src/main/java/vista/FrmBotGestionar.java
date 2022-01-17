@@ -5,6 +5,8 @@
  */
 package vista;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author USER
@@ -16,10 +18,6 @@ public class FrmBotGestionar extends javax.swing.JFrame {
      */
     public FrmBotGestionar() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(465, 260);
-        setResizable(false);
-        setLocationRelativeTo(null);
     }
 
     /**

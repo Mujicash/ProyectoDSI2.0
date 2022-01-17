@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 
@@ -19,11 +20,7 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
      */
     public FrmRegistrarGuiaRemision() {
         initComponents();
-        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
-        setSize(1068, 569);
-        setResizable(false);
-        setLocationRelativeTo(null);
-        exploradorColor();
+        
         
     }
     

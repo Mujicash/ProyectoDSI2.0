@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -39,6 +40,11 @@ public class CtrlDetalleOrdeCompra implements ControlStrategy {
     public void iniciar() {
         this.vista.setTitle("BOTICA CRUZ DE MAYO - JAUJA");
         this.vista.setSize(1010, 580);
+        this.vista.setResizable(false);
+        this.vista.setLocationRelativeTo(null);
+        this.vista.setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
+        
+        
         this.vista.jPanelRetBuscarOdenCompra.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -52,15 +58,17 @@ public class CtrlDetalleOrdeCompra implements ControlStrategy {
     }
     
     private void inicializarTabla(){
-        String[] colums = {"ID", "NOMBRE", "MEDIDA", "FABRICANTE", "CANTIDAD", "COSTO UNITARIO", "TOTAL"};
+        String[] colums = {"ID", "NOMBRE","CANTIDAD", "COSTO UNITARIO", "TOTAL"};
         FrmDetalleOrdenCompra.modelCompra = new DefaultTableModel(null,colums);        
         vista.jTableDetOrdCompra.setModel(FrmDetalleOrdenCompra.modelCompra);
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
-        
+        MedicamentoDTO medicamento;
+        String nombre;
         for(DetalleCompraDTO i : compra){
-            MedicamentoDTO medicamento = MedicamentoDAO.buscar(i.getIdMedicamento());
-            Object[] fila = {i.getIdMedicamento(), medicamento.getNombre(), medicamento.getMedida(), FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre(), i.getUnidades(), i.getPrecio(), (i.getUnidades()*i.getPrecio())};
+            medicamento = MedicamentoDAO.buscar(i.getIdMedicamento());
+            nombre = medicamento.getNombre() + " " + medicamento.getMedida() + " " + FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre();
+            Object[] fila = {i.getIdMedicamento(), nombre, i.getUnidades(), i.getPrecio(), (i.getUnidades()*i.getPrecio())};
             FrmDetalleOrdenCompra.modelCompra.addRow(fila);
         }
         
