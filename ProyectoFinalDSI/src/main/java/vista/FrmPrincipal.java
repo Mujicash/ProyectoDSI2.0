@@ -66,7 +66,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jLabelNomBotica.setBackground(new java.awt.Color(204, 204, 255));
         jLabelNomBotica.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        jLabelNomBotica.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNomBotica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNomBotica.setText("CRUZ DE MAYO");
         jPanelCentral.add(jLabelNomBotica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 410, 40));
@@ -240,10 +239,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1029, 4));
 
-        jLabelFondoCeleste.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\celeste.png")); // NOI18N
+        jLabelFondoCeleste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/celeste.png"))); // NOI18N
         jPanel1.add(jLabelFondoCeleste, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1029, 620));
 
-        jLabelFondoImagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\Farmaceutico.jpg")); // NOI18N
+        jLabelFondoImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Farmaceutico.jpg"))); // NOI18N
         jPanel1.add(jLabelFondoImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1030, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

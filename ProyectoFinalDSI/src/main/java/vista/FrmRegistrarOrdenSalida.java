@@ -70,6 +70,8 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
             }
         });
 
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelRetPrincipal7Layout = new javax.swing.GroupLayout(jPanelRetPrincipal7);
         jPanelRetPrincipal7.setLayout(jPanelRetPrincipal7Layout);
         jPanelRetPrincipal7Layout.setHorizontalGroup(
@@ -221,7 +223,7 @@ public class FrmRegistrarOrdenSalida extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBaseRegOrdenSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+            .addComponent(jPanelBaseRegOrdenSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
         );
 
         pack();

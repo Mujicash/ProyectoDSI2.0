@@ -40,28 +40,40 @@ public class CtrlGestionarDetalle implements MouseListener, ControlStrategy {
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == this.vent.btnAceptar){
-            int cajas = Integer.parseInt(this.vent.textCaja.getText());
-            int blister = Integer.parseInt(this.vent.textBlister.getText());
-            int factor = cajas + blister;
             
-            if(factor == padre.getUnidades()){
-                ProductoDAO.aumentarStock(med.getIdMedicamento(),1, cajas);
-                ProductoDAO.aumentarStock(med.getIdMedicamento(),2, blister*med.getNum_blister());
+            try{
+                int cajas = Integer.parseInt(this.vent.textCaja.getText());
+                int blister = Integer.parseInt(this.vent.textBlister.getText());
+            
+                if(cajas <=0 || blister <= 0){
+                    JOptionPane.showMessageDialog(null, "LAS CANTIDADES DEBEN SER POSITIVAS", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    int factor = cajas + blister;
+            
+                    if(factor == padre.getUnidades()){
+                        ProductoDAO.aumentarStock(med.getIdMedicamento(),1, cajas);
+                        ProductoDAO.aumentarStock(med.getIdMedicamento(),2, blister*med.getNum_blister());
                 
-                padre.setGestionado(true);
+                        padre.setGestionado(true);
                 
-                JOptionPane.showMessageDialog(null, "Stock Actualizado");
+                        JOptionPane.showMessageDialog(null, "Stock Actualizado");
           
-                this.cerrar();
+                        this.cerrar();
                 
-            }else if(factor <=  padre.getUnidades() ){
+                    }else if(factor <=  padre.getUnidades() ){
                 
-                JOptionPane.showMessageDialog(null, "Aun le sobran unidades, porfavor revise sus valores ");
+                        JOptionPane.showMessageDialog(null, "Aun le sobran unidades, porfavor revise sus valores ");
                 
-            }else{
-                JOptionPane.showMessageDialog(null, "Se ha excedido en las unidades, porfavor revise sus valores ");
-            }
-     
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Se ha excedido en las unidades, porfavor revise sus valores ");
+                    }
+                }
+            } catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "LAS CANTIDADES DEBEN SER NUMEROS", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+            
+            
+            
         }
         
         

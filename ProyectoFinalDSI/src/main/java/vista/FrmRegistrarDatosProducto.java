@@ -77,7 +77,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         });
 
         jLabelReturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelRetPrincipal3Layout = new javax.swing.GroupLayout(jPanelRetPrincipal3);
         jPanelRetPrincipal3.setLayout(jPanelRetPrincipal3Layout);
@@ -118,9 +118,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelNombre.setText("NOMBRE:");
         jPanelBaseRegDatosProducto.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, 20));
 
-        jTextFieldNombre.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNombre.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNombre.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldNombre.setBorder(null);
         jTextFieldNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -131,9 +129,7 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelPeso.setText("PESO:");
         jPanelBaseRegDatosProducto.add(jLabelPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 90, 20));
 
-        jTextFieldPeso.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPeso.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldPeso.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldPeso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldPeso.setBorder(null);
         jTextFieldPeso.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -171,15 +167,11 @@ public class FrmRegistrarDatosProducto extends javax.swing.JFrame {
         jLabelCodigo1.setText("TIPO: ");
         jPanelBaseRegDatosProducto.add(jLabelCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 90, 20));
 
-        jComboBoxMarca.setBackground(new java.awt.Color(255, 255, 255));
         jComboBoxMarca.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jComboBoxMarca.setForeground(new java.awt.Color(0, 0, 0));
         jComboBoxMarca.setBorder(null);
         jPanelBaseRegDatosProducto.add(jComboBoxMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 290, 40));
 
-        jTextFieldNumBlister.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumBlister.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldNumBlister.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNumBlister.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldNumBlister.setBorder(null);
         jTextFieldNumBlister.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));

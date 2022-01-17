@@ -56,7 +56,7 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
         });
 
         jLabelReturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelRetBuscarOdenCompraLayout = new javax.swing.GroupLayout(jPanelRetBuscarOdenCompra);
         jPanelRetBuscarOdenCompra.setLayout(jPanelRetBuscarOdenCompraLayout);
@@ -72,7 +72,7 @@ public class FrmDetalleOrdenCompra extends javax.swing.JFrame {
             .addGroup(jPanelRetBuscarOdenCompraLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanelBaseDetOrdenCompra.add(jPanelRetBuscarOdenCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, 60, 55));

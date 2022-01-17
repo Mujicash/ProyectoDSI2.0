@@ -96,6 +96,7 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
             vista.jTableRegOrdSalida.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
+    
 
     @Override
     public void cerrar() {
@@ -183,14 +184,22 @@ public class CtrlRegistroOrdenSalida implements ActionListener, ControlStrategy 
                 int idMe = vista.jcbMedicamentos.getSelectedIndex() + 1;
                 int idTip = vista.jcbTipo.getSelectedIndex() + 1;
                 ProductoDTO producto = ProductoDAO.buscar(idMe, idTip);
-                if (producto != null) {
-                    idMedicamento.add(idMe);
-                    idTipo.add(idTip);
-                    cantidades.add(cant);
-                    MedicamentoDTO medicamento = MedicamentoDAO.buscar(idMe);
+                
+                if(cant <=0){
+                        JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO POSITIVO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                
+                }else{
+                    if (producto != null) {
+                        idMedicamento.add(idMe);
+                        idTipo.add(idTip);
+                        cantidades.add(cant);
+                        MedicamentoDTO medicamento = MedicamentoDAO.buscar(idMe);
 
-                    cargarTabla(idMe, idTip, medicamento.getNombre(), medicamento.getMedida(), FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre(), cant);
+                        cargarTabla(idMe, idTip, medicamento.getNombre(), medicamento.getMedida(), FabricanteDAO.buscar(medicamento.getIdFabricante()).getNombre(), cant);
+                    }
                 }
+                
+                
                 
             }catch(NumberFormatException ne){
                 JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);

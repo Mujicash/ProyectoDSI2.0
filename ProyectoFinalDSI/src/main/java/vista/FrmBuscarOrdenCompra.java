@@ -5,6 +5,10 @@
  */
 package vista;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +24,10 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
      */
     public FrmBuscarOrdenCompra() {
         initComponents();
+        
+        
+        
+       
 //        setTitle("BOTICA CRUZ DE MAYO - JAUJA");
 //        setSize(1193, 660);
 //        setResizable(false);
@@ -37,7 +45,7 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
 
         jPanelBaseBusOrdenCompra = new javax.swing.JPanel();
         jPanelRetPrincipal2 = new javax.swing.JPanel();
-        jLabelReturn = new javax.swing.JLabel();
+        jLabelReturn = new javax.swing.JLabel(new ImageIcon("/imagenes/return.png"));
         jLabelBusOrdenCompra = new javax.swing.JLabel();
         jLabelNomProveedor = new javax.swing.JLabel();
         jButtonBusOrdenCompra = new javax.swing.JButton();
@@ -59,13 +67,16 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
             }
         });
 
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+        jLabelReturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelRetPrincipal2Layout = new javax.swing.GroupLayout(jPanelRetPrincipal2);
         jPanelRetPrincipal2.setLayout(jPanelRetPrincipal2Layout);
         jPanelRetPrincipal2Layout.setHorizontalGroup(
             jPanelRetPrincipal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRetPrincipal2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelRetPrincipal2Layout.setVerticalGroup(
             jPanelRetPrincipal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,8 +142,6 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
         jbtnDetalle.setPreferredSize(new java.awt.Dimension(150, 40));
         jPanelBaseBusOrdenCompra.add(jbtnDetalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, -1, -1));
 
-        jcbProveedores.setBackground(new java.awt.Color(255, 255, 255));
-        jcbProveedores.setForeground(new java.awt.Color(0, 0, 0));
         jPanelBaseBusOrdenCompra.add(jcbProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 410, 40));
 
         jPanelFranjaDerecha.setBackground(new java.awt.Color(23, 178, 178));
@@ -218,4 +227,7 @@ public class FrmBuscarOrdenCompra extends javax.swing.JFrame {
     public javax.swing.JButton jbtnDetalle;
     public javax.swing.JComboBox<String> jcbProveedores;
     // End of variables declaration//GEN-END:variables
+
+  
+
 }

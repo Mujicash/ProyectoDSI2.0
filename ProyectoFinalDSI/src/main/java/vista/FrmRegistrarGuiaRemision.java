@@ -103,6 +103,8 @@ public class FrmRegistrarGuiaRemision extends javax.swing.JFrame {
             }
         });
 
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
+
         javax.swing.GroupLayout btnRetroLayout = new javax.swing.GroupLayout(btnRetro);
         btnRetro.setLayout(btnRetroLayout);
         btnRetroLayout.setHorizontalGroup(

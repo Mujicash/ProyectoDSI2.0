@@ -80,12 +80,7 @@ public class CtrlGestionarInventario implements MouseListener,ControlStrategy {
         
         int fila = this.vent.tblDetalle.rowAtPoint(e.getPoint());
         int columna = this.vent.tblDetalle.columnAtPoint(e.getPoint());
-        
-        if (e.getSource() == this.vent.btnRetro) {
-            this.vent.setVisible(false);
-            this.vent.dispose();
-        } 
-        
+
         if(columna==2){
             if(!compra.get(fila).isGestionado()){
                 //CtrlGestionarDetalle cd = new CtrlGestionarDetalle(compra.get(fila),this.ctrl); 
@@ -121,7 +116,6 @@ public class CtrlGestionarInventario implements MouseListener,ControlStrategy {
         this.vent.textOrden.setText(String.valueOf(padre.getOrden().getIdOrdenCompra()));
         String prov = ProveedorDAO.buscar(padre.getOrden().getProveedor()).getNombre();
         this.vent.textProveedor.setText(prov);
-        this.vent.btnRetro.addMouseListener(this);
         this.vent.btnAceptar.addMouseListener(this);
         this.vent.tblDetalle.addMouseListener(this);
         

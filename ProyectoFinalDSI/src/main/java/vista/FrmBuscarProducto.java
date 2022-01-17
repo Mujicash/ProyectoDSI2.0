@@ -59,6 +59,8 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelRetPrincipal2Layout = new javax.swing.GroupLayout(jPanelRetPrincipal2);
         jPanelRetPrincipal2.setLayout(jPanelRetPrincipal2Layout);
         jPanelRetPrincipal2Layout.setHorizontalGroup(
@@ -72,7 +74,7 @@ public class FrmBuscarProducto extends javax.swing.JFrame {
             jPanelRetPrincipal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRetPrincipal2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

@@ -64,7 +64,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
             }
         });
 
-        jLabelReturn.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Dropbox\\Mi PC (LAPTOP-ML2VI351)\\Documents\\CICLOS UNMSM\\CICLO VI\\DISEÑO DE SISTEMAS DE INFORMACIÓN\\ProyectoFinal\\SistemaBotica\\ProyectoDSI2.0\\ProyectoFinalDSI\\src\\main\\java\\imagenes\\return.png")); // NOI18N
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelRetPrincipal4Layout = new javax.swing.GroupLayout(jPanelRetPrincipal4);
         jPanelRetPrincipal4.setLayout(jPanelRetPrincipal4Layout);
@@ -94,9 +94,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
         jLabelRUC.setText("RUC:");
         jPanelBaseRegDatosProveedor.add(jLabelRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 90, 20));
 
-        jTextFieldRUC.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldRUC.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldRUC.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldRUC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldRUC.setBorder(null);
         jTextFieldRUC.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -107,9 +105,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
         jLabelDireccion.setText("DIRECCIÓN:");
         jPanelBaseRegDatosProveedor.add(jLabelDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 150, 20));
 
-        jTextFieldDireccion.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDireccion.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldDireccion.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldDireccion.setBorder(null);
         jTextFieldDireccion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -120,9 +116,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
         jLabelEmpresa.setText("EMPRESA:");
         jPanelBaseRegDatosProveedor.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 100, 20));
 
-        jTextFieldEmpresa.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEmpresa.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldEmpresa.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldEmpresa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldEmpresa.setBorder(null);
         jTextFieldEmpresa.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -141,9 +135,7 @@ public class FrmRegistrarDatosProveedor extends javax.swing.JFrame {
         jLabelTelefono.setText("TELEFONO:");
         jPanelBaseRegDatosProveedor.add(jLabelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 150, 20));
 
-        jTextFieldTelefono.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTelefono.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldTelefono.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldTelefono.setBorder(null);
         jTextFieldTelefono.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));

@@ -70,19 +70,21 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
             }
         });
 
+        jLabelReturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanelRetPrincipal6Layout = new javax.swing.GroupLayout(jPanelRetPrincipal6);
         jPanelRetPrincipal6.setLayout(jPanelRetPrincipal6Layout);
         jPanelRetPrincipal6Layout.setHorizontalGroup(
             jPanelRetPrincipal6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRetPrincipal6Layout.createSequentialGroup()
                 .addComponent(jLabelReturn)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         jPanelRetPrincipal6Layout.setVerticalGroup(
             jPanelRetPrincipal6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelRetPrincipal6Layout.createSequentialGroup()
                 .addComponent(jLabelReturn)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
         jPanelBaseRegOrdenCompra.add(jPanelRetPrincipal6, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, 50, 50));
@@ -98,9 +100,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelPrecioCompra.setText("PRECIO COMPRA:");
         jPanelBaseRegOrdenCompra.add(jLabelPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 150, -1));
 
-        jTextFieldPrecCompra.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPrecCompra.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldPrecCompra.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldPrecCompra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldPrecCompra.setBorder(null);
         jTextFieldPrecCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -120,9 +120,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelCodProducto.setText("CÓDIGO MEDICAMENTO:");
         jPanelBaseRegOrdenCompra.add(jLabelCodProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 210, -1));
 
-        jTextFieldCodProducto.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCodProducto.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCodProducto.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCodProducto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCodProducto.setBorder(null);
         jTextFieldCodProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -133,9 +131,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelEmpresa.setText("PROVEEDOR:");
         jPanelBaseRegOrdenCompra.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 130, -1));
 
-        jTextFieldCantidad.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCantidad.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jTextFieldCantidad.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCantidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCantidad.setBorder(null);
         jTextFieldCantidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -151,9 +147,7 @@ public class FrmRegistrarOrdenCompra extends javax.swing.JFrame {
         jLabelCantidad.setText("CANTIDAD:");
         jPanelBaseRegOrdenCompra.add(jLabelCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 120, -1));
 
-        JComboProveedor.setBackground(new java.awt.Color(255, 255, 255));
         JComboProveedor.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        JComboProveedor.setForeground(new java.awt.Color(0, 0, 0));
         JComboProveedor.setAutoscrolls(true);
         JComboProveedor.setBorder(null);
         JComboProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

@@ -117,6 +117,12 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
         
         try{
             int codigo = Integer.valueOf(cod);
+            
+            if(codigo <=0){
+                JOptionPane.showMessageDialog(null, "EL CODIGO DEL MEDICAMENTO DEBE SER UN POSITIVO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            
         } catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "EL CODIGO DEL MEDICAMENTO DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);
             return false;
@@ -124,6 +130,12 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
         
         try{
             int cantidad = Integer.valueOf(cant);
+            
+            if(cantidad <=0){
+                JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO POSITIVO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            
         } catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);
             return false;
@@ -131,6 +143,12 @@ public class CtrlRegistrarOrdenCompra implements ActionListener, ControlStrategy
         
         try{
             double precio = Double.valueOf(prec);
+            
+            if(precio<=0){
+                JOptionPane.showMessageDialog(null, "EL PRECIO DEBE SER UN NUMERO POSITIVO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            
         } catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "EL PRECIO DEBE SER UN NUMERO REAL", "ERROR", JOptionPane.ERROR_MESSAGE);
             return false;

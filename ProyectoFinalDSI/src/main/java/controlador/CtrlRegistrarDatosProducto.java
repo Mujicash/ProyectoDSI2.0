@@ -65,41 +65,56 @@ public class CtrlRegistrarDatosProducto implements ActionListener, MouseListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vista.jButtonGuardarDatMedicamento) {
-            MedicamentoDTO nuevo = new MedicamentoDTO(
+  
+            try{
+                int cantidad = Integer.parseInt(this.vista.jTextFieldNumBlister.getText());;
+            
+                if(cantidad <=0){
+                    JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO POSITIVO", "ERROR", JOptionPane.ERROR_MESSAGE); 
+                }else{
+                    MedicamentoDTO nuevo = new MedicamentoDTO(
                     0,
                     this.cbxFabricante.get(this.vista.jComboBoxMarca.getSelectedIndex()).getIdFabricante(),
                     this.vista.jTextFieldNombre.getText(),
                     this.vista.jTextFieldPeso.getText(),
                     Integer.parseInt(this.vista.jTextFieldNumBlister.getText()));
-            if (MedicamentoDAO.insertar(nuevo)) {
-                this.vista.jTextFieldNombre.setEnabled(false);
-                this.vista.jTextFieldPeso.setEnabled(false);
-                this.vista.jTextFieldNumBlister.setEnabled(false);
-                this.vista.jComboBoxMarca.setEnabled(false);
-                this.vista.jButtonGuardarDatMedicamento.setEnabled(false);
+                    
+                    if (MedicamentoDAO.insertar(nuevo)) {
+                        this.vista.jTextFieldNombre.setEnabled(false);
+                        this.vista.jTextFieldPeso.setEnabled(false);
+                        this.vista.jTextFieldNumBlister.setEnabled(false);
+                        this.vista.jComboBoxMarca.setEnabled(false);
+                        this.vista.jButtonGuardarDatMedicamento.setEnabled(false);
 
-                int ultimoID = MedicamentoDAO.ultimoID();
+                         int ultimoID = MedicamentoDAO.ultimoID();
 
-                ProductoDTO caja = new ProductoDTO(ultimoID, 1, 0, 0);
-                ProductoDTO blister = new ProductoDTO(ultimoID, 2, 0, 0);
+                        ProductoDTO caja = new ProductoDTO(ultimoID, 1, 0, 0);
+                        ProductoDTO blister = new ProductoDTO(ultimoID, 2, 0, 0);
 
-                if (ProductoDAO.insertar(caja) && ProductoDAO.insertar(blister)) {
-                    JOptionPane.showMessageDialog(this.vista, "Se ha registrado el Producto correctamente. Por favor registrar el precio de venta", "Registrado", JOptionPane.INFORMATION_MESSAGE);
-                    this.vista.jTextFieldCodigoBlister.setText(ultimoID + "");
-                    this.vista.jTextFieldCodigoCaja.setText(ultimoID + "");
-                    this.vista.jTextFieldPrecioVentaBlister.setEnabled(true);
-                    this.vista.jTextFieldPrecioVentaCaja.setEnabled(true);
-                    this.vista.jButtonModificarDatProducto.setEnabled(true);
-                } else {
-                    JOptionPane.showMessageDialog(this.vista, "No pudo registrar el Producto", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-                    this.vista.jTextFieldNombre.setEnabled(true);
-                    this.vista.jTextFieldPeso.setEnabled(true);
-                    this.vista.jTextFieldNumBlister.setEnabled(true);
-                    this.vista.jComboBoxMarca.setEnabled(true);
-                    this.vista.jButtonGuardarDatMedicamento.setEnabled(true);
+                        if (ProductoDAO.insertar(caja) && ProductoDAO.insertar(blister)) {
+                            JOptionPane.showMessageDialog(this.vista, "Se ha registrado el Producto correctamente. Por favor registrar el precio de venta", "Registrado", JOptionPane.INFORMATION_MESSAGE);
+                            this.vista.jTextFieldCodigoBlister.setText(ultimoID + "");
+                            this.vista.jTextFieldCodigoCaja.setText(ultimoID + "");
+                            this.vista.jTextFieldPrecioVentaBlister.setEnabled(true);
+                            this.vista.jTextFieldPrecioVentaCaja.setEnabled(true);
+                            this.vista.jButtonModificarDatProducto.setEnabled(true);
+                        } else {
+                            JOptionPane.showMessageDialog(this.vista, "No pudo registrar el Producto", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                            this.vista.jTextFieldNombre.setEnabled(true);
+                            this.vista.jTextFieldPeso.setEnabled(true);
+                            this.vista.jTextFieldNumBlister.setEnabled(true);
+                            this.vista.jComboBoxMarca.setEnabled(true);
+                            this.vista.jButtonGuardarDatMedicamento.setEnabled(true);
+                        }
+                    }
                 }
-
+            
+            } catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "LA CANTIDAD DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            
             }
+            
+            
         }
         if (e.getSource() == this.vista.jButtonModificarDatProducto) {
             ProductoDTO modificarCaja = new ProductoDTO(

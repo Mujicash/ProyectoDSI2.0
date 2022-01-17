@@ -97,6 +97,58 @@ public class CtrlGuiaRemision implements MouseListener,ControlStrategy {
         }
         
     }
+    
+    private boolean validarFecha(String d,String m,String a){
+        
+        try{
+            int dia = Integer.valueOf(d);
+            int mes = Integer.valueOf(m);
+            int anio = Integer.valueOf(a);
+            
+            if(anio<=0){
+                JOptionPane.showMessageDialog(null, "EL NUMERO DE LA FECHA ES INCORRECTO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }else{
+                if(mes <=0){
+                    JOptionPane.showMessageDialog(null, "EL NUMERO DEL MES ES INCORRECTO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    return false;
+                }else if(dia>0){
+                    if(mes==28 && dia<=28){
+                        return true;
+                    }
+                    
+                    if(mes==4 || mes==6 || mes==9 || mes==11){
+                        if(dia<=30){
+                            return true;
+                        }
+                    }
+                    
+                    if(mes==1 || mes==3 || mes==5 || mes==7|| mes==8 || mes==10 || mes==12 ){
+                        if(dia<=31){
+                            return true;
+                        }
+                    }
+                    
+                    
+                    
+                    JOptionPane.showMessageDialog(null, "LA FECHA ES INCORRECTO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    
+                    return false;
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "EL NUMERO DEL DIA ES INCORRECTO", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    return false;
+                }
+            }
+            
+            
+       
+        } catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "LAS FECHAS SE ESCRIBEN CON NUMERO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -106,36 +158,43 @@ public class CtrlGuiaRemision implements MouseListener,ControlStrategy {
             if("".equals(vista.textOrden.getText())){
                  JOptionPane.showMessageDialog(null, "LLene la casilla de numero de orden para buscar");
             }else{
-               compraDTO = OrdenCompraDAO.buscar(Integer.parseInt(vista.textOrden.getText()));
-               if(compraDTO != null){
-                   ProveedorDTO provDTO;
-                   provDTO = ProveedorDAO.buscar(compraDTO.getProveedor());
-                   this.vista.textProveedor.setText(provDTO.getNombre());
+                
+                try{
+                    int num = Integer.parseInt(vista.textOrden.getText());
+            
+                if(num <=0){
+                    JOptionPane.showMessageDialog(null, "EL NUMERO DE ORDEN DEBE SER UN NUMERO POSITIVO", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+                }else{
+                    compraDTO = OrdenCompraDAO.buscar(Integer.parseInt(vista.textOrden.getText()));
+                    if(compraDTO != null){
+                        ProveedorDTO provDTO;
+                        provDTO = ProveedorDAO.buscar(compraDTO.getProveedor());
+                        this.vista.textProveedor.setText(provDTO.getNombre());
                    
-                 
-                       model = GuiaRemisionDAO.buscar(compraDTO.getIdOrdenCompra());
-                       if(null != model){
+                        model = GuiaRemisionDAO.buscar(compraDTO.getIdOrdenCompra());
+                        if(null != model){
                            System.out.println("si hay guia de remision\n");
                            this.llenar(model);
                            this.vista.botonArchivo.setEnabled(false);
                            this.vista.botonGestionar.setEnabled(false);
                            this.vista.botonGuardar.setEnabled(false);
-                       }else{
+                        }else{
                            model = new GuiaRemisionDTO();
                            this.vista.botonArchivo.setEnabled(true);
                            this.vista.botonGestionar.setEnabled(true);
                            this.vista.botonGuardar.setEnabled(true);
-                       }
-                       
-                       
-                   
-                   
-                   
-               }else{
-                   JOptionPane.showMessageDialog(null, "No se encuentra la orden de compra");
-               }
-            }   
-        }
+                        }    
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No se encuentra la orden de compra");
+                    }
+                }
+            } catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "EL NUMERO DE ORDEN DEBE SER UN NUMERO ENTERO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            
+            }     
+        }   
+    }
         
         if(this.vista.botonArchivo == e.getSource()){
                 JFileChooser fc = new JFileChooser();
@@ -177,20 +236,24 @@ public class CtrlGuiaRemision implements MouseListener,ControlStrategy {
         
         if(this.vista.botonGuardar == e.getSource()){
             if(gestionado){
-                model.setNumGuia(vista.textNumero.getText());
-                model.setIdGuia(Integer.parseInt(vista.textOrden.getText()));
-                model.setMotivo(vista.textMotivo.getText());
-                model.setPuntoPartida(vista.textPartida.getText());
-                System.out.println();
-                model.setFechaInicio(new Date( Integer.parseInt(vista.textAnio.getText())-1900,Integer.parseInt(vista.textMes.getText())-1 , Integer.parseInt(vista.textDia.getText())));
-                model.setFechaEntrega(Calendar.getInstance().getTime());
-                model.setFoto(imagenCargada);
-                model.setGestionado(true);
+                
+                if(this.validarFecha(vista.textDia.getText(), vista.textMes.getText(), vista.textAnio.getText())){
+                    model.setNumGuia(vista.textNumero.getText());
+                    model.setIdGuia(Integer.parseInt(vista.textOrden.getText()));
+                    model.setMotivo(vista.textMotivo.getText());
+                    model.setPuntoPartida(vista.textPartida.getText());
+                    System.out.println();
+                    model.setFechaInicio(new Date( Integer.parseInt(vista.textAnio.getText())-1900,Integer.parseInt(vista.textMes.getText())-1 , Integer.parseInt(vista.textDia.getText())));
+                    model.setFechaEntrega(Calendar.getInstance().getTime());
+                    model.setFoto(imagenCargada);
+                    model.setGestionado(true);
             
-                GuiaRemisionDAO.insertar(model);
-                compraDTO.setEstado(true);
-                OrdenCompraDAO.modificar(compraDTO);
-                this.limpiar();
+                    GuiaRemisionDAO.insertar(model);
+                    compraDTO.setEstado(true);
+                    OrdenCompraDAO.modificar(compraDTO);
+                    this.limpiar();
+                }
+                
             }else{
                  JOptionPane.showMessageDialog(null, "Por favor, Gestione el inventario");
             }
