@@ -13,9 +13,9 @@ import java.util.logging.Logger;
 public class Conexion {
 
     private static final String SERVER = "sql10.freemysqlhosting.net";
-    private static final String NAME = "sql10465818";
-    private static final String USER = "sql10465818";
-    private static final String CLAVE = "izhD42ryUv";
+    private static final String NAME = "sql10466323";
+    private static final String USER = "sql10466323";
+    private static final String CLAVE = "BtRjURMrB6";
     private static final String URL = "jdbc:mysql://" + SERVER + "/" + NAME;
 
     private static Connection instance; //Singleton
